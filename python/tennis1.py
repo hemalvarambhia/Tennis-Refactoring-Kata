@@ -16,7 +16,8 @@ class TennisGame1:
 
     def score(self):
         result = ""
-        if (self.p1points==self.p2points):
+        game_tied = self.p1points == self.p2points
+        if game_tied:
             result = {
                 0 : "Love-All",
                 1 : "Fifteen-All",
