@@ -16,7 +16,6 @@ class TennisGame1:
 
     def score(self):
         result = ""
-        tempScore=0
         if (self.p1points==self.p2points):
             result = {
                 0 : "Love-All",
