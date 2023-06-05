@@ -15,13 +15,12 @@ class TennisGame1:
             self.p2points += 1
 
     def score(self):
-        result = ""
         points_difference = self.p1points - self.p2points
         game_tied = points_difference == 0
         if game_tied and self.p1points >= 3:
             return "Deuce"
         if game_tied:
-            return "%s-All" % self.points_as_text(self.p1points)
+            return "%s-All" % TennisGame1.points_as_text(self.p1points)
         elif self.p1points >= 4 or self.p2points >= 4:
             if points_difference == 1:
                 return "Advantage %s" % self.player1Name
@@ -32,9 +31,10 @@ class TennisGame1:
             else:
                 return "Win for %s" % self.player2Name
 
-        return "%s-%s" % (self.points_as_text(self.p1points), self.points_as_text(self.p2points))
+        return "%s-%s" % (TennisGame1.points_as_text(self.p1points), TennisGame1.points_as_text(self.p2points))
 
-    def points_as_text(self, points_scored):
+    @staticmethod
+    def points_as_text(points_scored):
         return {
             0: "Love",
             1: "Fifteen",
