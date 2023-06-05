@@ -16,7 +16,8 @@ class TennisGame1:
 
     def score(self):
         result = ""
-        game_tied = self.p1points == self.p2points
+        points_difference = self.p1points - self.p2points
+        game_tied = points_difference == 0
         if game_tied and self.p1points >= 3:
             return "Deuce"
         if game_tied:
@@ -27,7 +28,6 @@ class TennisGame1:
             }[self.p1points]
             return result
         elif (self.p1points >= 4 or self.p2points >= 4):
-            points_difference = self.p1points - self.p2points
             if (points_difference == 1):
                 result = "Advantage %s" % self.player1Name
             elif (points_difference == -1):
