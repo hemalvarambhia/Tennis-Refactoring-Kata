@@ -20,11 +20,7 @@ class TennisGame1:
             return "Deuce"
         if game_tied:
             return "%s-All" % TennisGame1.points_as_text(self.p1points)
-        player_with_advantage = None
-        if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() == 1:
-            player_with_advantage = self.player1Name
-        if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() == -1:
-            player_with_advantage = self.player2Name
+        player_with_advantage = self.player_with_advantage()
         if player_with_advantage:
             return "Advantage %s" % player_with_advantage
         if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() >= 2:
@@ -33,6 +29,12 @@ class TennisGame1:
             return "Win for %s" % self.player2Name
 
         return "%s-%s" % (TennisGame1.points_as_text(self.p1points), TennisGame1.points_as_text(self.p2points))
+
+    def player_with_advantage(self):
+        if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() == 1:
+            return self.player1Name
+        if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() == -1:
+            return self.player2Name
 
     def points_difference(self):
         return self.p1points - self.p2points
