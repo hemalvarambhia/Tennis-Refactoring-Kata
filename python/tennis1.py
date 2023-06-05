@@ -42,25 +42,25 @@ class TennisGame1:
         if winning_player is not None:
             return "Win for %s" % winning_player
 
-        return "%s-%s" % (TennisGame1.points_as_text(self.player1.points), TennisGame1.points_as_text(self.p2points))
+        return "%s-%s" % (TennisGame1.points_as_text(self.player1.points), TennisGame1.points_as_text(self.player2.points))
 
     def game_tied(self):
         return self.points_difference() == 0
 
     def winner(self):
-        if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() >= 2:
+        if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() >= 2:
             return self.player1.name
-        if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() <= -2:
+        if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() <= -2:
             return self.player2Name
 
     def player_with_advantage(self):
-        if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() == 1:
+        if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() == 1:
             return self.player1.name
-        if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() == -1:
+        if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() == -1:
             return self.player2Name
 
     def points_difference(self):
-        return self.player1.points - self.p2points
+        return self.player1.points - self.player2.points
 
     @staticmethod
     def points_as_text(points_scored):
