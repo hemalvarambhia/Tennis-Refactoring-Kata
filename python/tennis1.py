@@ -18,7 +18,7 @@ class TennisGame1:
         result = ""
         game_tied = self.p1points == self.p2points
         if game_tied:
-            if self.p1points > 2:
+            if self.p1points >= 3:
                 return "Deuce"
             result = {
                 0 : "Love-All",
