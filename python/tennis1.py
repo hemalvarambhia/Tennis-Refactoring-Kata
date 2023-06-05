@@ -35,7 +35,6 @@ class TennisGame1:
         if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() <= -2:
             return self.player2Name
 
-
     def player_with_advantage(self):
         if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() == 1:
             return self.player1Name
