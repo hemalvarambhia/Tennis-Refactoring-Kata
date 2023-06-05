@@ -21,7 +21,7 @@ class TennisGame1:
         if game_tied:
             return "%s-All" % TennisGame1.points_as_text(self.p1points)
         player_with_advantage = self.player_with_advantage()
-        if player_with_advantage:
+        if player_with_advantage is not None:
             return "Advantage %s" % player_with_advantage
         winning_player = self.winner()
         if winning_player is not None:
