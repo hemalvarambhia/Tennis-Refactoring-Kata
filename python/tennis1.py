@@ -32,9 +32,9 @@ class TennisGame1:
             elif points_difference == -1:
                 return "Advantage %s" % self.player2Name
             elif points_difference >= 2:
-                return "Win for player1"
+                return "Win for %s" % self.player1Name
             else:
-                return "Win for player2"
+                return "Win for %s" % self.player2Name
         else:
             return "%s-%s" % (self.points_as_text(self.p1points), self.points_as_text(self.p2points))
 
