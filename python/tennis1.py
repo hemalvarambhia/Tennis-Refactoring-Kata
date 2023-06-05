@@ -23,7 +23,7 @@ class TennisGame1:
         self.p2points = 0
 
     def won_point(self, player_name):
-        if player_name == self.player1Name:
+        if player_name == self.player1.name:
             self.player1.won_point()
         else:
             self.p2points += 1
@@ -48,13 +48,13 @@ class TennisGame1:
 
     def winner(self):
         if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() >= 2:
-            return self.player1Name
+            return self.player1.name
         if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() <= -2:
             return self.player2Name
 
     def player_with_advantage(self):
         if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() == 1:
-            return self.player1Name
+            return self.player1.name
         if (self.player1.points >= 4 or self.p2points >= 4) and self.points_difference() == -1:
             return self.player2Name
 
