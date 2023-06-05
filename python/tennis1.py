@@ -15,7 +15,6 @@ class TennisGame1:
             self.p2points += 1
 
     def score(self):
-        game_tied = self.points_difference() == 0
         if self.game_tied() and self.p1points >= 3:
             return "Deuce"
         if self.game_tied():
