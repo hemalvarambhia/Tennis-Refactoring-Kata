@@ -37,7 +37,7 @@ class TennisGame1:
             else:
                 result = "Win for player2"
         else:
-            for i in range(1, 3):
+            for i in [1, 2]:
                 if (i == 1):
                     tempScore = self.p1points
                 else:
