@@ -31,7 +31,7 @@ class TennisGame1:
             if (points_difference == 1):
                 result = "Advantage %s" % self.player1Name
             elif (points_difference == -1):
-                result = "Advantage player2"
+                result = "Advantage %s" % self.player2Name
             elif (points_difference >= 2):
                 result = "Win for player1"
             else:
