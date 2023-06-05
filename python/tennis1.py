@@ -37,13 +37,7 @@ class TennisGame1:
             else:
                 result = "Win for player2"
         else:
-            for i in [1, 2]:
-                if (i == 1):
-                    tempScore = self.p1points
-                else:
-                    result += "-"
-                    tempScore = self.p2points
-                result = "%s-%s" % (self.points_as_text(self.p1points), self.points_as_text(self.p2points))
+            result = "%s-%s" % (self.points_as_text(self.p1points), self.points_as_text(self.p2points))
         return result
 
     def points_as_text(self, points_scored):
