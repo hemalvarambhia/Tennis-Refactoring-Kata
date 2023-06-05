@@ -35,8 +35,8 @@ class TennisGame1:
                 return "Win for %s" % self.player1Name
             else:
                 return "Win for %s" % self.player2Name
-        else:
-            return "%s-%s" % (self.points_as_text(self.p1points), self.points_as_text(self.p2points))
+
+        return "%s-%s" % (self.points_as_text(self.p1points), self.points_as_text(self.p2points))
 
     def points_as_text(self, points_scored):
         return {
