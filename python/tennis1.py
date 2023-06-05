@@ -25,6 +25,7 @@ class TennisGame1:
                 1: "Fifteen-All",
                 2: "Thirty-All",
             }[self.p1points]
+            return result
         elif (self.p1points >= 4 or self.p2points >= 4):
             points_difference = self.p1points - self.p2points
             if (points_difference == 1):
