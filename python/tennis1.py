@@ -16,9 +16,9 @@ class TennisGame1:
 
     def score(self):
         game_tied = self.points_difference() == 0
-        if game_tied and self.p1points >= 3:
+        if self.game_tied() and self.p1points >= 3:
             return "Deuce"
-        if game_tied:
+        if self.game_tied():
             return "%s-All" % TennisGame1.points_as_text(self.p1points)
         player_with_advantage = self.player_with_advantage()
         if player_with_advantage is not None:
@@ -28,6 +28,10 @@ class TennisGame1:
             return "Win for %s" % winning_player
 
         return "%s-%s" % (TennisGame1.points_as_text(self.p1points), TennisGame1.points_as_text(self.p2points))
+
+
+    def game_tied(self):
+        return self.points_difference() == 0
 
     def winner(self):
         if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() >= 2:
