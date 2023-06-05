@@ -16,10 +16,10 @@ class Player:
 
 class TennisGame1:
 
-    def __init__(self, player1Name, player2Name):
-        self.player1Name = player1Name
-        self.player1 = Player(player2Name)
-        self.player2Name = player2Name
+    def __init__(self, player1_name, player2_name):
+        self.player1Name = player1_name
+        self.player1 = Player(player2_name)
+        self.player2Name = player2_name
         self.p2points = 0
 
     def won_point(self, player_name):
