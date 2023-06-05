@@ -32,6 +32,9 @@ class TennisGame1:
 
         return "%s-%s" % (TennisGame1.points_as_text(self.p1points), TennisGame1.points_as_text(self.p2points))
 
+    def points_difference(self):
+        return self.p1points - self.p2points
+
     @staticmethod
     def points_as_text(points_scored):
         return {
