@@ -43,10 +43,13 @@ class TennisGame1:
                 else:
                     result += "-"
                     tempScore = self.p2points
-                result += {
-                    0: "Love",
-                    1: "Fifteen",
-                    2: "Thirty",
-                    3: "Forty",
-                }[tempScore]
+                result += self.points_as_text(tempScore)
         return result
+
+    def points_as_text(self, points_scored):
+        return {
+            0: "Love",
+            1: "Fifteen",
+            2: "Thirty",
+            3: "Forty",
+        }[points_scored]
