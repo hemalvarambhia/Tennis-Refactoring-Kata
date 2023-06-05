@@ -27,12 +27,12 @@ class TennisGame1:
                 2: "Thirty-All",
             }[self.p1points]
             return result
-        elif (self.p1points >= 4 or self.p2points >= 4):
-            if (points_difference == 1):
+        elif self.p1points >= 4 or self.p2points >= 4:
+            if points_difference == 1:
                 result = "Advantage %s" % self.player1Name
-            elif (points_difference == -1):
+            elif points_difference == -1:
                 result = "Advantage %s" % self.player2Name
-            elif (points_difference >= 2):
+            elif points_difference >= 2:
                 result = "Win for player1"
             else:
                 result = "Win for player2"
