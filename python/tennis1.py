@@ -24,9 +24,11 @@ class TennisGame1:
         if player_with_advantage:
             return "Advantage %s" % player_with_advantage
         if (self.p1points >= 4 or self.p2points >= 4) and self.points_difference() >= 2:
-            return "Win for %s" % self.player1Name
+            winning_player = self.player1Name
+            return "Win for %s" % winning_player
         if self.p1points >= 4 or self.p2points >= 4 and self.points_difference() <= -2:
-            return "Win for %s" % self.player2Name
+            winning_player = self.player2Name
+            return "Win for %s" % winning_player
 
         return "%s-%s" % (TennisGame1.points_as_text(self.p1points), TennisGame1.points_as_text(self.p2points))
 
