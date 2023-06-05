@@ -21,12 +21,11 @@ class TennisGame1:
         if game_tied and self.p1points >= 3:
             return "Deuce"
         if game_tied:
-            result = {
+            return {
                 0: "Love-All",
                 1: "Fifteen-All",
                 2: "Thirty-All",
             }[self.p1points]
-            return result
         elif self.p1points >= 4 or self.p2points >= 4:
             if points_difference == 1:
                 return "Advantage %s" % self.player1Name
