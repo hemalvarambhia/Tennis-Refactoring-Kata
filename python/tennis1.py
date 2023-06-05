@@ -29,7 +29,7 @@ class TennisGame1:
         elif (self.p1points >= 4 or self.p2points >= 4):
             points_difference = self.p1points - self.p2points
             if (points_difference == 1):
-                result = "Advantage player1"
+                result = "Advantage %s" % self.player1Name
             elif (points_difference == -1):
                 result = "Advantage player2"
             elif (points_difference >= 2):
