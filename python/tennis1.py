@@ -17,9 +17,9 @@ class TennisGame1:
     def score(self):
         result = ""
         game_tied = self.p1points == self.p2points
+        if game_tied and self.p1points >= 3:
+            return "Deuce"
         if game_tied:
-            if self.p1points >= 3:
-                return "Deuce"
             result = {
                 0 : "Love-All",
                 1 : "Fifteen-All",
