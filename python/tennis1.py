@@ -13,6 +13,9 @@ class Player:
     def points(self):
         return self.points
 
+    def __str__(self):
+        return self.name
+
 
 class TennisGame1:
 
@@ -37,7 +40,7 @@ class TennisGame1:
             return "Advantage %s" % player_with_advantage
         winning_player = self.winner()
         if winning_player is not None:
-            return "Win for %s" % winning_player
+            return "Win for %s" % str(winning_player)
 
         return "%s-%s" % (TennisGame1.points_as_text(self.player1.points), TennisGame1.points_as_text(self.player2.points))
 
