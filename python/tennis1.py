@@ -13,6 +13,9 @@ class Player:
     def points(self):
         return self.points
 
+    def has_beaten(self, player2):
+        return (self.points >= 4 or player2.points >= 4) and self.points_difference(player2) >= 2
+
     def points_difference(self, player_2):
         return self.points - player_2.points
 
