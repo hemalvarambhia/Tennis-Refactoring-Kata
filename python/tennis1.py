@@ -37,7 +37,7 @@ class TennisGame1:
             return "%s-All" % TennisGame1.points_as_text(self.player1.points)
         player_with_advantage = self.player_with_advantage()
         if player_with_advantage is not None:
-            return "Advantage %s" % player_with_advantage
+            return "Advantage %s" % str(player_with_advantage)
         winning_player = self.winner()
         if winning_player is not None:
             return "Win for %s" % str(winning_player)
@@ -55,9 +55,9 @@ class TennisGame1:
 
     def player_with_advantage(self):
         if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() == 1:
-            return self.player1.name
+            return self.player1
         if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() == -1:
-            return self.player2.name
+            return self.player2
 
     def points_difference(self):
         return self.player1.points - self.player2.points
