@@ -63,7 +63,7 @@ class TennisGame1:
             return self.player2
 
     def player_with_advantage(self):
-        if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() == 1:
+        if self.player1.has_the_advantage(self.player2):
             return self.player1
         if (self.player1.points >= 4 or self.player2.points >= 4) and self.points_difference() == -1:
             return self.player2
