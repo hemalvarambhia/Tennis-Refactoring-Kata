@@ -13,6 +13,9 @@ class Player:
     def points(self):
         return self.points
 
+    def points_difference(self, player_2):
+        return self.points - player_2.points
+
     def __str__(self):
         return self.name
 
@@ -60,7 +63,7 @@ class TennisGame1:
             return self.player2
 
     def points_difference(self):
-        return self.player1.points - self.player2.points
+        return self.player1.points_difference(self.player2)
 
     @staticmethod
     def points_as_text(points_scored):
