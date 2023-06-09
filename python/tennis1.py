@@ -54,7 +54,7 @@ class TennisGame1:
         return "%s-%s" % (TennisGame1.points_as_text(self.player1.points), TennisGame1.points_as_text(self.player2.points))
 
     def __game_tied(self):
-        return self.points_difference() == 0
+        return self.player1.points_difference(self.player2) == 0
 
     def winner(self):
         if self.player1.has_beaten(self.player2):
@@ -67,9 +67,6 @@ class TennisGame1:
             return self.player1
         if self.player2.has_the_advantage(self.player1):
             return self.player2
-
-    def points_difference(self):
-        return self.player1.points_difference(self.player2)
 
     @staticmethod
     def points_as_text(points_scored):
