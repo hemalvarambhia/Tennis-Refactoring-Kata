@@ -47,7 +47,7 @@ class TennisGame1:
         player_with_advantage = self.player_with_advantage()
         if player_with_advantage is not None:
             return "Advantage %s" % str(player_with_advantage)
-        winning_player = self.winner()
+        winning_player = self.__winner()
         if winning_player is not None:
             return "Win for %s" % str(winning_player)
 
@@ -56,7 +56,7 @@ class TennisGame1:
     def __game_tied(self):
         return self.player1.points_difference(self.player2) == 0
 
-    def winner(self):
+    def __winner(self):
         if self.player1.has_beaten(self.player2):
             return self.player1
         elif self.player2.has_beaten(self.player1):
