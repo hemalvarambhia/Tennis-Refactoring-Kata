@@ -36,7 +36,7 @@ class TennisGame2:
                 P1res = "Forty"
 
             P2res = "Love"
-            result = P1res + "-" + P2res
+            result = P1res + "-" + 'Love'
         if (self.p2points > 0 and self.p1points==0):
             if (self.p2points==1):
                 P2res = "Fifteen"
