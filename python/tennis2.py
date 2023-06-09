@@ -22,6 +22,11 @@ class TennisGame2:
                 result = "Fifteen"
             if (self.p1points==2):
                 result = "Thirty"
+            result = {
+                0: 'Love',
+                1: 'Fifteen',
+                2: 'Thirty'
+            }[self.p1points]
             result += "-All"
         if (self.p1points==self.p2points and self.p1points>2):
             result = "Deuce"
