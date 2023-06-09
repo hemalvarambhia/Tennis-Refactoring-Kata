@@ -16,12 +16,6 @@ class TennisGame2:
     def score(self):
         result = ""
         if (self.p1points == self.p2points and self.p1points < 3):
-            if (self.p1points==0):
-                result = "Love"
-            if (self.p1points==1):
-                result = "Fifteen"
-            if (self.p1points==2):
-                result = "Thirty"
             result = {
                 0: 'Love',
                 1: 'Fifteen',
