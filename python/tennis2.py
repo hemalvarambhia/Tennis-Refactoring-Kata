@@ -21,7 +21,7 @@ class TennisGame2:
                 1: 'Fifteen',
                 2: 'Thirty'
             }[self.p1points]
-            result += "-All"
+            return result + "-All"
         if (self.p1points==self.p2points and self.p1points>2):
             return "Deuce"
 
