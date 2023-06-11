@@ -42,14 +42,11 @@ class TennisGame2:
             P2res = points_to_text[self.p2points]
             result = P1res + "-" + P2res
         if (self.p2points>self.p1points and self.p2points < 4):
-            if (self.p2points==2):
-                P2res="Thirty"
-            if (self.p2points==3):
-                P2res="Forty"
             if (self.p1points==1):
                 P1res="Fifteen"
             if (self.p1points==2):
                 P1res="Thirty"
+            P2res = points_to_text[self.p2points]
             result = P1res + "-" + P2res
 
         if (self.p1points > self.p2points and self.p2points >= 3):
