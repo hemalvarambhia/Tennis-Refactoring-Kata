@@ -38,13 +38,13 @@ class TennisGame2:
             result = P1res + "-" + 'Love'
         if (self.p2points > 0 and self.p1points==0):
             points_to_text = {
+                0: 'Love',
                 1: 'Fifteen',
                 2: 'Thirty',
                 3: 'Forty'
             }
             P2res = points_to_text.get(self.p2points, '')
-
-            P1res = "Love"
+            P1res = points_to_text[self.p1points]
             result = P1res + "-" + P2res
 
 
