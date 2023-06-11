@@ -47,8 +47,6 @@ class TennisGame2:
             P2res = points_to_text.get(self.p2points, '')
             P1res = points_to_text[self.p1points]
             result = P1res + "-" + P2res
-
-
         if (self.p1points>self.p2points and self.p1points < 4):
             points_to_text = {
                 0: 'Love',
