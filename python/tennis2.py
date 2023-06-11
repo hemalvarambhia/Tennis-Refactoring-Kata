@@ -53,10 +53,7 @@ class TennisGame2:
                 2: 'Thirty',
                 3: 'Forty'
             }
-            if (self.p1points==2):
-                P1res= points_to_text[self.p1points]
-            if (self.p1points==3):
-                P1res = points_to_text[self.p1points]
+            P1res= points_to_text[self.p1points]
             if (self.p2points==1):
                 P2res="Fifteen"
             if (self.p2points==2):
