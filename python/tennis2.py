@@ -48,8 +48,13 @@ class TennisGame2:
 
 
         if (self.p1points>self.p2points and self.p1points < 4):
+            points_to_text = {
+                1: 'Fifteen',
+                2: 'Thirty',
+                3: 'Forty'
+            }
             if (self.p1points==2):
-                P1res="Thirty"
+                P1res= points_to_text[self.p1points]
             if (self.p1points==3):
                 P1res="Forty"
             if (self.p2points==1):
