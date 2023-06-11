@@ -53,9 +53,9 @@ class TennisGame2:
                 2: 'Thirty',
                 3: 'Forty'
             }
-            P1res= points_to_text[self.p1points]
+            P1res = points_to_text[self.p1points]
             if (self.p2points==1):
-                P2res="Fifteen"
+                P2res = points_to_text[self.p2points]
             if (self.p2points==2):
                 P2res="Thirty"
             result = P1res + "-" + P2res
