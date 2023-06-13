@@ -39,9 +39,9 @@ class TennisGame2:
             return "Advantage player2"
 
         if (self.p1points>=4 and self.p2points>=0 and (self.p1points-self.p2points)>=2):
-            result = "Win for player1"
+            return  "Win for player1"
         if (self.p2points>=4 and self.p1points>=0 and (self.p2points-self.p1points)>=2):
-            result = "Win for player2"
+            return "Win for player2"
         return result
 
     def SetP1Score(self, number):
