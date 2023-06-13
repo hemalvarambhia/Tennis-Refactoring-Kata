@@ -21,7 +21,7 @@ class TennisGame2:
             3: 'Forty'
         }
         if (self.p1points == self.p2points and self.p1points < 3):
-            result = points_to_text[self.p1points]
+            result = self.__points_to_text(self.p1points)
             return result + "-All"
         if (self.p1points - self.p2points == 0 and self.p1points >= 3):
             return "Deuce"
@@ -37,8 +37,17 @@ class TennisGame2:
         if (self.p2points>=4 and self.p1points>=0 and (self.p2points-self.p1points)>=2):
             return "Win for player2"
 
-        P1res = points_to_text[self.p1points]
-        P2res = points_to_text[self.p2points]
+        P1res = self.__points_to_text(self.p1points)
+        P2res = self.__points_to_text(self.p2points)
 
         result = P1res + "-" + P2res
         return result
+
+    def __points_to_text(self, points):
+        return {
+            0: 'Love',
+            1: 'Fifteen',
+            2: 'Thirty',
+            3: 'Forty'
+        }[points]
+
