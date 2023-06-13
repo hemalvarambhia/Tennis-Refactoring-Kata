@@ -24,7 +24,7 @@ class TennisGame2:
         if (self.p1points == self.p2points and self.p1points < 3):
             result = points_to_text[self.p1points]
             return result + "-All"
-        if (self.p1points==self.p2points and self.p1points>2):
+        if (self.p1points - self.p2points == 0 and self.p1points > 2):
             return "Deuce"
 
         if self.p1points - self.p2points == 1 and self.p2points >= 3:
