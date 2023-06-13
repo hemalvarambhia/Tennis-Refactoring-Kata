@@ -42,11 +42,3 @@ class TennisGame2:
 
         result = P1res + "-" + P2res
         return result
-
-    def SetP1Score(self, number):
-        for i in range(number):
-            self.p1points += 1
-
-    def SetP2Score(self, number):
-        for i in range(number):
-            self.p2points += 1
