@@ -31,11 +31,7 @@ class TennisGame2:
         if (self.p2points>=4 and self.p1points>=0 and (self.p2points-self.p1points)>=2):
             return "Win for player2"
 
-        P1res = self.__points_to_text(self.p1points)
-        P2res = self.__points_to_text(self.p2points)
-
-        result = P1res + "-" + P2res
-        return result
+        return self.__points_to_text(self.p1points) + "-" + self.__points_to_text(self.p2points)
 
     def __points_to_text(self, points):
         return {
