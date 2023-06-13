@@ -15,8 +15,7 @@ class TennisGame2:
 
     def score(self):
         if (self.p1points == self.p2points and self.p1points < 3):
-            result = self.__points_to_text(self.p1points)
-            return result + "-All"
+            return self.__points_to_text(self.p1points) + "-All"
         if (self.p1points - self.p2points == 0 and self.p1points >= 3):
             return "Deuce"
 
