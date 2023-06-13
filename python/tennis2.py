@@ -14,7 +14,6 @@ class TennisGame2:
             self.p2points += 1
 
     def score(self):
-        result = ""
         points_to_text = {
             0: 'Love',
             1: 'Fifteen',
