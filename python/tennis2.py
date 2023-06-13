@@ -32,10 +32,10 @@ class TennisGame2:
 
         result = P1res + "-" + P2res
 
-        if (self.p1points > self.p2points and self.p2points >= 3):
+        if self.p1points - self.p2points == 1 and self.p2points >= 3:
             result = "Advantage player1"
 
-        if (self.p2points > self.p1points and self.p1points >= 3):
+        if (self.p2points - self.p1points == 1 and self.p1points >= 3):
             result = "Advantage player2"
 
         if (self.p1points>=4 and self.p2points>=0 and (self.p1points-self.p2points)>=2):
