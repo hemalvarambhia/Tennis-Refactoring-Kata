@@ -26,12 +26,18 @@ class TennisGame2:
         if self.p2points - self.p1points == 1 and self.p1points >= 3:
             return "Advantage player2"
 
-        if self.p1points>=4 and self.p2points>=0 and (self.p1points-self.p2points)>=2:
+        if self.__player_1_beat_player_2():
             return  "Win for player1"
-        if self.p2points>=4 and self.p1points>=0 and (self.p2points-self.p1points)>=2:
+        if self.__player_2_beat_player_1():
             return "Win for player2"
 
         return self.__points_to_text(self.p1points) + "-" + self.__points_to_text(self.p2points)
+
+    def __player_2_beat_player_1(self):
+        return self.p2points >= 4 and self.p1points >= 0 and (self.p2points - self.p1points) >= 2
+
+    def __player_1_beat_player_2(self):
+        return self.p1points >= 4 and self.p2points >= 0 and (self.p1points - self.p2points) >= 2
 
     def __points_to_text(self, points):
         return {
