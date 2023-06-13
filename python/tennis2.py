@@ -27,11 +27,6 @@ class TennisGame2:
         if (self.p1points==self.p2points and self.p1points>2):
             return "Deuce"
 
-        P1res = points_to_text.get(self.p1points, '')
-        P2res = points_to_text.get(self.p2points, '')
-
-        result = P1res + "-" + P2res
-
         if self.p1points - self.p2points == 1 and self.p2points >= 3:
             return "Advantage player1"
 
@@ -42,6 +37,11 @@ class TennisGame2:
             return  "Win for player1"
         if (self.p2points>=4 and self.p1points>=0 and (self.p2points-self.p1points)>=2):
             return "Win for player2"
+
+        P1res = points_to_text.get(self.p1points, '')
+        P2res = points_to_text.get(self.p2points, '')
+
+        result = P1res + "-" + P2res
         return result
 
     def SetP1Score(self, number):
