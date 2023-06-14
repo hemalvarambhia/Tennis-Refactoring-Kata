@@ -18,7 +18,7 @@ class TennisGame2:
             self.player2.won_point()
 
     def score(self):
-        if self.p1points - self.p2points == 0 and self.p1points < 3:
+        if self.player1.points_difference(self.player2) == 0 and self.p1points < 3:
             return self.__points_to_text(self.p1points) + "-All"
 
         if self.p1points - self.p2points == 0 and self.p1points >= 3:
