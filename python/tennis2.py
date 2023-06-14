@@ -12,8 +12,10 @@ class TennisGame2:
     def won_point(self, playerName):
         if playerName == self.player1Name:
             self.p1points += 1
+            self.player1.won_point()
         else:
             self.p2points += 1
+            self.player2.won_point()
 
     def score(self):
         if self.p1points - self.p2points == 0 and self.p1points < 3:
