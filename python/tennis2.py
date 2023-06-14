@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
-
+from player import Player
 class TennisGame2:
     def __init__(self, player1Name, player2Name):
         self.player1Name = player1Name
         self.player2Name = player2Name
         self.p1points = 0
         self.p2points = 0
+        self.player1 = Player(player1Name)
+        self.player2 = Player(player2Name)
 
     def won_point(self, playerName):
         if playerName == self.player1Name:
