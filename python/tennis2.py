@@ -21,16 +21,16 @@ class TennisGame2:
             return "Deuce"
 
         if self.player1.has_the_advantage(self.player2):
-            return "Advantage player1"
+            return "Advantage %s" % self.player1
 
         if self.player2.has_the_advantage(self.player1):
-            return "Advantage player2"
+            return "Advantage %s" % self.player2
 
         if self.player1.has_beaten(self.player2):
-            return  "Win for player1"
+            return  "Win for %s" % self.player1
 
         if self.player2.has_beaten(self.player1):
-            return "Win for player2"
+            return "Win for %s" % self.player2
 
         return self.__points_to_text(self.player1.points) + "-" + self.__points_to_text(self.player2.points)
 
