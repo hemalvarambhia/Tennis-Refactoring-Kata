@@ -36,7 +36,7 @@ class TennisGame2:
         if self.player2.has_beaten(self.player1):
             return "Win for player2"
 
-        return self.__points_to_text(self.p1points) + "-" + self.__points_to_text(self.p2points)
+        return self.__points_to_text(self.player1.points) + "-" + self.__points_to_text(self.player2.points)
 
     def __deuce(self):
         return self.player1.points_difference(self.player2) == 0 and self.p1points >= 3
