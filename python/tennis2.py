@@ -24,10 +24,10 @@ class TennisGame2:
         if self.__deuce():
             return "Deuce"
 
-        if self.player1.points_difference(self.player2) == 1 and self.player2.points >= 3:
+        if self.player1.has_the_advantage(self.player2):
             return "Advantage player1"
 
-        if self.player2.points_difference(self.player1) == 1 and self.player1.points >= 3:
+        if self.player2.has_the_advantage(self.player1):
             return "Advantage player2"
 
         if self.__player_1_beat_player_2():
