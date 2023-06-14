@@ -21,7 +21,7 @@ class TennisGame2:
         if self.player1.points_difference(self.player2) == 0 and self.player1.points < 3:
             return self.__points_to_text(self.p1points) + "-All"
 
-        if self.p1points - self.p2points == 0 and self.p1points >= 3:
+        if self.player1.points_difference(self.player2) == 0 and self.p1points >= 3:
             return "Deuce"
 
         if self.p1points - self.p2points == 1 and self.p2points >= 3:
