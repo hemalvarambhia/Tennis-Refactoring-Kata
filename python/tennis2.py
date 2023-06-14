@@ -19,7 +19,7 @@ class TennisGame2:
 
     def score(self):
         if self.player1.points_difference(self.player2) == 0 and self.player1.points < 3:
-            return self.__points_to_text(self.p1points) + "-All"
+            return self.__points_to_text(self.player1.points) + "-All"
 
         if self.__deuce():
             return "Deuce"
