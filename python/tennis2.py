@@ -39,7 +39,7 @@ class TennisGame2:
         return self.__points_to_text(self.player1.points) + "-" + self.__points_to_text(self.player2.points)
 
     def __deuce(self):
-        return self.player1.points_difference(self.player2) == 0 and self.p1points >= 3
+        return self.player1.points_difference(self.player2) == 0 and self.player1.points >= 3
 
     def __points_to_text(self, points):
         return {
