@@ -20,6 +20,10 @@ class TennisGame2:
         if self.__deuce():
             return "Deuce"
 
+        player_with_advantage = self.__player_with_advantage()
+        if player_with_advantage is not None:
+            return 'Advantage %s' % player_with_advantage
+
         if self.player1.has_the_advantage(self.player2):
             return "Advantage %s" % self.player1
 
