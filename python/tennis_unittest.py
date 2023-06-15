@@ -40,6 +40,7 @@ test_cases = [
     (4, 3, "Advantage player1", 'player1', 'player2'),
     (3, 4, "Advantage player2", 'player1', 'player2'),
     (5, 4, "Advantage player1", 'player1', 'player2'),
+    (5, 4, "Advantage Roger Federer", 'Roger Federer', 'Tim Henman'),
     (4, 5, "Advantage player2", 'player1', 'player2'),
     (15, 14, "Advantage player1", 'player1', 'player2'),
     (14, 15, "Advantage player2", 'player1', 'player2'),
