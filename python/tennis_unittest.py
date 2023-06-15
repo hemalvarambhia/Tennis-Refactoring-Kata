@@ -35,6 +35,7 @@ test_cases = [
     (2, 3, "Thirty-Forty", 'player1', 'player2'),
     (4, 2, "Win for player1", 'player1', 'player2'),
     (2, 4, "Win for player2", 'player1', 'player2'),
+    (2, 4, "Win for Paola Suarez", 'Amelie Mauresmo', 'Paola Suarez'),
 
     (4, 3, "Advantage player1", 'player1', 'player2'),
     (3, 4, "Advantage player2", 'player1', 'player2'),
