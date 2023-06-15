@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from player import Player
+
+
 class TennisGame2:
     def __init__(self, player1Name, player2Name):
         self.player1 = Player(player1Name)
@@ -39,7 +41,7 @@ class TennisGame2:
 
     def __player_with_advantage(self):
         if self.player1.has_the_advantage(self.player2):
-            return  self.player1
+            return self.player1
 
         if self.player2.has_the_advantage(self.player1):
             return self.player2
@@ -51,4 +53,3 @@ class TennisGame2:
             2: 'Thirty',
             3: 'Forty'
         }[points]
-
