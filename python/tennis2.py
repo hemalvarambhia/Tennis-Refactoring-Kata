@@ -26,7 +26,7 @@ class TennisGame2:
 
         winner = self.__winning_player()
         if winner is not None:
-            return  "Win for %s" % winner
+            return 'Win for %s' % winner
 
         return self.__points_to_text(self.player1.points) + "-" + self.__points_to_text(self.player2.points)
 
