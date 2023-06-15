@@ -30,11 +30,8 @@ class TennisGame2:
         elif self.player2.has_beaten(self.player1):
             winner = self.player2
 
-        if self.player1.has_beaten(self.player2):
+        if winner is not None:
             return  "Win for %s" % winner
-
-        if self.player2.has_beaten(self.player1):
-            return "Win for %s" % winner
 
         return self.__points_to_text(self.player1.points) + "-" + self.__points_to_text(self.player2.points)
 
