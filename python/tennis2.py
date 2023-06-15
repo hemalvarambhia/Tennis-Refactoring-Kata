@@ -2,8 +2,6 @@
 from player import Player
 class TennisGame2:
     def __init__(self, player1Name, player2Name):
-        self.player1Name = player1Name
-        self.player2Name = player2Name
         self.player1 = Player(player1Name)
         self.player2 = Player(player2Name)
 
