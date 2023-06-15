@@ -37,6 +37,13 @@ class TennisGame2:
     def __deuce(self):
         return self.player1.points_difference(self.player2) == 0 and self.player1.points >= 3
 
+    def __player_with_advantage(self):
+        if self.player1.has_the_advantage(self.player2):
+            return  self.player1
+
+        if self.player2.has_the_advantage(self.player1):
+            return self.player2
+
     def __points_to_text(self, points):
         return {
             0: 'Love',
