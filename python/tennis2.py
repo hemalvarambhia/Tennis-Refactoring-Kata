@@ -24,16 +24,17 @@ class TennisGame2:
         if player_with_advantage is not None:
             return 'Advantage %s' % player_with_advantage
 
-        winner = None
-        if self.player1.has_beaten(self.player2):
-            winner = self.player1
-        elif self.player2.has_beaten(self.player1):
-            winner = self.player2
-
+        winner = self.__winning_player()
         if winner is not None:
             return  "Win for %s" % winner
 
         return self.__points_to_text(self.player1.points) + "-" + self.__points_to_text(self.player2.points)
+
+    def __winning_player(self):
+        if self.player1.has_beaten(self.player2):
+            return self.player1
+        elif self.player2.has_beaten(self.player1):
+            return self.player2
 
     def __deuce(self):
         return self.player1.points_difference(self.player2) == 0 and self.player1.points >= 3
