@@ -2,13 +2,13 @@
 
 class TennisGame3:
     def __init__(self, player1Name, player2Name):
-        self.p1N = player1Name
+        self.player1_name = player1Name
         self.p2N = player2Name
         self.p1 = 0
         self.p2 = 0
 
     def won_point(self, n):
-        if n == self.p1N:
+        if n == self.player1_name:
             self.p1 += 1
         else:
             self.p2 += 1
@@ -21,5 +21,5 @@ class TennisGame3:
         else:
             if (self.p1 == self.p2):
                 return "Deuce"
-            s = self.p1N if self.p1 > self.p2 else self.p2N
+            s = self.player1_name if self.p1 > self.p2 else self.p2N
             return "Advantage " + s if ((self.p1-self.p2)*(self.p1-self.p2) == 1) else "Win for " + s
