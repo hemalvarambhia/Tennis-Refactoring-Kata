@@ -11,7 +11,7 @@ class TennisGame3:
         self.player2 = Player(player2Name)
 
     def won_point(self, n):
-        if n == self.player1_name:
+        if n == self.player1.name:
             self.player1.won_point()
         else:
             self.player2.won_point()
