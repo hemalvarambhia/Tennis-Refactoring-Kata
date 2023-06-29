@@ -7,7 +7,6 @@ class TennisGame3:
     def __init__(self, player1Name, player2Name):
         self.player1_name = player1Name
         self.player2_name = player2Name
-        self.player2_points = 0
         self.player1 = Player(player1Name)
         self.player2 = Player(player2Name)
 
@@ -15,7 +14,6 @@ class TennisGame3:
         if n == self.player1_name:
             self.player1.won_point()
         else:
-            self.player2_points += 1
             self.player2.won_point()
 
     def score(self):
