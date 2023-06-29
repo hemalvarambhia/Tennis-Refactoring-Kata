@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from player import Player
+import math
 
 
 class TennisGame3:
@@ -28,4 +29,4 @@ class TennisGame3:
             if self.player1.points == self.player2.points:
                 return "Deuce"
             s = self.player1.name if self.player1.points > self.player2.points else self.player2.name
-            return "Advantage " + s if ((self.player1.points - self.player2.points) * (self.player1.points - self.player2.points) == 1) else "Win for " + s
+            return "Advantage " + s if (math.pow(self.player1.points - self.player2.points, 2) == 1) else "Win for " + s
