@@ -5,8 +5,6 @@ import math
 
 class TennisGame3:
     def __init__(self, player1Name, player2Name):
-        self.player1_name = player1Name
-        self.player2_name = player2Name
         self.player1 = Player(player1Name)
         self.player2 = Player(player2Name)
 
