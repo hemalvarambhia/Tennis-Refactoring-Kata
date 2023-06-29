@@ -16,11 +16,10 @@ class TennisGame3:
     def score(self):
         if (self.player1_points < 4 and self.player2_points < 4) and (self.player1_points + self.player2_points < 6):
             points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
-            s = points_to_text[self.player1_points]
             if self.player1_points == self.player2_points:
-                return s + "-All"
+                return points_to_text[self.player1_points] + "-All"
             else:
-                return s + "-" + points_to_text[self.player2_points]
+                return points_to_text[self.player1_points] + "-" + points_to_text[self.player2_points]
         else:
             if self.player1_points == self.player2_points:
                 return "Deuce"
