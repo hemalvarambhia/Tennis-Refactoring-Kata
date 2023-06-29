@@ -20,14 +20,14 @@ class TennisGame3:
             self.player2.won_point()
 
     def score(self):
-        if (self.player1_points < 4 and self.player2_points < 4) and (self.player1_points + self.player2_points < 6):
+        if (self.player1.points < 4 and self.player2_points < 4) and (self.player1.points + self.player2_points < 6):
             points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
-            if self.player1_points == self.player2_points:
-                return points_to_text[self.player1_points] + "-All"
+            if self.player1.points == self.player2_points:
+                return points_to_text[self.player1.points] + "-All"
             else:
-                return points_to_text[self.player1_points] + "-" + points_to_text[self.player2_points]
+                return points_to_text[self.player1.points] + "-" + points_to_text[self.player2_points]
         else:
-            if self.player1_points == self.player2_points:
+            if self.player1.points == self.player2_points:
                 return "Deuce"
-            s = self.player1_name if self.player1_points > self.player2_points else self.player2_name
-            return "Advantage " + s if ((self.player1_points - self.player2_points) * (self.player1_points - self.player2_points) == 1) else "Win for " + s
+            s = self.player1.name if self.player1.points > self.player2_points else self.player2_name
+            return "Advantage " + s if ((self.player1.points - self.player2_points) * (self.player1.points - self.player2_points) == 1) else "Win for " + s
