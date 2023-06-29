@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from player import Player
+
 
 class TennisGame3:
     def __init__(self, player1Name, player2Name):
@@ -6,12 +8,16 @@ class TennisGame3:
         self.player2_name = player2Name
         self.player1_points = 0
         self.player2_points = 0
+        self.player1 = Player(player1Name)
+        self.player2 = Player(player2Name)
 
     def won_point(self, n):
         if n == self.player1_name:
             self.player1_points += 1
+            self.player1.won_point()
         else:
             self.player2_points += 1
+            self.player2.won_point()
 
     def score(self):
         if (self.player1_points < 4 and self.player2_points < 4) and (self.player1_points + self.player2_points < 6):
