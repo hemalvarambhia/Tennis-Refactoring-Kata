@@ -22,13 +22,13 @@ class TennisGame3:
             else:
                 return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
         else:
-            if self.player1.points - self.player2.points == 0:
+            if self.player1.points_difference(self.player2) == 0:
                 return "Deuce"
             if self.player1.points > self.player2.points:
                 leading_player = self.player1.name
             else:
                 leading_player = self.player2.name
-            advantage = math.pow(self.player1.points - self.player2.points, 2) == 1
+            advantage = math.pow(self.player1.points_difference(self.player2), 2) == 1
             if advantage:
                 return "Advantage " + leading_player
             else:
