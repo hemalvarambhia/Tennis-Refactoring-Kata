@@ -4,9 +4,9 @@ import math
 
 
 class TennisGame3:
-    def __init__(self, player1Name, player2Name):
-        self.player1 = Player(player1Name)
-        self.player2 = Player(player2Name)
+    def __init__(self, server, receiver):
+        self.player1 = Player(server)
+        self.player2 = Player(receiver)
 
     def won_point(self, n):
         if n == self.player1.name:
@@ -26,7 +26,7 @@ class TennisGame3:
                 leading_player = self.player1.name
             else:
                 leading_player = self.player2.name
-            advantage = math.pow(self.player1.points_difference(self.player2), 2) == 1
+            advantage = abs(self.player1.points_difference(self.player2)) == 1
             if advantage:
                 return "Advantage " + leading_player
             else:
