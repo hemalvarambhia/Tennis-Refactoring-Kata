@@ -22,7 +22,7 @@ class TennisGame3:
             else:
                 return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
         else:
-            if self.player1.points == self.player2.points:
+            if self.player1.points - self.player2.points == 0:
                 return "Deuce"
             if self.player1.points > self.player2.points:
                 leading_player = self.player1.name
