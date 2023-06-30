@@ -24,6 +24,6 @@ class TennisGame3:
         else:
             if self.player1.points == self.player2.points:
                 return "Deuce"
-            s = self.player1.name if self.player1.points > self.player2.points else self.player2.name
+            leading_player = self.player1.name if self.player1.points > self.player2.points else self.player2.name
             advantage = math.pow(self.player1.points - self.player2.points, 2) == 1
-            return "Advantage " + s if advantage else "Win for " + s
+            return "Advantage " + leading_player if advantage else "Win for " + leading_player
