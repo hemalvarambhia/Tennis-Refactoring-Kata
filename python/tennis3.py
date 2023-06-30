@@ -19,8 +19,6 @@ class TennisGame3:
             points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
             if self.player1.points_difference(self.player2) == 0:
                 return points_to_text[self.player1.points] + "-All"
-            else:
-                return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
         else:
             if self.player1.points_difference(self.player2) == 0:
                 return "Deuce"
@@ -33,3 +31,5 @@ class TennisGame3:
                 return "Advantage " + leading_player
             else:
                 return "Win for " + leading_player
+
+        return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
