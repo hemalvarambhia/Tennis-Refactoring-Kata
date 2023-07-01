@@ -15,9 +15,8 @@ class TennisGame3:
             self.player2.won_point()
 
     def score(self):
-        if (self.player1.points >= 3 and self.player2.points >= 3) and (self.player1.points + self.player2.points >= 5):
-            if self.player1.points_difference(self.player2) == 0:
-                return "Deuce"
+        if (self.player1.points >= 3 and self.player2.points >= 3) and self.player1.points_difference(self.player2) == 0:
+            return "Deuce"
 
         if (self.player1.points <= 3 and self.player2.points <= 3) and (self.player1.points + self.player2.points <= 5):
             points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
