@@ -19,8 +19,8 @@ class TennisGame3:
             if self.player1.points_difference(self.player2) == 0:
                 return "Deuce"
 
+        points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
         if (self.player1.points <= 3 and self.player2.points <= 3) and (self.player1.points + self.player2.points <= 5):
-            points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
             if self.player1.points_difference(self.player2) == 0:
                 return points_to_text[self.player1.points] + "-All"
         else:
