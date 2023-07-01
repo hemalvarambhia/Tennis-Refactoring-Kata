@@ -21,10 +21,6 @@ class TennisGame3:
         player_with_advantage = self.__player_with_advantage()
         if player_with_advantage:
             return "Advantage %s" % player_with_advantage
-        if self.player1.has_the_advantage(self.player2):
-            return "Advantage %s" % self.player1
-        elif self.player2.has_the_advantage(self.player1):
-            return "Advantage %s" % self.player2
 
         if self.player1.has_beaten(self.player2):
             winning_player = self.player1
