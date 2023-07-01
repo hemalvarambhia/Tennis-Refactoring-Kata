@@ -22,12 +22,9 @@ class TennisGame3:
         if player_with_advantage:
             return "Advantage %s" % player_with_advantage
 
-        if self.player1.has_beaten(self.player2):
-            winning_player = self.player1
-            return "Win for %s" % winning_player
-        elif self.player2.has_beaten(self.player1):
-            winning_player = self.player2
-            return "Win for %s" % winning_player
+        winner = self.__winning_player()
+        if winner:
+            return "Win for %s" % winner
 
         points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
         if self.player1.points_difference(self.player2) == 0:
