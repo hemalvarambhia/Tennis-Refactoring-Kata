@@ -35,17 +35,7 @@ class TennisGame3:
             if self.player1.points_difference(self.player2) == 0:
                 return points_to_text[self.player1.points] + "-All"
         else:
-            win = abs(self.player1.points_difference(self.player2)) >= 2
-            if win:
-                if self.player1.points > self.player2.points:
-                    winning_player = self.player1.name
-                else:
-                    winning_player = self.player2.name
-                if self.player1.has_beaten(self.player2):
-                    winning_player = self.player1
-                elif self.player2.has_beaten(self.player1):
-                    winning_player = self.player2
-                return "Win for " + winning_player.__str__()
+           pass
 
         return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
 
