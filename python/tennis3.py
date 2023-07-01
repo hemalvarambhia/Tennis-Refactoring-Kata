@@ -27,10 +27,10 @@ class TennisGame3:
             advantage = abs(self.player1.points_difference(self.player2)) == 1
             if advantage:
                 if self.player1.points > self.player2.points:
-                    leading_player = self.player1.name
+                    player_with_advantage = self.player1.name
                 else:
-                    leading_player = self.player2.name
-                return "Advantage " + leading_player
+                    player_with_advantage = self.player2.name
+                return "Advantage " + player_with_advantage
             else:
                 if self.player1.points > self.player2.points:
                     leading_player = self.player1.name
