@@ -5,14 +5,14 @@ import math
 
 class TennisGame3:
     def __init__(self, server, receiver):
-        self.player1 = Player(server)
-        self.player2 = Player(receiver)
+        self.server = Player(server)
+        self.receiver = Player(receiver)
 
     def won_point(self, n):
-        if n == self.player1.name:
-            self.player1.won_point()
+        if n == self.server.name:
+            self.server.won_point()
         else:
-            self.player2.won_point()
+            self.receiver.won_point()
 
     def score(self):
         if self.__deuce():
@@ -27,23 +27,23 @@ class TennisGame3:
             return "Win for %s" % winner
 
         points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
-        if self.player1.points_difference(self.player2) == 0:
-            return points_to_text[self.player1.points] + "-All"
+        if self.server.points_difference(self.receiver) == 0:
+            return points_to_text[self.server.points] + "-All"
 
-        return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
+        return points_to_text[self.server.points] + "-" + points_to_text[self.receiver.points]
 
     def __deuce(self):
-        return (self.player1.points >= 3 and self.player2.points >= 3) and \
-            self.player1.points_difference(self.player2) == 0
+        return (self.server.points >= 3 and self.receiver.points >= 3) and \
+            self.server.points_difference(self.receiver) == 0
 
     def __player_with_advantage(self):
-        if self.player1.has_the_advantage(self.player2):
-            return self.player1
-        elif self.player2.has_the_advantage(self.player1):
-            return self.player2
+        if self.server.has_the_advantage(self.receiver):
+            return self.server
+        elif self.receiver.has_the_advantage(self.server):
+            return self.receiver
 
     def __winning_player(self):
-        if self.player1.has_beaten(self.player2):
-            return self.player1
-        elif self.player2.has_beaten(self.player1):
-            return self.player2
+        if self.server.has_beaten(self.receiver):
+            return self.server
+        elif self.receiver.has_beaten(self.server):
+            return self.receiver
