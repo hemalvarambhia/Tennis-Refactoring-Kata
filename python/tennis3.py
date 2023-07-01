@@ -44,3 +44,9 @@ class TennisGame3:
             return self.player1
         elif self.player2.has_the_advantage(self.player1):
             return self.player2
+
+    def __winning_player(self):
+        if self.player1.has_beaten(self.player2):
+            return self.player1
+        elif self.player2.has_beaten(self.player1):
+            return self.player2
