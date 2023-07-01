@@ -33,9 +33,9 @@ class TennisGame3:
                 return "Advantage " + player_with_advantage
             else:
                 if self.player1.points > self.player2.points:
-                    leading_player = self.player1.name
+                    winning_player = self.player1.name
                 else:
-                    leading_player = self.player2.name
-                return "Win for " + leading_player
+                    winning_player = self.player2.name
+                return "Win for " + winning_player
 
         return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
