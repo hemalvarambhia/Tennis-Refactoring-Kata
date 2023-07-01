@@ -34,9 +34,11 @@ class TennisGame3:
                     winning_player = self.player1.name
                 else:
                     winning_player = self.player2.name
-                return "Win for " + winning_player
-            else:
-                pass
+                if self.player1.has_beaten(self.player2):
+                    winning_player = self.player1
+                elif self.player2.has_beaten(self.player1):
+                    winning_player = self.player2
+                return "Win for " + winning_player.__str__()
 
         return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
 
