@@ -31,11 +31,12 @@ class TennisGame3:
             return "Win for %s" % winning_player
 
         points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
+        if self.player1.points_difference(self.player2) == 0:
+            return points_to_text[self.player1.points] + "-All"
         if (self.player1.points <= 3 and self.player2.points <= 3):
-            if self.player1.points_difference(self.player2) == 0:
-                return points_to_text[self.player1.points] + "-All"
+            pass
         else:
-           pass
+            pass
 
         return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
 
