@@ -23,8 +23,6 @@ class TennisGame3:
             if self.player1.points_difference(self.player2) == 0:
                 return points_to_text[self.player1.points] + "-All"
         else:
-            if self.player1.points_difference(self.player2) == 0:
-                return "Deuce"
             if self.player1.points > self.player2.points:
                 leading_player = self.player1.name
             else:
