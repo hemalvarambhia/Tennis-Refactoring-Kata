@@ -23,6 +23,13 @@ class TennisGame3:
         elif self.player2.has_the_advantage(self.player1):
             return "Advantage %s" % self.player2
 
+        if self.player1.has_beaten(self.player2):
+            winning_player = self.player1
+            return "Win for %s" % winning_player
+        elif self.player2.has_beaten(self.player1):
+            winning_player = self.player2
+            return "Win for %s" % winning_player
+
         points_to_text = {0: 'Love', 1: 'Fifteen', 2: 'Thirty', 3: 'Forty'}
         if (self.player1.points <= 3 and self.player2.points <= 3):
             if self.player1.points_difference(self.player2) == 0:
