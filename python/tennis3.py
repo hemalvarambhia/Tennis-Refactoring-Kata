@@ -15,7 +15,7 @@ class TennisGame3:
             self.player2.won_point()
 
     def score(self):
-        if (self.player1.points >= 3 and self.player2.points >= 3) and self.player1.points_difference(self.player2) == 0:
+        if self.__deuce():
             return "Deuce"
 
         if self.player1.has_the_advantage(self.player2):
@@ -39,3 +39,7 @@ class TennisGame3:
                 return "Win for " + winning_player
 
         return points_to_text[self.player1.points] + "-" + points_to_text[self.player2.points]
+
+    def __deuce(self):
+        return (self.player1.points >= 3 and self.player2.points >= 3) and \
+            self.player1.points_difference(self.player2) == 0
