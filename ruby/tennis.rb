@@ -18,7 +18,6 @@ class TennisGame1
   
   def score
     result = ""
-    tempScore=0
     if (@p1points==@p2points)
       result = {
           0 => "Love-All",
