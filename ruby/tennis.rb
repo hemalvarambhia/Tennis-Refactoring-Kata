@@ -31,9 +31,9 @@ class TennisGame1
       elsif (points_difference ==-1)
         result ="Advantage #{@player2Name}"
       elsif (points_difference>=2)
-        result = "Win for player1"
+        result = "Win for #{@player1Name}"
       else
-        result ="Win for player2"
+        result ="Win for #{@player2Name}"
       end
     else
       (1...3).each do |i|
