@@ -15,7 +15,14 @@ class TennisGame1
       @p2points += 1
     end
   end
-  
+
+  POINTS_TO_SCORE = {
+    0 => "Love",
+    1 => "Fifteen",
+    2 => "Thirty",
+    3 => "Forty",
+  }
+
   def score
     result = ""
     if (@p1points==@p2points)
@@ -42,12 +49,7 @@ class TennisGame1
           result+="-"
           tempScore = @p2points
         end
-        result += {
-            0 => "Love",
-            1 => "Fifteen",
-            2 => "Thirty",
-            3 => "Forty",
-        }[tempScore]
+        result += POINTS_TO_SCORE[tempScore]
       end
     end
     result
