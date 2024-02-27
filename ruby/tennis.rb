@@ -27,7 +27,7 @@ class TennisGame1
     elsif (@p1points>=4 or @p2points>=4)
       points_difference = @p1points-@p2points
       if (points_difference==1)
-        result ="Advantage player1"
+        result ="Advantage #{@player1Name}"
       elsif (points_difference ==-1)
         result ="Advantage player2"
       elsif (points_difference>=2)
