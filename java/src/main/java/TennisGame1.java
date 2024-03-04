@@ -45,7 +45,7 @@ public class TennisGame1 implements TennisGame {
             int minusResult = m_score1-m_score2;
             if (minusResult==1) score = String.format("Advantage %s", player1Name);
             else if (minusResult ==-1) score = String.format("Advantage %s", player2Name);
-            else if (minusResult>=2) score = "Win for player1";
+            else if (minusResult>=2) score = String.format("Win for %s", player1Name);
             else score ="Win for player2";
         }
         else
