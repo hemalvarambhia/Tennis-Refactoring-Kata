@@ -59,7 +59,7 @@ public class TennisGame1 implements TennisGame {
                         score+= scoreFrom(tempScore);
                         break;
                     case 1:
-                        score+="Fifteen";
+                        score+=scoreFrom(tempScore);
                         break;
                     case 2:
                         score+="Thirty";
