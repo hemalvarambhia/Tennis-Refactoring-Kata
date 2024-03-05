@@ -53,21 +53,7 @@ public class TennisGame1 implements TennisGame {
             {
                 if (i==1) tempScore = player1Points;
                 else { score+="-"; tempScore = player2Points;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+= scoreFrom(tempScore);
-                        break;
-                    case 1:
-                        score+=scoreFrom(tempScore);
-                        break;
-                    case 2:
-                        score+=scoreFrom(tempScore);
-                        break;
-                    case 3:
-                        score+=scoreFrom(tempScore);
-                        break;
-                }
+                score+= scoreFrom(tempScore);
             }
         }
         return score;
