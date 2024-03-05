@@ -49,16 +49,7 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) {
-                    score+= scoreFrom(player1Points);
-                }
-                else {
-                    score+="-";
-                    score+= scoreFrom(player2Points);
-                }
-            }
+            score = String.format("%s-%s", scoreFrom(player1Points), scoreFrom(player2Points));
         }
         return score;
     }
