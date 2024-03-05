@@ -54,12 +54,13 @@ public class TennisGame1 implements TennisGame {
             {
                 if (i==1) {
                     tempScore = player1Points;
+                    score+= scoreFrom(tempScore);
                 }
                 else {
                     score+="-";
                     tempScore = player2Points;
+                    score+= scoreFrom(tempScore);
                 }
-                score+= scoreFrom(tempScore);
             }
         }
         return score;
