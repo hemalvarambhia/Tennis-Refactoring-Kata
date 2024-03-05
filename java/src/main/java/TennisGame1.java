@@ -59,11 +59,12 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String scoreFrom(int points) {
-        Map<Integer, String> pointsToScore = new HashMap<Integer, String>();
-        pointsToScore.put(0, "Love");
-        pointsToScore.put(1, "Fifteen");
-        pointsToScore.put(2, "Thirty");
-        pointsToScore.put(3, "Forty");
+        Map<Integer, String> pointsToScore = new HashMap<Integer, String>() {{
+            put(0, "Love");
+            put(1, "Fifteen");
+            put(2, "Thirty");
+            put(3, "Forty");
+        }};
 
         return pointsToScore.get(points);
     }
