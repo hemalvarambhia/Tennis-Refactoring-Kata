@@ -23,7 +23,7 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         if (equalScores())
         {
-            if(player1Points >= 3 && equalScores()) return "Deuce";
+            if(isDeuce()) return "Deuce";
 
             switch (player1Points)
             {
@@ -50,6 +50,10 @@ public class TennisGame1 implements TennisGame {
             score = String.format("%s-%s", scoreFrom(player1Points), scoreFrom(player2Points));
         }
         return score;
+    }
+
+    private boolean isDeuce() {
+        return player1Points >= 3 && equalScores();
     }
 
     private boolean equalScores() {
