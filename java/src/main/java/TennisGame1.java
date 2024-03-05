@@ -76,4 +76,25 @@ public class TennisGame1 implements TennisGame {
     private int pointsDifference() {
         return player1Points - player2Points;
     }
+
+    private String scoreFrom(int points) {
+        String score = "";
+        switch(points)
+        {
+            case 0:
+                score = "Love";
+                break;
+            case 1:
+                score = "Fifteen";
+                break;
+            case 2:
+                score = "Thirty";
+                break;
+            case 3:
+                score = "Forty";
+                break;
+        }
+
+        return score;
+    }
 }
