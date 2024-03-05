@@ -1,4 +1,5 @@
-
+import java.util.Map;
+import java.util.HashMap;
 public class TennisGame1 implements TennisGame {
 
     private final String player1Name;
@@ -80,7 +81,12 @@ public class TennisGame1 implements TennisGame {
                 score = "Forty";
                 break;
         }
+        Map<Integer, String> pointsToScore = new HashMap<Integer, String>();
+        pointsToScore.put(0, "Love");
+        pointsToScore.put(1, "Fifteen");
+        pointsToScore.put(2, "Thirty");
+        pointsToScore.put(3, "Forty");
 
-        return score;
+        return pointsToScore.get(points);
     }
 }
