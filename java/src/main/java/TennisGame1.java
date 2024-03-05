@@ -56,7 +56,7 @@ public class TennisGame1 implements TennisGame {
                 switch(tempScore)
                 {
                     case 0:
-                        score+="Love";
+                        score+= scoreFrom(tempScore);
                         break;
                     case 1:
                         score+="Fifteen";
