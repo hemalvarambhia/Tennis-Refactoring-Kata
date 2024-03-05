@@ -1,8 +1,8 @@
 
 public class TennisGame1 implements TennisGame {
     
-    private int m_score1 = 0;
-    private int m_score2 = 0;
+    private int player1Points = 0;
+    private int player2Points = 0;
     private final String player1Name;
     private final String player2Name;
 
@@ -13,16 +13,16 @@ public class TennisGame1 implements TennisGame {
 
     public void wonPoint(String playerName) {
         if ("player1".equals(playerName))
-            m_score1 += 1;
+            player1Points += 1;
         else
-            m_score2 += 1;
+            player2Points += 1;
     }
 
     public String getScore() {
         String score = "";
-        if (m_score1==m_score2)
+        if (player1Points == player2Points)
         {
-            switch (m_score1)
+            switch (player1Points)
             {
                 case 0:
                         score = "Love-All";
@@ -39,21 +39,21 @@ public class TennisGame1 implements TennisGame {
 
             }
         }
-        else if (m_score1>=4 || m_score2>=4)
+        else if (player1Points >=4 || player2Points >=4)
         {
-            int minusResult = m_score1-m_score2;
+            int minusResult = player1Points - player2Points;
             if (minusResult==1) score = String.format("Advantage %s", player1Name);
             else if (minusResult ==-1) score = String.format("Advantage %s", player2Name);
             else if (minusResult>=2) score = String.format("Win for %s", player1Name);
-            else score ="Win for player2";
+            else score = String.format("Win for %s", player2Name);
         }
         else
         {
             int tempScore;
             for (int i=1; i<3; i++)
             {
-                if (i==1) tempScore = m_score1;
-                else { score+="-"; tempScore = m_score2;}
+                if (i==1) tempScore = player1Points;
+                else { score+="-"; tempScore = player2Points;}
                 switch(tempScore)
                 {
                     case 0:
