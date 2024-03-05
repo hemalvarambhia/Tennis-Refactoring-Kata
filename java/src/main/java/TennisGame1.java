@@ -65,22 +65,6 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String scoreFrom(int points) {
-        String score = "";
-        switch(points)
-        {
-            case 0:
-                score = "Love";
-                break;
-            case 1:
-                score = "Fifteen";
-                break;
-            case 2:
-                score = "Thirty";
-                break;
-            case 3:
-                score = "Forty";
-                break;
-        }
         Map<Integer, String> pointsToScore = new HashMap<Integer, String>();
         pointsToScore.put(0, "Love");
         pointsToScore.put(1, "Fifteen");
