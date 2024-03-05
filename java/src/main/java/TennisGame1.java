@@ -23,6 +23,8 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         if (equalScores())
         {
+            if(player1Points >= 3 && equalScores()) return "Deuce";
+
             switch (player1Points)
             {
                 case 0:
@@ -34,10 +36,6 @@ public class TennisGame1 implements TennisGame {
                 case 2:
                         score = "Thirty-All";
                     break;
-                default:
-                        score = "Deuce";
-                    break;
-
             }
         }
         else if (player1Points >=4 || player2Points >=4)
