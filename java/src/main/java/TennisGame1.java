@@ -21,9 +21,9 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         String score = "";
+        if(isDeuce()) return "Deuce";
         if (equalScores())
         {
-            if(isDeuce()) return "Deuce";
 
             switch (player1Points)
             {
