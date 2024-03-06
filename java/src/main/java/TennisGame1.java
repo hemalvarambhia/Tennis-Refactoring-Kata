@@ -47,7 +47,7 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            score = String.format("%s-%s", scoreFrom(player1Points), scoreFrom(player2Points));
+            return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
         }
         return score;
     }
@@ -64,7 +64,7 @@ public class TennisGame1 implements TennisGame {
         return player1Points - player2Points;
     }
 
-    private String scoreFrom(int points) {
+    private String runningScore(int points) {
         Map<Integer, String> pointsToScore = new HashMap<Integer, String>() {{
             put(0, "Love");
             put(1, "Fifteen");
