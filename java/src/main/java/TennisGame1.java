@@ -24,19 +24,7 @@ public class TennisGame1 implements TennisGame {
         if(isDeuce()) return "Deuce";
         if (equalScores())
         {
-
-            switch (player1Points)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-            }
+            score = String.format("%s-All", runningScore(player1Points));
         }
         else if (player1Points >=4 || player2Points >=4)
         {
