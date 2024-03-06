@@ -24,7 +24,7 @@ public class TennisGame1 implements TennisGame {
         if(isDeuce()) return "Deuce";
         if (equalScores())
         {
-            score = String.format("%s-All", runningScore(player1Points));
+            return String.format("%s-All", runningScore(player1Points));
         }
         else if (player1Points >=4 || player2Points >=4)
         {
@@ -37,7 +37,6 @@ public class TennisGame1 implements TennisGame {
         {
             return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
         }
-        return score;
     }
 
     private boolean isDeuce() {
