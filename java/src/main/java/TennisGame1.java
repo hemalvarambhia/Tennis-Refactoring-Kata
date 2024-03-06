@@ -21,14 +21,14 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if(isDeuce()) return "Deuce";
+        if (player1HasAdvantage()) return String.format("Advantage %s", player1Name);
         if (equalScores())
         {
             return String.format("%s-All", runningScore(player1Points));
         }
         else if (player1Points >=4 || player2Points >=4)
         {
-            if (player1HasAdvantage()) return String.format("Advantage %s", player1Name);
-            else if (pointsDifference() ==-1) return String.format("Advantage %s", player2Name);
+            if (pointsDifference() ==-1) return String.format("Advantage %s", player2Name);
             else if (pointsDifference() >=2) return String.format("Win for %s", player1Name);
             else return String.format("Win for %s", player2Name);
         }
