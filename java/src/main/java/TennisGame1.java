@@ -27,7 +27,7 @@ public class TennisGame1 implements TennisGame {
         }
         if (player1Points >=4 || player2Points >=4)
         {
-            if (pointsDifference() ==-1) return String.format("Advantage %s", player2Name);
+            if (isAdvantagePlayer2()) return String.format("Advantage %s", player2Name);
             else if (pointsDifference() >=2) return String.format("Win for %s", player1Name);
             else return String.format("Win for %s", player2Name);
         }
@@ -47,6 +47,10 @@ public class TennisGame1 implements TennisGame {
 
     private boolean isAdvantagePlayer1() {
         return (player1Points >= 4 || player2Points >= 4) && pointsDifference() == 1;
+    }
+
+    private boolean isAdvantagePlayer2() {
+        return pointsDifference() == -1;
     }
 
     private int pointsDifference() {
