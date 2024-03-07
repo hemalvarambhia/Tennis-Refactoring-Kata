@@ -45,12 +45,12 @@ public class TennisGame1 implements TennisGame {
         return player1Points == player2Points;
     }
 
-    private int pointsDifference() {
-        return player1Points - player2Points;
-    }
-
     private boolean player1HasAdvantage() {
         return (player1Points >= 4 || player2Points >= 4) && pointsDifference() == 1;
+    }
+
+    private int pointsDifference() {
+        return player1Points - player2Points;
     }
 
     private String runningScore(int points) {
