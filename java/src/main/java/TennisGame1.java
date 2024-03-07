@@ -20,7 +20,7 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if(isDeuce()) return "Deuce";
-        if (player1HasAdvantage()) return String.format("Advantage %s", player1Name);
+        if (isAdvantagePlayer1()) return String.format("Advantage %s", player1Name);
         if (equalScores())
         {
             return String.format("%s-All", runningScore(player1Points));
@@ -45,7 +45,7 @@ public class TennisGame1 implements TennisGame {
         return player1Points == player2Points;
     }
 
-    private boolean player1HasAdvantage() {
+    private boolean isAdvantagePlayer1() {
         return (player1Points >= 4 || player2Points >= 4) && pointsDifference() == 1;
     }
 
