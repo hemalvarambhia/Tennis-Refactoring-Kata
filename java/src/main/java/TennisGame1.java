@@ -31,10 +31,8 @@ public class TennisGame1 implements TennisGame {
             if (pointsDifference() >=2) return String.format("Win for %s", player1Name);
             else return String.format("Win for %s", player2Name);
         }
-        else
-        {
-            return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
-        }
+
+        return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
     }
 
     private boolean isDeuce() {
