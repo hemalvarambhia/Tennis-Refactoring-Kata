@@ -27,7 +27,7 @@ public class TennisGame1 implements TennisGame {
         if (player1Points >=4 || player2Points >=4)
         {
             if (player1Won()) return String.format("Win for %s", player1Name);
-            else return String.format("Win for %s", player2Name);
+            else if(pointsDifference() <= -2) return String.format("Win for %s", player2Name);
         }
 
         return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
