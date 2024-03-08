@@ -50,7 +50,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean player1Won() {
-        return pointsDifference() >=2;
+        return (player1Points >=4 || player2Points >=4) && pointsDifference() >=2;
     }
 
     private int pointsDifference() {
