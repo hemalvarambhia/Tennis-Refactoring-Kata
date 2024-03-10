@@ -3,8 +3,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TennisTest {
 
@@ -76,6 +77,13 @@ public class TennisTest {
         tennisGame.wonPoint("Martina Hingis");
 
         assertEquals("Fifteen-Love", tennisGame.getScore());
+    }
+
+    @Test
+    public void testANonParticipatingPlayerCannotWinAPoint() {
+        TennisGame tennisGame = new TennisGame1("Roger Federer", "Novak Djokovic");
+
+        assertThrows(RuntimeException.class, () -> tennisGame.wonPoint("Not Playing"));
     }
 
     @ParameterizedTest

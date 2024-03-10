@@ -1,4 +1,8 @@
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
+
 public class TennisGame1 implements TennisGame {
 
     private final String player1Name;
@@ -12,6 +16,10 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
+        List<String> players = Arrays.asList(player1Name, player2Name);
+        if(!players.contains(playerName)){
+          throw new RuntimeException(String.format("%s is not playing the game", playerName));
+        }
         if (player1Name.equals(playerName))
             player1Points += 1;
         else
