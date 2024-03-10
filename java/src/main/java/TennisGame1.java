@@ -24,11 +24,12 @@ public class TennisGame1 implements TennisGame {
         if (isAdvantagePlayer2()) return String.format("Advantage %s", player2Name);
         if (equalScores()) return String.format("%s-All", runningScore(player1Points));
 
-        if (player1Points >=4 || player2Points >=4)
-        {
-            if (player1Won()) return String.format("Win for %s", player1Name);
-            else if(player2Won()) return String.format("Win for %s", player2Name);
+        if (player1Won()) {
+            return String.format("Win for %s", player1Name);
+        } else if(player2Won()) {
+            return String.format("Win for %s", player2Name);
         }
+
 
         return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
     }
@@ -54,7 +55,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean player2Won() {
-        return pointsDifference() <= -2;
+        return (player1Points >=4 || player2Points >=4) && pointsDifference() <= -2;
     }
 
     private int pointsDifference() {
