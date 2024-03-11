@@ -40,7 +40,7 @@ public class TennisGame1 implements TennisGame {
             return String.format("Win for %s", player2Name);
         }
 
-        if (equalScores()) return String.format("%s-All", runningScore(player1Points));
+        if (equalScores()) return String.format("%s-All", runningScore(player1.getPoints()));
 
         return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
     }

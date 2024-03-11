@@ -9,6 +9,10 @@ public class Player {
         points += 1;
     }
 
+    public Integer getPoints() {
+        return points;
+    }
+
     public String getName() {
         return name;
     }
