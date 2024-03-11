@@ -30,11 +30,11 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if(isDeuce()) return "Deuce";
-        if (isAdvantagePlayer1()) return String.format("Advantage %s", player1Name);
+        if (isAdvantagePlayer1()) return String.format("Advantage %s", player1.getName());
         if (isAdvantagePlayer2()) return String.format("Advantage %s", player2Name);
 
         if (player1Won()) {
-            return String.format("Win for %s", player1Name);
+            return String.format("Win for %s", player1.getName());
         } else if(player2Won()) {
             return String.format("Win for %s", player2Name);
         }
