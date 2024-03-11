@@ -22,9 +22,10 @@ public class TennisGame1 implements TennisGame {
         if(!players.contains(playerName)){
           throw new RuntimeException(String.format("%s is not playing the game", playerName));
         }
-        if (player1Name.equals(playerName))
+        if (player1Name.equals(playerName)) {
             player1Points += 1;
-        else
+            player1.wonPoint();
+        } else
             player2Points += 1;
     }
 

@@ -5,6 +5,10 @@ public class Player {
         this.name = name;
     }
 
+    public void wonPoint() {
+        points += 1;
+    }
+
     public String getName() {
         return name;
     }
