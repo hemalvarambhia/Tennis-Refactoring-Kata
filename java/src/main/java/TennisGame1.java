@@ -5,13 +5,11 @@ import java.util.stream.Stream;
 
 public class TennisGame1 implements TennisGame {
 
-    private final String player1Name;
     private final Player player1;
     private final String player2Name;
     private int player2Points = 0;
 
     public TennisGame1(String player1Name, String player2Name) {
-        this.player1Name = player1Name;
         this.player1 = new Player(player1Name);
         this.player2Name = player2Name;
     }
