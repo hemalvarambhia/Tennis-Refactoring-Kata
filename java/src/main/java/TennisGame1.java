@@ -7,7 +7,6 @@ public class TennisGame1 implements TennisGame {
 
     private final String player1Name;
     private final Player player1;
-    private int player1Points = 0;
     private final String player2Name;
     private int player2Points = 0;
 
@@ -23,7 +22,6 @@ public class TennisGame1 implements TennisGame {
           throw new RuntimeException(String.format("%s is not playing the game", playerName));
         }
         if (player1Name.equals(playerName)) {
-            player1Points += 1;
             player1.wonPoint();
         } else
             player2Points += 1;
