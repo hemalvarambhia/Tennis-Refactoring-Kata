@@ -17,11 +17,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        List<String> players = Arrays.asList(player1Name, player2Name);
+        List<String> players = Arrays.asList(player1.getName(), player2Name);
         if(!players.contains(playerName)){
           throw new RuntimeException(String.format("%s is not playing the game", playerName));
         }
-        if (player1Name.equals(playerName)) {
+        if (player1.getName().equals(playerName)) {
             player1.wonPoint();
         } else
             player2Points += 1;
