@@ -42,35 +42,35 @@ public class TennisGame1 implements TennisGame {
 
         if (equalScores()) return String.format("%s-All", runningScore(player1.getPoints()));
 
-        return String.format("%s-%s", runningScore(player1Points), runningScore(player2Points));
+        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2Points));
     }
 
     private boolean isDeuce() {
-        return player1Points >= 3 && equalScores();
+        return player1.getPoints() >= 3 && equalScores();
     }
 
     private boolean equalScores() {
-        return player1Points == player2Points;
+        return player1.getPoints() == player2Points;
     }
 
     private boolean isAdvantagePlayer1() {
-        return (player1Points >= 4 || player2Points >= 4) && pointsDifference() == 1;
+        return (player1.getPoints() >= 4 || player2Points >= 4) && pointsDifference() == 1;
     }
 
     private boolean isAdvantagePlayer2() {
-        return (player1Points >=4 || player2Points >=4) && pointsDifference() == -1;
+        return (player1.getPoints() >=4 || player2Points >=4) && pointsDifference() == -1;
     }
 
     private boolean player1Won() {
-        return (player1Points >=4 || player2Points >=4) && pointsDifference() >=2;
+        return (player1.getPoints() >=4 || player2Points >=4) && pointsDifference() >=2;
     }
 
     private boolean player2Won() {
-        return (player1Points >=4 || player2Points >=4) && pointsDifference() <= -2;
+        return (player1.getPoints() >=4 || player2Points >=4) && pointsDifference() <= -2;
     }
 
     private int pointsDifference() {
-        return player1Points - player2Points;
+        return player1.getPoints() - player2Points;
     }
 
     private String runningScore(int points) {
