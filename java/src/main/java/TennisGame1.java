@@ -42,9 +42,9 @@ public class TennisGame1 implements TennisGame {
             return String.format("Win for %s", player2.getName());
         }
 
-        if (equalScores()) return String.format("%s-All", runningScore(player1.getPoints()));
+        if (equalScores()) return String.format("%s-All", player1.runningScore());
 
-        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2.getPoints()));
+        return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
 
     private boolean isDeuce() {
