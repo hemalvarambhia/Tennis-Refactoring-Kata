@@ -52,7 +52,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean equalScores() {
-        return player1.getPoints().equals(player2.getPoints());
+        return pointsDifference() == 0;
     }
 
     private boolean isAdvantagePlayer1() {
