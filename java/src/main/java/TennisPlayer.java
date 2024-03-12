@@ -21,6 +21,10 @@ public class TennisPlayer {
         return (getPoints() >=4) && pointsDifference(opponent) >=2;
     }
 
+    public boolean hasAdvantageOver(TennisPlayer opponent) {
+        return getPoints() >= 4 && pointsDifference(opponent) == 1;
+    }
+
     public int pointsDifference(TennisPlayer opponent) {
         return getPoints() - opponent.getPoints();
     }

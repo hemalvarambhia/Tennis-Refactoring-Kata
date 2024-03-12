@@ -56,11 +56,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean isAdvantagePlayer1() {
-        return player1.getPoints() >= 4 && pointsDifference() == 1;
+        return player1.hasAdvantageOver(player2);
     }
 
     private boolean isAdvantagePlayer2() {
-        return  player2.getPoints()>=4 && pointsDifference() == -1;
+        return  player2.hasAdvantageOver(player1);
     }
 
     private boolean player1Won() {
