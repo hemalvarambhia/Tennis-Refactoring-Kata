@@ -17,6 +17,10 @@ public class TennisPlayer {
         return name;
     }
 
+    public boolean hasBeaten(TennisPlayer opponent) {
+        return (getPoints() >=4) && pointsDifference(opponent) >=2;
+    }
+
     public int pointsDifference(TennisPlayer opponent) {
         return getPoints() - opponent.getPoints();
     }

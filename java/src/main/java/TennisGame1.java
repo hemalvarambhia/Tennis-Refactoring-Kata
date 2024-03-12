@@ -68,7 +68,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean player2Won() {
-        return (player2.getPoints() >=4) && pointsDifference() <= -2;
+        return player2.hasBeaten(player1);
     }
 
     private int pointsDifference() {
