@@ -64,11 +64,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean player1Won() {
-        return (player1.getPoints() >=4 || player2.getPoints() >=4) && pointsDifference() >=2;
+        return (player1.getPoints() >=4) && pointsDifference() >=2;
     }
 
     private boolean player2Won() {
-        return (player1.getPoints() >=4 || player2.getPoints() >=4) && pointsDifference() <= -2;
+        return (player2.getPoints() >=4) && pointsDifference() <= -2;
     }
 
     private int pointsDifference() {
