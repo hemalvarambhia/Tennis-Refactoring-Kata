@@ -72,7 +72,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private int pointsDifference() {
-        return player1.getPoints() - player2.getPoints();
+        return player1.pointsDifference(player2);
     }
 
     private String runningScore(int points) {

@@ -16,4 +16,8 @@ public class TennisPlayer {
     public String getName() {
         return name;
     }
+
+    public int pointsDifference(TennisPlayer opponent) {
+        return getPoints() - opponent.getPoints();
+    }
 }
