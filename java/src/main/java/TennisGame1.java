@@ -4,8 +4,8 @@ import java.util.Map;
 
 public class TennisGame1 implements TennisGame {
 
-    private final Player player1;
-    private final Player player2;
+    private final TennisPlayer player1;
+    private final TennisPlayer player2;
 
     private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE = Map.of(
             0, "Love",
@@ -15,8 +15,8 @@ public class TennisGame1 implements TennisGame {
     );
 
     public TennisGame1(String player1Name, String player2Name) {
-        this.player1 = new Player(player1Name);
-        this.player2 = new Player(player2Name);
+        this.player1 = new TennisPlayer(player1Name);
+        this.player2 = new TennisPlayer(player2Name);
     }
 
     public void wonPoint(String playerName) {
