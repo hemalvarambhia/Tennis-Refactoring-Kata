@@ -6,7 +6,13 @@ public class TennisGame1 implements TennisGame {
 
     private final Player player1;
     private final Player player2;
-    private int player2Points = 0;
+
+    private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE = Map.of(
+            0, "Love",
+            1, "Fifteen",
+            2, "Thirty",
+            3, "Forty"
+    );
 
     public TennisGame1(String player1Name, String player2Name) {
         this.player1 = new Player(player1Name);
@@ -21,7 +27,6 @@ public class TennisGame1 implements TennisGame {
         if (player1.getName().equals(playerName)) {
             player1.wonPoint();
         } else {
-            player2Points += 1;
             player2.wonPoint();
         }
     }
@@ -71,13 +76,6 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String runningScore(int points) {
-        Map<Integer, String> pointsToScore = Map.of(
-                0, "Love",
-                1, "Fifteen",
-                2, "Thirty",
-                3, "Forty"
-        );
-
-        return pointsToScore.get(points);
+        return POINTS_TO_RUNNING_SCORE.get(points);
     }
 }
