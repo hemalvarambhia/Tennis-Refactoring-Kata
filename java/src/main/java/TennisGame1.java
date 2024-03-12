@@ -7,13 +7,6 @@ public class TennisGame1 implements TennisGame {
     private final TennisPlayer player1;
     private final TennisPlayer player2;
 
-    private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE = Map.of(
-            0, "Love",
-            1, "Fifteen",
-            2, "Thirty",
-            3, "Forty"
-    );
-
     public TennisGame1(String player1Name, String player2Name) {
         this.player1 = new TennisPlayer(player1Name);
         this.player2 = new TennisPlayer(player2Name);
@@ -73,9 +66,5 @@ public class TennisGame1 implements TennisGame {
 
     private int pointsDifference() {
         return player1.pointsDifference(player2);
-    }
-
-    private String runningScore(int points) {
-        return POINTS_TO_RUNNING_SCORE.get(points);
     }
 }
