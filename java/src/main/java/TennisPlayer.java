@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class TennisPlayer {
     private final String name;
     private Integer points = 0;
@@ -28,4 +30,15 @@ public class TennisPlayer {
     public int pointsDifference(TennisPlayer opponent) {
         return getPoints() - opponent.getPoints();
     }
+
+    public String runningScore() {
+        return POINTS_TO_RUNNING_SCORE.get(points);
+    }
+
+    private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE = Map.of(
+            0, "Love",
+            1, "Fifteen",
+            2, "Thirty",
+            3, "Forty"
+    );
 }
