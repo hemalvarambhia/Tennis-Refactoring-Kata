@@ -16,30 +16,32 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        List<String> players = Arrays.asList(player1.getName(), player2Name);
+        List<String> players = Arrays.asList(player1.getName(), player2.getName());
         if(!players.contains(playerName)){
           throw new RuntimeException(String.format("%s is not playing the game", playerName));
         }
         if (player1.getName().equals(playerName)) {
             player1.wonPoint();
-        } else
+        } else {
             player2Points += 1;
+            player2.wonPoint();
+        }
     }
 
     public String getScore() {
         if(isDeuce()) return "Deuce";
         if (isAdvantagePlayer1()) return String.format("Advantage %s", player1.getName());
-        if (isAdvantagePlayer2()) return String.format("Advantage %s", player2Name);
+        if (isAdvantagePlayer2()) return String.format("Advantage %s", player2.getName());
 
         if (player1Won()) {
             return String.format("Win for %s", player1.getName());
         } else if(player2Won()) {
-            return String.format("Win for %s", player2Name);
+            return String.format("Win for %s", player2.getName());
         }
 
         if (equalScores()) return String.format("%s-All", runningScore(player1.getPoints()));
 
-        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2Points));
+        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2.getPoints()));
     }
 
     private boolean isDeuce() {
