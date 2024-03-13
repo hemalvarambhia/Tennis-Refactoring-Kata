@@ -28,9 +28,9 @@ public class TennisGame1 implements TennisGame {
         if (player1.hasAdvantageOver(player2)) return advantage(player1);
         if (player2.hasAdvantageOver(player1)) return advantage(player2);
 
-        if (player1Won()) {
+        if (player1.hasBeaten(player2)) {
             return won(player1);
-        } else if(player2Won()) {
+        } else if(player2.hasBeaten(player1)) {
             return won(player2);
         }
 
@@ -49,14 +49,6 @@ public class TennisGame1 implements TennisGame {
 
     private String advantage(TennisPlayer player) {
         return String.format("Advantage %s", player.getName());
-    }
-
-    private boolean player1Won() {
-        return player1.hasBeaten(player2);
-    }
-
-    private boolean player2Won() {
-        return player2.hasBeaten(player1);
     }
 
     private String won(TennisPlayer winner) {
