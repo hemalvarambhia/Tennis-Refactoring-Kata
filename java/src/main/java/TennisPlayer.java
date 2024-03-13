@@ -1,8 +1,6 @@
 import java.util.Map;
 
 public class TennisPlayer {
-    private final String name;
-    private Integer points = 0;
     public TennisPlayer(String name) {
         this.name = name;
     }
@@ -34,6 +32,10 @@ public class TennisPlayer {
     public String runningScore() {
         return POINTS_TO_RUNNING_SCORE.get(points);
     }
+
+    private final String name;
+
+    private Integer points = 0;
 
     private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE = Map.of(
             0, "Love",
