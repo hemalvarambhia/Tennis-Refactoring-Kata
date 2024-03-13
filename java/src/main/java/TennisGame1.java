@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class TennisGame1 implements TennisGame {
 
@@ -35,16 +34,16 @@ public class TennisGame1 implements TennisGame {
             return won(player2);
         }
 
-        if (equalScores()) return String.format("%s-All", player1.runningScore());
+        if (scoresAreEqual()) return String.format("%s-All", player1.runningScore());
 
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
 
     private boolean isDeuce() {
-        return player1.getPoints() >= 3 && equalScores();
+        return player1.getPoints() >= 3 && scoresAreEqual();
     }
 
-    private boolean equalScores() {
+    private boolean scoresAreEqual() {
         return pointsDifference() == 0;
     }
 
