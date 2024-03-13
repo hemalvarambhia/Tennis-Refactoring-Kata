@@ -25,8 +25,8 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if(isDeuce()) return "Deuce";
-        if (isAdvantagePlayer1()) return advantage(player1);
-        if (isAdvantagePlayer2()) return advantage(player2);
+        if (player1.hasAdvantageOver(player2)) return advantage(player1);
+        if (player2.hasAdvantageOver(player1)) return advantage(player2);
 
         if (player1Won()) {
             return won(player1);
@@ -44,15 +44,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean scoresAreEqual() {
-        return pointsDifference() == 0;
-    }
-
-    private boolean isAdvantagePlayer1() {
-        return player1.hasAdvantageOver(player2);
-    }
-
-    private boolean isAdvantagePlayer2() {
-        return  player2.hasAdvantageOver(player1);
+        return player1.pointsDifference(player2) == 0;
     }
 
     private String advantage(TennisPlayer player) {
@@ -71,7 +63,4 @@ public class TennisGame1 implements TennisGame {
         return String.format("Win for %s", winner.getName());
     }
 
-    private int pointsDifference() {
-        return player1.pointsDifference(player2);
-    }
 }
