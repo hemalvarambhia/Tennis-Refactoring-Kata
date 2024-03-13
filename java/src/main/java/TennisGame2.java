@@ -1,3 +1,4 @@
+import java.util.Map;
 
 public class TennisGame2 implements TennisGame
 {
@@ -10,12 +11,15 @@ public class TennisGame2 implements TennisGame
         String score = "";
         if (P1point == P2point && P1point < 4)
         {
-            if (P1point==0)
-                score = "Love";
-            if (P1point==1)
-                score = "Fifteen";
-            if (P1point==2)
-                score = "Thirty";
+            if (P1point==0) {
+                score = POINTS_TO_RUNNING_SCORE.get(P1point);
+            }
+            if (P1point==1) {
+                score = POINTS_TO_RUNNING_SCORE.get(P1point);
+            }
+            if (P1point==2) {
+                score = POINTS_TO_RUNNING_SCORE.get(P1point);
+            }
             score += "-All";
         }
         if (P1point==P2point && P1point>=3)
@@ -132,4 +136,12 @@ public class TennisGame2 implements TennisGame
     private String P2res = "";
     private String player1Name;
     private String player2Name;
+
+    private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE =
+        Map.of(
+            0, "Love",
+                1, "Fifteen",
+                2, "Thirty",
+                3, "Forty"
+        );
 }
