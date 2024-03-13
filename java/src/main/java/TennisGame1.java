@@ -30,9 +30,9 @@ public class TennisGame1 implements TennisGame {
         if (isAdvantagePlayer2()) return advantage(player2);
 
         if (player1Won()) {
-            return String.format("Win for %s", player1.getName());
+            return won(player1);
         } else if(player2Won()) {
-            return String.format("Win for %s", player2.getName());
+            return won(player2);
         }
 
         if (equalScores()) return String.format("%s-All", player1.runningScore());
@@ -66,6 +66,10 @@ public class TennisGame1 implements TennisGame {
 
     private boolean player2Won() {
         return player2.hasBeaten(player1);
+    }
+
+    private String won(TennisPlayer winner) {
+        return String.format("Win for %s", winner.getName());
     }
 
     private int pointsDifference() {
