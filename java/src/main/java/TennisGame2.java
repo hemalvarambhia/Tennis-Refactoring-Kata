@@ -8,11 +8,11 @@ public class TennisGame2 implements TennisGame
     }
 
     public String getScore(){
-        if (P1point==P2point && P1point>=3)
+        if (scoresAreEqual() && P1point>=3)
             return "Deuce";
 
         String score = "";
-        if (P1point == P2point)
+        if (scoresAreEqual())
         {
             score = POINTS_TO_RUNNING_SCORE.get(P1point);
             score += "-All";
@@ -88,7 +88,11 @@ public class TennisGame2 implements TennisGame
         }
         return score;
     }
-    
+
+    private boolean scoresAreEqual() {
+        return P1point == P2point;
+    }
+
     public void SetP1Score(int number){
         
         for (int i = 0; i < number; i++)
