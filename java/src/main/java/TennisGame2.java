@@ -14,15 +14,7 @@ public class TennisGame2 implements TennisGame
         String score = "";
         if (P1point == P2point)
         {
-            if (P1point==0) {
-                score = POINTS_TO_RUNNING_SCORE.get(P1point);
-            }
-            if (P1point==1) {
-                score = POINTS_TO_RUNNING_SCORE.get(P1point);
-            }
-            if (P1point==2) {
-                score = POINTS_TO_RUNNING_SCORE.get(P1point);
-            }
+            score = POINTS_TO_RUNNING_SCORE.get(P1point);
             score += "-All";
         }
         
