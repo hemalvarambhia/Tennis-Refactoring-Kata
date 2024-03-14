@@ -93,7 +93,7 @@ public class TennisGame2 implements TennisGame
         return P1point == P2point;
     }
 
-    public void SetP1Score(int number){
+    private void SetP1Score(int number){
         
         for (int i = 0; i < number; i++)
         {
@@ -102,7 +102,7 @@ public class TennisGame2 implements TennisGame
             
     }
     
-    public void SetP2Score(int number){
+    private void SetP2Score(int number){
         
         for (int i = 0; i < number; i++)
         {
