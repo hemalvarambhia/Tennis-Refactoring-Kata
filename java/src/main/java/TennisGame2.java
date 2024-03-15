@@ -18,10 +18,7 @@ public class TennisGame2 implements TennisGame
             return score + "-All";
         }
 
-        if (player1HasAdvantage())
-        {
-            return "Advantage player1";
-        }
+        if (player1HasAdvantage()) return "Advantage player1";
         
         player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
         player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
