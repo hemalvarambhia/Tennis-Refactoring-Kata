@@ -25,11 +25,6 @@ public class TennisGame2 implements TennisGame
         player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
         score = player1RunningScore + "-" + player2RunningScore;
         
-        if (player2Point > player1Point && player1Point >= 3)
-        {
-            score = "Advantage player2";
-        }
-        
         if (player1Point >=4 && player2Point >=0 && (player1Point - player2Point)>=2)
         {
             score = "Win for player1";
