@@ -20,46 +20,46 @@ public class TennisGame2 implements TennisGame
         
         if (P1point > 0 && P2point==0)
         {
-            P1res = POINTS_TO_RUNNING_SCORE.get(P1point);
-            P2res = POINTS_TO_RUNNING_SCORE.get(P2point);
-            score = P1res + "-" + P2res;
+            playerOneRunningScore = POINTS_TO_RUNNING_SCORE.get(P1point);
+            playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
+            score = playerOneRunningScore + "-" + playerTwoRunningScore;
         }
         if (P2point > 0 && P1point==0)
         {
             if (P2point==1)
-                P2res = POINTS_TO_RUNNING_SCORE.get(P2point);
+                playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
             if (P2point==2)
-                P2res = POINTS_TO_RUNNING_SCORE.get(P2point);
+                playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
             if (P2point==3)
-                P2res = "Forty";
+                playerTwoRunningScore = "Forty";
             
-            P1res = "Love";
-            score = P1res + "-" + P2res;
+            playerOneRunningScore = "Love";
+            score = playerOneRunningScore + "-" + playerTwoRunningScore;
         }
         
         if (P1point>P2point && P1point < 4)
         {
             if (P1point==2)
-                P1res=POINTS_TO_RUNNING_SCORE.get(P1point);
+                playerOneRunningScore =POINTS_TO_RUNNING_SCORE.get(P1point);
             if (P1point==3)
-                P1res="Forty";
+                playerOneRunningScore ="Forty";
             if (P2point==1)
-                P2res="Fifteen";
+                playerTwoRunningScore ="Fifteen";
             if (P2point==2)
-                P2res=POINTS_TO_RUNNING_SCORE.get(P2point);;
-            score = P1res + "-" + P2res;
+                playerTwoRunningScore =POINTS_TO_RUNNING_SCORE.get(P2point);;
+            score = playerOneRunningScore + "-" + playerTwoRunningScore;
         }
         if (P2point>P1point && P2point < 4)
         {
             if (P2point==2)
-                P2res=POINTS_TO_RUNNING_SCORE.get(P2point);
+                playerTwoRunningScore =POINTS_TO_RUNNING_SCORE.get(P2point);
             if (P2point==3)
-                P2res="Forty";
+                playerTwoRunningScore ="Forty";
             if (P1point==1)
-                P1res="Fifteen";
+                playerOneRunningScore ="Fifteen";
             if (P1point==2)
-                P1res=POINTS_TO_RUNNING_SCORE.get(P1point);
-            score = P1res + "-" + P2res;
+                playerOneRunningScore =POINTS_TO_RUNNING_SCORE.get(P1point);
+            score = playerOneRunningScore + "-" + playerTwoRunningScore;
         }
         
         if (P1point > P2point && P2point >= 3)
@@ -97,8 +97,8 @@ public class TennisGame2 implements TennisGame
     private int P1point = 0;
     private int P2point = 0;
 
-    private String P1res = "";
-    private String P2res = "";
+    private String playerOneRunningScore = "";
+    private String playerTwoRunningScore = "";
     private String player1Name;
     private String player2Name;
 
