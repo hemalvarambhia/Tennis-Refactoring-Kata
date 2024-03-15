@@ -1,5 +1,5 @@
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collection;
 
 public class TennisGame1 implements TennisGame {
 
@@ -7,13 +7,12 @@ public class TennisGame1 implements TennisGame {
     private final TennisPlayer player2;
 
     public TennisGame1(String player1Name, String player2Name) {
-        this.player1 = new TennisPlayer(player1Name);
-        this.player2 = new TennisPlayer(player2Name);
+        player1 = new TennisPlayer(player1Name);
+        player2 = new TennisPlayer(player2Name);
     }
 
     public void wonPoint(String playerName) {
-        List<String> players = Arrays.asList(player1.getName(), player2.getName());
-        if(!players.contains(playerName)){
+        if(isNotPlaying(playerName)){
           throw new RuntimeException(String.format("%s is not playing the game", playerName));
         }
         if (player1.getName().equals(playerName)) {
@@ -55,4 +54,8 @@ public class TennisGame1 implements TennisGame {
         return String.format("Win for %s", winner.getName());
     }
 
+    private boolean isNotPlaying(String playerName) {
+        Collection<String> players = Arrays.asList(player1.getName(), player2.getName());
+        return !players.contains(playerName);
+    }
 }
