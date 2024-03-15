@@ -18,31 +18,14 @@ public class TennisGame2 implements TennisGame
             return score + "-All";
         }
         
-        if (player1Point > 0 && player2Point ==0)
+        if ((player1Point > 0 && player2Point ==0) || player2Point > 0 && player1Point ==0
+        || player1Point > player2Point && player1Point < 4)
         {
             player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
             player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
-            score = player1RunningScore + "-" + player2RunningScore;
-        }
-        if (player2Point > 0 && player1Point ==0)
-        {
-            player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
-            player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
             score = player1RunningScore + "-" + player2RunningScore;
         }
         
-        if (player1Point > player2Point && player1Point < 4)
-        {
-            if (player1Point ==2)
-                player1RunningScore =POINTS_TO_RUNNING_SCORE.get(player1Point);
-            if (player1Point ==3)
-                player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
-            if (player2Point ==1)
-                player2RunningScore =POINTS_TO_RUNNING_SCORE.get(player2Point);
-            if (player2Point ==2)
-                player2RunningScore =POINTS_TO_RUNNING_SCORE.get(player2Point);;
-            score = player1RunningScore + "-" + player2RunningScore;
-        }
         if (player2Point > player1Point && player2Point < 4)
         {
             if (player2Point ==2)
