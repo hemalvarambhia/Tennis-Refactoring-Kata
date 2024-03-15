@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Objects;
 
 public class TennisGame1 implements TennisGame {
 
@@ -55,7 +56,6 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean isNotPlaying(String playerName) {
-        Collection<String> players = Arrays.asList(player1.getName(), player2.getName());
-        return !players.contains(playerName);
+        return !Objects.equals(player1.getName(), playerName) && !Objects.equals(player2.getName(), playerName);
     }
 }
