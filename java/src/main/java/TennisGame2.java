@@ -8,70 +8,69 @@ public class TennisGame2 implements TennisGame
     }
 
     public String getScore(){
-        if (scoresAreEqual() && P1point>=3)
+        if (scoresAreEqual() && player1Point >=3)
             return "Deuce";
 
         String score = "";
         if (scoresAreEqual())
         {
-            score = POINTS_TO_RUNNING_SCORE.get(P1point);
+            score = POINTS_TO_RUNNING_SCORE.get(player1Point);
             return score + "-All";
         }
         
-        if (P1point > 0 && P2point==0)
+        if (player1Point > 0 && player2Point ==0)
         {
-            playerOneRunningScore = POINTS_TO_RUNNING_SCORE.get(P1point);
-            playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
-            score = playerOneRunningScore + "-" + playerTwoRunningScore;
+            player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
+            player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
+            score = player1RunningScore + "-" + player2RunningScore;
         }
-        if (P2point > 0 && P1point==0)
+        if (player2Point > 0 && player1Point ==0)
         {
-            playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
-
-            playerOneRunningScore = POINTS_TO_RUNNING_SCORE.get(P1point);
-            score = playerOneRunningScore + "-" + playerTwoRunningScore;
-        }
-        
-        if (P1point>P2point && P1point < 4)
-        {
-            if (P1point==2)
-                playerOneRunningScore =POINTS_TO_RUNNING_SCORE.get(P1point);
-            if (P1point==3)
-                playerOneRunningScore = POINTS_TO_RUNNING_SCORE.get(P1point);
-            if (P2point==1)
-                playerTwoRunningScore ="Fifteen";
-            if (P2point==2)
-                playerTwoRunningScore =POINTS_TO_RUNNING_SCORE.get(P2point);;
-            score = playerOneRunningScore + "-" + playerTwoRunningScore;
-        }
-        if (P2point>P1point && P2point < 4)
-        {
-            if (P2point==2)
-                playerTwoRunningScore =POINTS_TO_RUNNING_SCORE.get(P2point);
-            if (P2point==3)
-                playerTwoRunningScore =POINTS_TO_RUNNING_SCORE.get(P2point);
-            if (P1point==1)
-                playerOneRunningScore ="Fifteen";
-            if (P1point==2)
-                playerOneRunningScore =POINTS_TO_RUNNING_SCORE.get(P1point);
-            score = playerOneRunningScore + "-" + playerTwoRunningScore;
+            player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
+            player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
+            score = player1RunningScore + "-" + player2RunningScore;
         }
         
-        if (P1point > P2point && P2point >= 3)
+        if (player1Point > player2Point && player1Point < 4)
+        {
+            if (player1Point ==2)
+                player1RunningScore =POINTS_TO_RUNNING_SCORE.get(player1Point);
+            if (player1Point ==3)
+                player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
+            if (player2Point ==1)
+                player2RunningScore ="Fifteen";
+            if (player2Point ==2)
+                player2RunningScore =POINTS_TO_RUNNING_SCORE.get(player2Point);;
+            score = player1RunningScore + "-" + player2RunningScore;
+        }
+        if (player2Point > player1Point && player2Point < 4)
+        {
+            if (player2Point ==2)
+                player2RunningScore =POINTS_TO_RUNNING_SCORE.get(player2Point);
+            if (player2Point ==3)
+                player2RunningScore =POINTS_TO_RUNNING_SCORE.get(player2Point);
+            if (player1Point ==1)
+                player1RunningScore ="Fifteen";
+            if (player1Point ==2)
+                player1RunningScore =POINTS_TO_RUNNING_SCORE.get(player1Point);
+            score = player1RunningScore + "-" + player2RunningScore;
+        }
+        
+        if (player1Point > player2Point && player2Point >= 3)
         {
             score = "Advantage player1";
         }
         
-        if (P2point > P1point && P1point >= 3)
+        if (player2Point > player1Point && player1Point >= 3)
         {
             score = "Advantage player2";
         }
         
-        if (P1point>=4 && P2point>=0 && (P1point-P2point)>=2)
+        if (player1Point >=4 && player2Point >=0 && (player1Point - player2Point)>=2)
         {
             score = "Win for player1";
         }
-        if (P2point>=4 && P1point>=0 && (P2point-P1point)>=2)
+        if (player2Point >=4 && player1Point >=0 && (player2Point - player1Point)>=2)
         {
             score = "Win for player2";
         }
@@ -79,21 +78,21 @@ public class TennisGame2 implements TennisGame
     }
 
     private boolean scoresAreEqual() {
-        return P1point == P2point;
+        return player1Point == player2Point;
     }
 
     public void wonPoint(String player) {
         if (player == "player1")
-            P1point++;
+            player1Point++;
         else
-            P2point++;
+            player2Point++;
     }
 
-    private int P1point = 0;
-    private int P2point = 0;
+    private int player1Point = 0;
+    private int player2Point = 0;
 
-    private String playerOneRunningScore = "";
-    private String playerTwoRunningScore = "";
+    private String player1RunningScore = "";
+    private String player2RunningScore = "";
     private String player1Name;
     private String player2Name;
 
