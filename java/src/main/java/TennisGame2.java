@@ -11,10 +11,9 @@ public class TennisGame2 implements TennisGame
         if (scoresAreEqual() && player1Point >=3)
             return "Deuce";
 
-        String score = "";
         if (scoresAreEqual())
         {
-            score = POINTS_TO_RUNNING_SCORE.get(player1Point);
+            String score = POINTS_TO_RUNNING_SCORE.get(player1Point);
             return String.format("%s-All", score);
         }
 
@@ -23,7 +22,7 @@ public class TennisGame2 implements TennisGame
         
         player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
         player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
-        score = player1RunningScore + "-" + player2RunningScore;
+        String score = player1RunningScore + "-" + player2RunningScore;
         
         if (player1Point >=4 && (player1Point - player2Point)>=2)
         {
