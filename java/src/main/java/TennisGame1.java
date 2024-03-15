@@ -31,7 +31,7 @@ public class TennisGame1 implements TennisGame {
 
     /**
      * Computes the running score for a game of tennis.
-     * @return the running score e.g. 15-40, Deuce, Advantage Player 1, Win for Player 2
+     * @return the running score e.g. 15-40, Deuce, Advantage Player 1, Win for Player 2.
      */
     public String getScore() {
         if(isDeuce()) return "Deuce";
@@ -51,7 +51,7 @@ public class TennisGame1 implements TennisGame {
 
     /**
      * Classifies whether the game was a deuce.
-     * @return game is a deuce (true) or it is not (false)
+     * @return game is a deuce (true) or it is not (false).
      */
     private boolean isDeuce() {
         return player1.getPoints() >= 3 && scoresAreEqual();
@@ -63,7 +63,7 @@ public class TennisGame1 implements TennisGame {
 
     /**
      * Computes a string form of the outcome when a player has advantage (e.g. Advantage player 1).
-     * @param player player with the advantage
+     * @param player player with the advantage.
      * @return Advantage {name of player}
      */
     private String advantage(TennisPlayer player) {
@@ -72,8 +72,8 @@ public class TennisGame1 implements TennisGame {
 
     /**
      * Computes a string form of the outcome when a player has advantage (e.g. Advantage player 1).
-     * @param winner the winner of the game
-     * @return Win for  {name of player}
+     * @param winner the winner of the game.
+     * @return Win for {name of player}
      */
     private String won(TennisPlayer winner) {
         return String.format("Win for %s", winner.getName());
