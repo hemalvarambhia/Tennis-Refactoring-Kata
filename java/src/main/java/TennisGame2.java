@@ -18,7 +18,7 @@ public class TennisGame2 implements TennisGame
             return score + "-All";
         }
 
-        if (player1Point - player2Point == 1 && player2Point >= 3)
+        if (player1Point - player2Point == 1 && player1Point > 3)
         {
             return "Advantage player1";
         }
