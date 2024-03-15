@@ -26,13 +26,8 @@ public class TennisGame2 implements TennisGame
         }
         if (P2point > 0 && P1point==0)
         {
-            if (P2point==1)
-                playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
-            if (P2point==2)
-                playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
-            if (P2point==3)
-                playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
-            
+            playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
+
             playerOneRunningScore = "Love";
             score = playerOneRunningScore + "-" + playerTwoRunningScore;
         }
