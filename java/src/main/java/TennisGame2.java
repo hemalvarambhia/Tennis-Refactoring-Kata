@@ -28,7 +28,7 @@ public class TennisGame2 implements TennisGame
         {
             playerTwoRunningScore = POINTS_TO_RUNNING_SCORE.get(P2point);
 
-            playerOneRunningScore = "Love";
+            playerOneRunningScore = POINTS_TO_RUNNING_SCORE.get(P1point);
             score = playerOneRunningScore + "-" + playerTwoRunningScore;
         }
         
