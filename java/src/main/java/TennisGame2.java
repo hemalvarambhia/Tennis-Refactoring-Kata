@@ -25,17 +25,15 @@ public class TennisGame2 implements TennisGame
             player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
             score = player1RunningScore + "-" + player2RunningScore;
         }
-        
+
         if (player2Point > player1Point && player2Point < 4)
         {
-            if (player2Point ==2)
-                player2RunningScore =POINTS_TO_RUNNING_SCORE.get(player2Point);
-            if (player2Point ==3)
-                player2RunningScore =POINTS_TO_RUNNING_SCORE.get(player2Point);
-            if (player1Point ==1)
-                player1RunningScore =POINTS_TO_RUNNING_SCORE.get(player1Point);
-            if (player1Point ==2)
-                player1RunningScore =POINTS_TO_RUNNING_SCORE.get(player1Point);
+            if (player2Point ==2 || player2Point ==3) {
+                player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
+            }
+            if (player1Point ==1 || player1Point ==2) {
+                player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
+            }
             score = player1RunningScore + "-" + player2RunningScore;
         }
         
