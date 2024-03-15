@@ -15,7 +15,7 @@ public class TennisGame2 implements TennisGame
         if (scoresAreEqual())
         {
             score = POINTS_TO_RUNNING_SCORE.get(player1Point);
-            return score + "-All";
+            return String.format("%s-All", score);
         }
 
         if (player1HasAdvantage()) return "Advantage player1";
