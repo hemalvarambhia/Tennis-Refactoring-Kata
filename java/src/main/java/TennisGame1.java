@@ -12,6 +12,12 @@ public class TennisGame1 implements TennisGame {
         player2 = new TennisPlayer(player2Name);
     }
 
+    /**
+     * Awards a point to the player who won it.
+     *
+     * @param playerName player who won the point.
+     *
+     */
     public void wonPoint(String playerName) {
         if(isNotPlaying(playerName)){
           throw new RuntimeException(String.format("%s is not playing the game", playerName));
@@ -23,6 +29,10 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
+    /**
+     * Computes the running score for a game of tennis.
+     * @return the running score e.g. 15-40, Deuce, Advantage Player 1, Win for Player 2
+     */
     public String getScore() {
         if(isDeuce()) return "Deuce";
         if (player1.hasAdvantageOver(player2)) return advantage(player1);
@@ -39,6 +49,10 @@ public class TennisGame1 implements TennisGame {
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
 
+    /**
+     * Classifies whether the game was a deuce.
+     * @return game is a deuce (true) or it is not (false)
+     */
     private boolean isDeuce() {
         return player1.getPoints() >= 3 && scoresAreEqual();
     }
@@ -47,10 +61,20 @@ public class TennisGame1 implements TennisGame {
         return player1.pointsDifference(player2) == 0;
     }
 
+    /**
+     * Computes a string form of the outcome when a player has advantage (e.g. Advantage player 1).
+     * @param player player with the advantage
+     * @return Advantage {name of player}
+     */
     private String advantage(TennisPlayer player) {
         return String.format("Advantage %s", player.getName());
     }
 
+    /**
+     * Computes a string form of the outcome when a player has advantage (e.g. Advantage player 1).
+     * @param winner the winner of the game
+     * @return Win for  {name of player}
+     */
     private String won(TennisPlayer winner) {
         return String.format("Win for %s", winner.getName());
     }
