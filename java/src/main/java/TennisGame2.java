@@ -29,7 +29,7 @@ public class TennisGame2 implements TennisGame
             if (P2point==1)
                 P2res = POINTS_TO_RUNNING_SCORE.get(P2point);
             if (P2point==2)
-                P2res = "Thirty";
+                P2res = POINTS_TO_RUNNING_SCORE.get(P2point);
             if (P2point==3)
                 P2res = "Forty";
             
@@ -40,25 +40,25 @@ public class TennisGame2 implements TennisGame
         if (P1point>P2point && P1point < 4)
         {
             if (P1point==2)
-                P1res="Thirty";
+                P1res=POINTS_TO_RUNNING_SCORE.get(P1point);
             if (P1point==3)
                 P1res="Forty";
             if (P2point==1)
                 P2res="Fifteen";
             if (P2point==2)
-                P2res="Thirty";
+                P2res=POINTS_TO_RUNNING_SCORE.get(P2point);;
             score = P1res + "-" + P2res;
         }
         if (P2point>P1point && P2point < 4)
         {
             if (P2point==2)
-                P2res="Thirty";
+                P2res=POINTS_TO_RUNNING_SCORE.get(P2point);
             if (P2point==3)
                 P2res="Forty";
             if (P1point==1)
                 P1res="Fifteen";
             if (P1point==2)
-                P1res="Thirty";
+                P1res=POINTS_TO_RUNNING_SCORE.get(P1point);
             score = P1res + "-" + P2res;
         }
         
