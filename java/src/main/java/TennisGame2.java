@@ -18,7 +18,7 @@ public class TennisGame2 implements TennisGame
             return score + "-All";
         }
 
-        if (player1Point - player2Point == 1 && player1Point > 3)
+        if (player1HasAdvantage())
         {
             return "Advantage player1";
         }
@@ -41,6 +41,10 @@ public class TennisGame2 implements TennisGame
             score = "Win for player2";
         }
         return score;
+    }
+
+    private boolean player1HasAdvantage() {
+        return player1Point - player2Point == 1 && player1Point > 3;
     }
 
     private boolean scoresAreEqual() {
