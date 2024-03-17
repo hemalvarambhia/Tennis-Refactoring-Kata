@@ -13,7 +13,7 @@ public class TennisGame2 implements TennisGame
 
         if (player1HasAdvantage()) return "Advantage player1";
         if (player2HasAdvantage()) return "Advantage player2";
-        if (player1Point >=4 && pointsDifference() >=2)
+        if (player1Point >=4 && pointsDifference() >= 2)
         {
             return "Win for player1";
         }
