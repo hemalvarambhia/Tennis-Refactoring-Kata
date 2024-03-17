@@ -17,7 +17,7 @@ public class TennisGame2 implements TennisGame
         {
             return "Win for player1";
         }
-        if (player2Point >=4 && (player2Point - player1Point)>=2)
+        if (player2Point >=4 && pointsDifference() <= -2)
         {
             return "Win for player2";
         }
@@ -36,7 +36,7 @@ public class TennisGame2 implements TennisGame
     }
 
     private boolean player2HasAdvantage() {
-        return player2Point - player1Point == 1 && player2Point > 3;
+        return pointsDifference() == -1 && player2Point > 3;
     }
 
     private boolean player1HasAdvantage() {
