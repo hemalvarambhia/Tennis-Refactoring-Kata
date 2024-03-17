@@ -13,7 +13,7 @@ public class TennisGame2 implements TennisGame
 
         if (player1HasAdvantage()) return "Advantage player1";
         if (player2HasAdvantage()) return "Advantage player2";
-        if (player1Point >=4 && (player1Point - player2Point)>=2)
+        if (player1Point >=4 && pointsDifference() >=2)
         {
             return "Win for player1";
         }
@@ -40,11 +40,15 @@ public class TennisGame2 implements TennisGame
     }
 
     private boolean player1HasAdvantage() {
-        return player1Point - player2Point == 1 && player1Point > 3;
+        return pointsDifference() == 1 && player1Point > 3;
     }
 
     private boolean scoresAreEqual() {
-        return player1Point - player2Point == 0;
+        return pointsDifference() == 0;
+    }
+
+    private int pointsDifference() {
+        return player1Point - player2Point;
     }
 
     public void wonPoint(String player) {
