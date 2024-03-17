@@ -8,7 +8,7 @@ public class TennisGame2 implements TennisGame
     }
 
     public String getScore(){
-        if (scoresAreEqual() && player1Point >=3)
+        if (isDeuce())
             return "Deuce";
 
         if (player1HasAdvantage()) return "Advantage player1";
@@ -30,9 +30,12 @@ public class TennisGame2 implements TennisGame
         }
         player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
         player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
-        String score = player1RunningScore + "-" + player2RunningScore;
 
-        return score;
+        return player1RunningScore + "-" + player2RunningScore;
+    }
+
+    private boolean isDeuce() {
+        return scoresAreEqual() && player1Point >= 3;
     }
 
     private boolean player2HasAdvantage() {
