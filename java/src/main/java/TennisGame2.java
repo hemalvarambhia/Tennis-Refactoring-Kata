@@ -12,11 +12,7 @@ public class TennisGame2 implements TennisGame
         if (player1HasAdvantage()) return "Advantage player1";
         if (player2HasAdvantage()) return "Advantage player2";
         if (player1Won()) return "Win for player1";
-
-        if (player2Point >=4 && pointsDifference() <= -2)
-        {
-            return "Win for player2";
-        }
+        if (player2Won()) return "Win for player2";
 
         if (scoresAreEqual())
         {
@@ -27,6 +23,10 @@ public class TennisGame2 implements TennisGame
         player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
 
         return player1RunningScore + "-" + player2RunningScore;
+    }
+
+    private boolean player2Won() {
+        return player2Point >= 4 && pointsDifference() <= -2;
     }
 
     private boolean player1Won() {
