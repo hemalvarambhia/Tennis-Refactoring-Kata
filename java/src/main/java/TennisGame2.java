@@ -16,8 +16,7 @@ public class TennisGame2 implements TennisGame
 
         if (scoresAreEqual())
         {
-            String score = toRunningScore(player1Point);
-            return String.format("%s-All", score);
+            return String.format("%s-All", toRunningScore(player1Point));
         }
         return String.format(
                 "%s-%s", toRunningScore(player1Point), toRunningScore(player2Point)
