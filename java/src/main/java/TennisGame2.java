@@ -16,11 +16,11 @@ public class TennisGame2 implements TennisGame
 
         if (scoresAreEqual())
         {
-            String score = POINTS_TO_RUNNING_SCORE.get(player1Point);
+            String score = toRunningScore(player1Point);
             return String.format("%s-All", score);
         }
         player1RunningScore = toRunningScore(player1Point);
-        player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
+        player2RunningScore = toRunningScore(player2Point);
 
         return player1RunningScore + "-" + player2RunningScore;
     }
