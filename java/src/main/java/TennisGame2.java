@@ -5,6 +5,8 @@ public class TennisGame2 implements TennisGame
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
+        player1 = new TennisPlayer(player1Name);
+        player2 = new TennisPlayer(player2Name);
     }
 
     public String getScore(){
@@ -56,17 +58,23 @@ public class TennisGame2 implements TennisGame
     }
 
     public void wonPoint(String player) {
-        if (player == "player1")
+        if (player == "player1") {
             player1Point++;
-        else
+            player1.wonPoint();
+        } else {
             player2Point++;
+            player2.wonPoint();
+        }
     }
 
     private int player1Point = 0;
     private int player2Point = 0;
 
     private String player1Name;
+    private TennisPlayer player1;
     private String player2Name;
+
+    private TennisPlayer player2;
 
     private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE =
         Map.of(
