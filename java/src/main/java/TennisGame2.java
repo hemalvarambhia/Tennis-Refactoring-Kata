@@ -19,8 +19,8 @@ public class TennisGame2 implements TennisGame
             String score = toRunningScore(player1Point);
             return String.format("%s-All", score);
         }
-        player1RunningScore = toRunningScore(player1Point);
-        player2RunningScore = toRunningScore(player2Point);
+        String player1RunningScore = toRunningScore(player1Point);
+        String player2RunningScore = toRunningScore(player2Point);
 
         return player1RunningScore + "-" + player2RunningScore;
     }
@@ -67,8 +67,6 @@ public class TennisGame2 implements TennisGame
     private int player1Point = 0;
     private int player2Point = 0;
 
-    private String player1RunningScore = "";
-    private String player2RunningScore = "";
     private String player1Name;
     private String player2Name;
 
