@@ -21,8 +21,7 @@ public class TennisGame2 implements TennisGame
         }
         String player1RunningScore = toRunningScore(player1Point);
         String player2RunningScore = toRunningScore(player2Point);
-
-        return player1RunningScore + "-" + player2RunningScore;
+        return String.format("%s-%s", player1RunningScore, player2RunningScore);
     }
 
     private boolean player2Won() {
