@@ -19,7 +19,7 @@ public class TennisGame2 implements TennisGame
             String score = POINTS_TO_RUNNING_SCORE.get(player1Point);
             return String.format("%s-All", score);
         }
-        player1RunningScore = POINTS_TO_RUNNING_SCORE.get(player1Point);
+        player1RunningScore = toRunningScore(player1Point);
         player2RunningScore = POINTS_TO_RUNNING_SCORE.get(player2Point);
 
         return player1RunningScore + "-" + player2RunningScore;
@@ -51,6 +51,10 @@ public class TennisGame2 implements TennisGame
 
     private int pointsDifference() {
         return player1Point - player2Point;
+    }
+
+    private String toRunningScore(Integer points) {
+        return POINTS_TO_RUNNING_SCORE.get(points);
     }
 
     public void wonPoint(String player) {
