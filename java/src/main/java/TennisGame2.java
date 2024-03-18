@@ -29,9 +29,7 @@ public class TennisGame2 implements TennisGame
         return player2Point >= 4 && pointsDifference() <= -2;
     }
 
-    private boolean player1Won() {
-        return player1Point >= 4 && pointsDifference() >= 2;
-    }
+    private boolean player1Won() { return player1.hasBeaten(player2); }
 
     private boolean isDeuce() {
         return scoresAreEqual() && player1Point >= 3;
