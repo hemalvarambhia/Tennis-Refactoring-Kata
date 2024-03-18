@@ -19,9 +19,9 @@ public class TennisGame2 implements TennisGame
             String score = toRunningScore(player1Point);
             return String.format("%s-All", score);
         }
-        String player1RunningScore = toRunningScore(player1Point);
-        String player2RunningScore = toRunningScore(player2Point);
-        return String.format("%s-%s", player1RunningScore, player2RunningScore);
+        return String.format(
+                "%s-%s", toRunningScore(player1Point), toRunningScore(player2Point)
+        );
     }
 
     private boolean player2Won() {
