@@ -55,16 +55,11 @@ public class TennisGame2 implements TennisGame
 
     public void wonPoint(String player) {
         if (player == "player1") {
-            player1Point++;
             player1.wonPoint();
         } else {
-            player2Point++;
             player2.wonPoint();
         }
     }
-
-    private int player1Point = 0;
-    private int player2Point = 0;
 
     private String player1Name;
     private TennisPlayer player1;
