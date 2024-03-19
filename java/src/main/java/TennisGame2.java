@@ -18,29 +18,27 @@ public class TennisGame2 implements TennisGame
 
         if (scoresAreEqual())
         {
-            return String.format("%s-All", toRunningScore(player1Point));
+            return String.format("%s-All", toRunningScore(player1.getPoints()));
         }
         return String.format(
-                "%s-%s", toRunningScore(player1Point), toRunningScore(player2Point)
+                "%s-%s", toRunningScore(player1.getPoints()), toRunningScore(player2.getPoints())
         );
     }
 
-    private boolean player2Won() {
-        return player2Point >= 4 && pointsDifference() <= -2;
-    }
+    private boolean player2Won() { return player2.hasBeaten(player1); }
 
     private boolean player1Won() { return player1.hasBeaten(player2); }
 
     private boolean isDeuce() {
-        return scoresAreEqual() && player1Point >= 3;
+        return scoresAreEqual() && player1.getPoints() >= 3;
     }
 
     private boolean player2HasAdvantage() {
-        return pointsDifference() == -1 && player2Point > 3;
+        return player2.hasAdvantageOver((player1));
     }
 
     private boolean player1HasAdvantage() {
-        return pointsDifference() == 1 && player1Point > 3;
+        return player1.hasAdvantageOver(player2);
     }
 
     private boolean scoresAreEqual() {
@@ -48,7 +46,7 @@ public class TennisGame2 implements TennisGame
     }
 
     private int pointsDifference() {
-        return player1Point - player2Point;
+        return player1.pointsDifference((player2));
     }
 
     private String toRunningScore(Integer points) {
