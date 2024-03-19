@@ -11,7 +11,7 @@ public class TennisGame2 implements TennisGame
 
     public String getScore(){
         if (isDeuce()) return "Deuce";
-        if (player1HasAdvantage()) return "Advantage player1";
+        if (player1HasAdvantage()) return String.format("Advantage %s", player1.getName());
         if (player2HasAdvantage()) return "Advantage player2";
         if (player1Won()) return "Win for player1";
         if (player2Won()) return "Win for player2";
