@@ -38,7 +38,7 @@ public class TennisGame2 implements TennisGame
     }
 
     public void wonPoint(String player) {
-        if (player == "player1") {
+        if (player == player1.getName()) {
             player1.wonPoint();
         } else {
             player2.wonPoint();
