@@ -11,10 +11,10 @@ public class TennisGame2 implements TennisGame
 
     public String getScore(){
         if (isDeuce()) return "Deuce";
-        if (player1HasAdvantage()) return String.format("Advantage %s", player1.getName());
-        if (player2HasAdvantage()) return "Advantage player2";
-        if (player1Won()) return "Win for player1";
-        if (player2Won()) return "Win for player2";
+        if (player1.hasAdvantageOver(player2)) return String.format("Advantage %s", player1.getName());
+        if (player2.hasAdvantageOver((player1))) return "Advantage player2";
+        if (player1.hasBeaten(player2)) return "Win for player1";
+        if (player2.hasBeaten(player1)) return "Win for player2";
 
         if (scoresAreEqual())
         {
@@ -25,20 +25,8 @@ public class TennisGame2 implements TennisGame
         );
     }
 
-    private boolean player2Won() { return player2.hasBeaten(player1); }
-
-    private boolean player1Won() { return player1.hasBeaten(player2); }
-
     private boolean isDeuce() {
         return scoresAreEqual() && player1.getPoints() >= 3;
-    }
-
-    private boolean player2HasAdvantage() {
-        return player2.hasAdvantageOver((player1));
-    }
-
-    private boolean player1HasAdvantage() {
-        return player1.hasAdvantageOver(player2);
     }
 
     private boolean scoresAreEqual() {
