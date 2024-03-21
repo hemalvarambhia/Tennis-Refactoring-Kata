@@ -18,10 +18,10 @@ public class TennisGame2 implements TennisGame
 
         if (scoresAreEqual())
         {
-            return String.format("%s-All", toRunningScore(player1.getPoints()));
+            return String.format("%s-All", toRunningScore(player1));
         }
         return String.format(
-                "%s-%s", toRunningScore(player1.getPoints()), toRunningScore(player2.getPoints())
+                "%s-%s", toRunningScore(player1), toRunningScore(player2)
         );
     }
 
@@ -37,8 +37,8 @@ public class TennisGame2 implements TennisGame
         return player1.pointsDifference((player2));
     }
 
-    private String toRunningScore(Integer points) {
-        return POINTS_TO_RUNNING_SCORE.get(points);
+    private String toRunningScore(TennisPlayer player) {
+        return player.runningScore();
     }
 
     public void wonPoint(String player) {
