@@ -1,5 +1,3 @@
-import java.util.Map;
-
 public class TennisGame2 implements TennisGame
 {
     public TennisGame2(String player1Name, String player2Name) {
@@ -46,12 +44,4 @@ public class TennisGame2 implements TennisGame
     private final TennisPlayer player1;
 
     private final TennisPlayer player2;
-
-    private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE =
-        Map.of(
-            0, "Love",
-                1, "Fifteen",
-                2, "Thirty",
-                3, "Forty"
-        );
 }
