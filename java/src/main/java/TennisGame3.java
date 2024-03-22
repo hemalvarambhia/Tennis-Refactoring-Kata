@@ -15,15 +15,15 @@ public class TennisGame3 implements TennisGame {
         String s;
         if (player1Points < 4 && player2Points < 4 && (player1Points + player2Points < 6)) {
             if (player1Points == player2Points)
-                return toRunningScore(player1Points) + "-All";
-            else
-                return toRunningScore(player1Points) + "-" + toRunningScore(player2Points);
+                return String.format("%s-All", toRunningScore(player1Points));
         } else {
             if (player1Points == player2Points)
                 return "Deuce";
             s = player1Points > player2Points ? player1Name : player2Name;
             return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + s : "Win for " + s;
         }
+
+        return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
     }
     
     public void wonPoint(String playerName) {
