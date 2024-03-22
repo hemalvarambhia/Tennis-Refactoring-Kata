@@ -18,8 +18,8 @@ public class TennisGame3 implements TennisGame {
         } else {
             if (player1Points == player2Points)
                 return "Deuce";
-            String s = player1Points > player2Points ? player1Name : player2Name;
-            return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + s : "Win for " + s;
+            String leadingPlayer = player1Points > player2Points ? player1Name : player2Name;
+            return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + leadingPlayer : "Win for " + leadingPlayer;
         }
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
