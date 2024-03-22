@@ -43,9 +43,9 @@ public class TennisGame2 implements TennisGame
         }
     }
 
-    private TennisPlayer player1;
+    private final TennisPlayer player1;
 
-    private TennisPlayer player2;
+    private final TennisPlayer player2;
 
     private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE =
         Map.of(
