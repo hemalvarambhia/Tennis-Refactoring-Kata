@@ -111,6 +111,16 @@ public class TennisTest {
         checkAllScores(player1Points, player2Points, expectedScore, game);
     }
 
+    @Test
+    public void testTennisGame3CanBePlayedByAnyTwoPlayers() {
+        TennisGame tennisGame = new TennisGame3("Muskaan Khanna", "Jaanki Patel");
+
+        tennisGame.wonPoint("Muskaan Khanna");
+        tennisGame.wonPoint("Jaanki Patel");
+
+        assertEquals("Fifteen-All", tennisGame.getScore());
+    }
+
     @ParameterizedTest
     @MethodSource("getAllScores")
     public void checkAllScoresTennisGame4(int player1Points, int player2Points, String expectedScore) {
