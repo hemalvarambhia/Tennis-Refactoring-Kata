@@ -15,7 +15,7 @@ public class TennisGame3 implements TennisGame {
         String s;
         if (player1Points < 4 && player2Points < 4 && !(player1Points + player2Points == 6)) {
             String[] runningScores = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-            s = runningScores[player1Points];
+            s = toRunningScore(player1Points);
             return (player1Points == player2Points) ? s + "-All" : s + "-" + runningScores[player2Points];
         } else {
             if (player1Points == player2Points)
@@ -31,6 +31,11 @@ public class TennisGame3 implements TennisGame {
         else
             this.player2Points += 1;
         
+    }
+
+    private String toRunningScore(Integer points) {
+        String[] runningScores = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
+        return runningScores[points];
     }
 
 }
