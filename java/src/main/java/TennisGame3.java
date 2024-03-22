@@ -12,14 +12,13 @@ public class TennisGame3 implements TennisGame {
     }
 
     public String getScore() {
-        String s;
         if (player1Points <= 3 && player2Points <= 3 && (player1Points + player2Points < 6)) {
             if (player1Points == player2Points)
                 return String.format("%s-All", toRunningScore(player1Points));
         } else {
             if (player1Points == player2Points)
                 return "Deuce";
-            s = player1Points > player2Points ? player1Name : player2Name;
+            String s = player1Points > player2Points ? player1Name : player2Name;
             return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + s : "Win for " + s;
         }
 
