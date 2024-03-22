@@ -14,9 +14,8 @@ public class TennisGame3 implements TennisGame {
     public String getScore() {
         String s;
         if (player1Points < 4 && player2Points < 4 && !(player1Points + player2Points == 6)) {
-            String[] runningScores = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
             s = toRunningScore(player1Points);
-            return (player1Points == player2Points) ? s + "-All" : s + "-" + runningScores[player2Points];
+            return (player1Points == player2Points) ? s + "-All" : s + "-" + toRunningScore(player2Points);
         } else {
             if (player1Points == player2Points)
                 return "Deuce";
