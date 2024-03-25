@@ -18,11 +18,15 @@ public class TennisGame3 implements TennisGame {
         } else {
             if (scoresAreEqual())
                 return "Deuce";
-            String leadingPlayer = player1Points > player2Points ? player1Name : player2Name;
+            String leadingPlayer = getLeadingPlayer();
             return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + leadingPlayer : "Win for " + leadingPlayer;
         }
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
+    }
+
+    private String getLeadingPlayer() {
+        return player1Points > player2Points ? player1Name : player2Name;
     }
 
     private boolean scoresAreEqual() {
