@@ -17,10 +17,10 @@ public class TennisGame3 implements TennisGame {
                 return "Deuce";
             String leadingPlayer = getLeadingPlayer();
             return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + leadingPlayer : "Win for " + leadingPlayer;
-        } else {
-            if (scoresAreEqual())
-                return String.format("%s-All", toRunningScore(player1Points));
         }
+
+        if (scoresAreEqual())
+            return String.format("%s-All", toRunningScore(player1Points));
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
     }
