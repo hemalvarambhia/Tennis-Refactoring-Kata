@@ -1,3 +1,4 @@
+import java.util.Map;
 
 public class TennisGame3 implements TennisGame {
     
@@ -42,8 +43,14 @@ public class TennisGame3 implements TennisGame {
     }
 
     private String toRunningScore(Integer points) {
-        String[] runningScores = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-        return runningScores[points];
+        return POINTS_TO_RUNNING_SCORE.get(points);
     }
+
+    private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE = Map.of(
+            0, "Love",
+            1, "Fifteen",
+            2, "Thirty",
+            3, "Forty"
+    );
 
 }
