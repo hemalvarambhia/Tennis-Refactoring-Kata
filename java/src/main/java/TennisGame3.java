@@ -17,7 +17,7 @@ public class TennisGame3 implements TennisGame {
             return "Deuce";
         }
 
-        if ((player1Points > 3 || player2Points > 3) || (player1Points + player2Points >= 6)) {
+        if (player1Points > 3 || player2Points > 3) {
             String leadingPlayer = getLeadingPlayer();
             return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + leadingPlayer : "Win for " + leadingPlayer;
         }
