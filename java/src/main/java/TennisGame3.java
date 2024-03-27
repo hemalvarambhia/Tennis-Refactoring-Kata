@@ -20,7 +20,7 @@ public class TennisGame3 implements TennisGame {
         int pointsDifferenceSquared = pointsDifference() * pointsDifference();
         if (player1Points > 3 || player2Points > 3) {
             String leadingPlayer = getLeadingPlayer();
-            return (pointsDifferenceSquared == 1) ? "Advantage " + leadingPlayer : "Win for " + leadingPlayer;
+            return (pointsDifferenceSquared == 1) ? String.format("Advantage %s", leadingPlayer) : String.format("Win for %s", leadingPlayer);
         }
 
         if (scoresAreEqual())
