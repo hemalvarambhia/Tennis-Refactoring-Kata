@@ -19,13 +19,17 @@ public class TennisGame3 implements TennisGame {
 
         if (player1Points > 3 || player2Points > 3) {
             String leadingPlayer = getLeadingPlayer();
-            return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + leadingPlayer : "Win for " + leadingPlayer;
+            return (pointsDifference() * pointsDifference() == 1) ? "Advantage " + leadingPlayer : "Win for " + leadingPlayer;
         }
 
         if (scoresAreEqual())
             return String.format("%s-All", toRunningScore(player1Points));
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
+    }
+
+    private int pointsDifference() {
+        return player1Points - player2Points;
     }
 
     private String getLeadingPlayer() {
