@@ -20,11 +20,11 @@ public class TennisGame3 implements TennisGame {
         if (scoresAreEqual())
             return String.format("%s-All", toRunningScore(player1Points));
 
-        if (player1Points > 3 || player2Points > 3) {
-            if (isAdvantage()) {
-                return advantage(getLeadingPlayer());
-            }
+        if (isAdvantage()) {
+            return advantage(getLeadingPlayer());
+        }
 
+        if (player1Points > 3 || player2Points > 3) {
             if(Math.abs(pointsDifference()) >= 2) {
                 return win(getLeadingPlayer());
             }
