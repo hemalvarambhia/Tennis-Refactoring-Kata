@@ -25,12 +25,16 @@ public class TennisGame3 implements TennisGame {
         }
 
         if (player1Points > 3 || player2Points > 3) {
-            if((player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) >= 2) {
+            if(thereIsAWinner()) {
                 return win(getLeadingPlayer());
             }
         }
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
+    }
+
+    private boolean thereIsAWinner() {
+        return (player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) >= 2;
     }
 
     private static String win(String leadingPlayer) {
