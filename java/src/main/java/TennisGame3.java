@@ -25,7 +25,9 @@ public class TennisGame3 implements TennisGame {
             String leadingPlayer = getLeadingPlayer();
             if (pointsDifference == 1) {
                 return advantage(leadingPlayer);
-            } else if(pointsDifference >= 2) {
+            }
+
+            if(pointsDifference >= 2) {
                 return win(leadingPlayer);
             }
         }
