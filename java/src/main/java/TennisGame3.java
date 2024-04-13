@@ -17,10 +17,10 @@ public class TennisGame3 implements TennisGame {
             return "Deuce";
         }
 
-        int pointsDifferenceSquared = pointsDifference() * pointsDifference();
+        int pointsDifference = Math.abs(pointsDifference());
         if (player1Points > 3 || player2Points > 3) {
             String leadingPlayer = getLeadingPlayer();
-            if (pointsDifferenceSquared == 1) {
+            if (pointsDifference == 1) {
                 return advantage(leadingPlayer);
             } else {
                 return win(leadingPlayer);
