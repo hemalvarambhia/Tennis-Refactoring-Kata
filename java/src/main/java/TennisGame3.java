@@ -24,10 +24,8 @@ public class TennisGame3 implements TennisGame {
             return advantage(getLeadingPlayer());
         }
 
-        if (player1Points > 3 || player2Points > 3) {
-            if(thereIsAWinner()) {
-                return win(getLeadingPlayer());
-            }
+        if(thereIsAWinner()) {
+            return win(getLeadingPlayer());
         }
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
