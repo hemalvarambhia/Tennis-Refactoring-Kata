@@ -13,20 +13,20 @@ public class TennisGame3 implements TennisGame {
     }
 
     public String getScore() {
+        if(thereIsAWinner()) {
+            return win(getLeadingPlayer());
+        }
+
+        if (isAdvantage()) {
+            return advantage(getLeadingPlayer());
+        }
+
         if(player1Points >= 3 && scoresAreEqual()) {
             return "Deuce";
         }
 
         if (scoresAreEqual())
             return String.format("%s-All", toRunningScore(player1Points));
-
-        if (isAdvantage()) {
-            return advantage(getLeadingPlayer());
-        }
-
-        if(thereIsAWinner()) {
-            return win(getLeadingPlayer());
-        }
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
     }
