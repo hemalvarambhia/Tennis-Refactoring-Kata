@@ -25,7 +25,7 @@ public class TennisGame3 implements TennisGame {
         }
 
         if (player1Points > 3 || player2Points > 3) {
-            if(Math.abs(pointsDifference()) >= 2) {
+            if((player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) >= 2) {
                 return win(getLeadingPlayer());
             }
         }
