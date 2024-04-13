@@ -2,9 +2,10 @@ import java.util.Map;
 
 public class TennisGame3 implements TennisGame {
     
-    private int player2Points;
     private int player1Points;
     private final String player1Name;
+
+    private int player2Points;
     private final String player2Name;
 
     public TennisGame3(String player1Name, String player2Name) {
