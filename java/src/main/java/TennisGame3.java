@@ -17,6 +17,9 @@ public class TennisGame3 implements TennisGame {
             return "Deuce";
         }
 
+        if (scoresAreEqual())
+            return String.format("%s-All", toRunningScore(player1Points));
+
         int pointsDifference = Math.abs(pointsDifference());
         if (player1Points > 3 || player2Points > 3) {
             String leadingPlayer = getLeadingPlayer();
@@ -26,9 +29,6 @@ public class TennisGame3 implements TennisGame {
                 return win(leadingPlayer);
             }
         }
-
-        if (scoresAreEqual())
-            return String.format("%s-All", toRunningScore(player1Points));
 
         return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
     }
