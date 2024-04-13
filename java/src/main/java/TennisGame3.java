@@ -22,7 +22,7 @@ public class TennisGame3 implements TennisGame {
 
         if (player1Points > 3 || player2Points > 3) {
             String leadingPlayer = getLeadingPlayer();
-            if ((player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) == 1) {
+            if (isAdvantage()) {
                 return advantage(leadingPlayer);
             }
 
@@ -36,6 +36,10 @@ public class TennisGame3 implements TennisGame {
 
     private static String win(String leadingPlayer) {
         return String.format("Win for %s", leadingPlayer);
+    }
+
+    private boolean isAdvantage() {
+        return (player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) == 1;
     }
 
     private static String advantage(String leadingPlayer) {
