@@ -14,11 +14,11 @@ public class TennisGame3 implements TennisGame {
 
     public String getScore() {
         if(thereIsAWinner()) {
-            return win(getLeadingPlayer());
+            return win(leadingPlayer());
         }
 
         if (isAdvantage()) {
-            return advantage(getLeadingPlayer());
+            return advantage(leadingPlayer());
         }
 
         if(player1Points >= 3 && scoresAreEqual()) {
@@ -51,7 +51,7 @@ public class TennisGame3 implements TennisGame {
         return player1Points - player2Points;
     }
 
-    private String getLeadingPlayer() {
+    private String leadingPlayer() {
         return player1Points > player2Points ? player1Name : player2Name;
     }
 
