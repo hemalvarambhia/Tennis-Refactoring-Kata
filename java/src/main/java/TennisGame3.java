@@ -8,11 +8,13 @@ public class TennisGame3 implements TennisGame {
 
     private int player2Points;
     private final String player2Name;
+    private final TennisPlayer player2;
 
     public TennisGame3(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         player1 = new TennisPlayer(player1Name);
         this.player2Name = player2Name;
+        player2 = new TennisPlayer(player2Name);
     }
 
     public String getScore() {
@@ -66,9 +68,10 @@ public class TennisGame3 implements TennisGame {
         if (playerName.equals(player1Name)) {
             this.player1Points += 1;
             player1.wonPoint();
-        } else
+        } else {
             this.player2Points += 1;
-        
+            player2.wonPoint();
+        }
     }
 
     private String toRunningScore(Integer points) {
