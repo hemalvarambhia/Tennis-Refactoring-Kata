@@ -20,14 +20,13 @@ public class TennisGame3 implements TennisGame {
         if (scoresAreEqual())
             return String.format("%s-All", toRunningScore(player1Points));
 
-        int pointsDifference = Math.abs(pointsDifference());
         if (player1Points > 3 || player2Points > 3) {
             String leadingPlayer = getLeadingPlayer();
-            if ((player1Points > 3 || player2Points > 3) && pointsDifference == 1) {
+            if ((player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) == 1) {
                 return advantage(leadingPlayer);
             }
 
-            if(pointsDifference >= 2) {
+            if(Math.abs(pointsDifference()) >= 2) {
                 return win(leadingPlayer);
             }
         }
