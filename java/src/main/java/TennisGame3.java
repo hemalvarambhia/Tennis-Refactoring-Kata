@@ -61,7 +61,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean scoresAreEqual() {
-        return player1Points == player2Points;
+        return pointsDifference() == 0;
     }
 
     public void wonPoint(String playerName) {
