@@ -2,7 +2,6 @@ import java.util.Map;
 
 public class TennisGame3 implements TennisGame {
     
-    private int player1Points;
     private final String player1Name;
     private final TennisPlayer player1;
 
@@ -26,18 +25,18 @@ public class TennisGame3 implements TennisGame {
             return advantage(leadingPlayer());
         }
 
-        if(player1Points >= 3 && scoresAreEqual()) {
+        if(player1.getPoints() >= 3 && scoresAreEqual()) {
             return "Deuce";
         }
 
         if (scoresAreEqual())
-            return String.format("%s-All", toRunningScore(player1Points));
+            return String.format("%s-All", toRunningScore(player1.getPoints()));
 
-        return String.format("%s-%s", toRunningScore(player1Points), toRunningScore(player2Points));
+        return String.format("%s-%s", toRunningScore(player1.getPoints()), toRunningScore(player2Points));
     }
 
     private boolean thereIsAWinner() {
-        return (player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) >= 2;
+        return (player1.getPoints() > 3 || player2Points > 3) && Math.abs(pointsDifference()) >= 2;
     }
 
     private static String win(String leadingPlayer) {
@@ -45,7 +44,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean isAdvantage() {
-        return (player1Points > 3 || player2Points > 3) && Math.abs(pointsDifference()) == 1;
+        return (player1.getPoints() > 3 || player2Points > 3) && Math.abs(pointsDifference()) == 1;
     }
 
     private static String advantage(String leadingPlayer) {
@@ -53,11 +52,11 @@ public class TennisGame3 implements TennisGame {
     }
 
     private int pointsDifference() {
-        return player1Points - player2Points;
+        return player1.getPoints() - player2Points;
     }
 
     private String leadingPlayer() {
-        return player1Points > player2Points ? player1Name : player2Name;
+        return player1.getPoints() > player2Points ? player1Name : player2Name;
     }
 
     private boolean scoresAreEqual() {
@@ -66,7 +65,6 @@ public class TennisGame3 implements TennisGame {
 
     public void wonPoint(String playerName) {
         if (playerName.equals(player1Name)) {
-            this.player1Points += 1;
             player1.wonPoint();
         } else {
             this.player2Points += 1;
