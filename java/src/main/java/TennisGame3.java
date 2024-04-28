@@ -55,7 +55,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private String leadingPlayer() {
-        return player1.getPoints() > player2.getPoints() ? player1Name : player2Name;
+        return player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
     }
 
     private boolean scoresAreEqual() {
