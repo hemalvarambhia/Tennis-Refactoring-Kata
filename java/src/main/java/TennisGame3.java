@@ -32,11 +32,11 @@ public class TennisGame3 implements TennisGame {
         if (scoresAreEqual())
             return String.format("%s-All", toRunningScore(player1.getPoints()));
 
-        return String.format("%s-%s", toRunningScore(player1.getPoints()), toRunningScore(player2Points));
+        return String.format("%s-%s", toRunningScore(player1.getPoints()), toRunningScore(player2.getPoints()));
     }
 
     private boolean thereIsAWinner() {
-        return (player1.getPoints() > 3 || player2Points > 3) && Math.abs(pointsDifference()) >= 2;
+        return (player1.getPoints() > 3 || player2.getPoints() > 3) && Math.abs(pointsDifference()) >= 2;
     }
 
     private static String win(String leadingPlayer) {
@@ -44,7 +44,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean isAdvantage() {
-        return (player1.getPoints() > 3 || player2Points > 3) && Math.abs(pointsDifference()) == 1;
+        return (player1.getPoints() > 3 || player2.getPoints() > 3) && Math.abs(pointsDifference()) == 1;
     }
 
     private static String advantage(String leadingPlayer) {
@@ -52,11 +52,11 @@ public class TennisGame3 implements TennisGame {
     }
 
     private int pointsDifference() {
-        return player1.getPoints() - player2Points;
+        return player1.getPoints() - player2.getPoints();
     }
 
     private String leadingPlayer() {
-        return player1.getPoints() > player2Points ? player1Name : player2Name;
+        return player1.getPoints() > player2.getPoints() ? player1Name : player2Name;
     }
 
     private boolean scoresAreEqual() {
