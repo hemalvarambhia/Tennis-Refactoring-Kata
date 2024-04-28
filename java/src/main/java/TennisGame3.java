@@ -5,7 +5,6 @@ public class TennisGame3 implements TennisGame {
     private final String player1Name;
     private final TennisPlayer player1;
 
-    private int player2Points;
     private final String player2Name;
     private final TennisPlayer player2;
 
@@ -67,7 +66,6 @@ public class TennisGame3 implements TennisGame {
         if (playerName.equals(player1Name)) {
             player1.wonPoint();
         } else {
-            this.player2Points += 1;
             player2.wonPoint();
         }
     }
