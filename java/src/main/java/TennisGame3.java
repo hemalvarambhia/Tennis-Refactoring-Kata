@@ -29,9 +29,9 @@ public class TennisGame3 implements TennisGame {
         }
 
         if (scoresAreEqual())
-            return String.format("%s-All", toRunningScore(player1.getPoints()));
+            return String.format("%s-All", runningScoreFor(player1));
 
-        return String.format("%s-%s", toRunningScore(player1.getPoints()), toRunningScore(player2.getPoints()));
+        return String.format("%s-%s", runningScoreFor(player1), runningScoreFor(player2));
     }
 
     private boolean thereIsAWinner() {
