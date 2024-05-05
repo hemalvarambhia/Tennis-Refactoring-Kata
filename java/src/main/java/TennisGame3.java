@@ -29,10 +29,6 @@ public class TennisGame3 implements TennisGame {
         return String.format("%s-%s", runningScoreFor(player1), runningScoreFor(player2));
     }
 
-    private boolean isDeuce() {
-        return player1.getPoints() >= 3 && scoresAreEqual();
-    }
-
     private boolean thereIsAWinner() {
         return player1.hasBeaten(player2) || player2.hasBeaten(player1);
     }
@@ -55,6 +51,10 @@ public class TennisGame3 implements TennisGame {
 
     private String leadingPlayer() {
         return player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
+    }
+
+    private boolean isDeuce() {
+        return player1.getPoints() >= 3 && scoresAreEqual();
     }
 
     private boolean scoresAreEqual() {
