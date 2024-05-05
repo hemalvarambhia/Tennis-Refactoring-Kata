@@ -29,6 +29,14 @@ public class TennisGame3 implements TennisGame {
         return String.format("%s-%s", runningScoreFor(player1), runningScoreFor(player2));
     }
 
+    public void wonPoint(String playerName) {
+        if (playerName.equals(player1.getName())) {
+            player1.wonPoint();
+        } else {
+            player2.wonPoint();
+        }
+    }
+
     private boolean thereIsAWinner() {
         return player1.hasBeaten(player2) || player2.hasBeaten(player1);
     }
@@ -59,14 +67,6 @@ public class TennisGame3 implements TennisGame {
 
     private boolean scoresAreEqual() {
         return pointsDifference() == 0;
-    }
-
-    public void wonPoint(String playerName) {
-        if (playerName.equals(player1.getName())) {
-            player1.wonPoint();
-        } else {
-            player2.wonPoint();
-        }
     }
 
     private String runningScoreFor(TennisPlayer player) {
