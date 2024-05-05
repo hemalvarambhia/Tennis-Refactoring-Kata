@@ -30,7 +30,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean thereIsAWinner() {
-        return (player1.getPoints() > 3 || player2.getPoints() > 3) && Math.abs(pointsDifference()) >= 2;
+        return player1.hasBeaten(player2) || player2.hasBeaten(player1);
     }
 
     private static String win(String leadingPlayer) {
@@ -38,7 +38,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean isAdvantage() {
-        return (player1.getPoints() > 3 || player2.getPoints() > 3) && Math.abs(pointsDifference()) == 1;
+        return player1.hasAdvantageOver(player2) || player2.hasAdvantageOver(player1);
     }
 
     private static String advantage(String leadingPlayer) {
