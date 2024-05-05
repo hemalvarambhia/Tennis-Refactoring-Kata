@@ -19,7 +19,7 @@ public class TennisGame3 implements TennisGame {
             return advantage(leadingPlayer());
         }
 
-        if(player1.getPoints() >= 3 && scoresAreEqual()) {
+        if(isDeuce()) {
             return "Deuce";
         }
 
@@ -27,6 +27,10 @@ public class TennisGame3 implements TennisGame {
             return String.format("%s-All", runningScoreFor(player1));
 
         return String.format("%s-%s", runningScoreFor(player1), runningScoreFor(player2));
+    }
+
+    private boolean isDeuce() {
+        return player1.getPoints() >= 3 && scoresAreEqual();
     }
 
     private boolean thereIsAWinner() {
