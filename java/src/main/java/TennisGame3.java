@@ -68,16 +68,4 @@ public class TennisGame3 implements TennisGame {
     private String runningScoreFor(TennisPlayer player) {
         return player.runningScore();
     }
-
-    private String toRunningScore(Integer points) {
-        return POINTS_TO_RUNNING_SCORE.get(points);
-    }
-
-    private static final Map<Integer, String> POINTS_TO_RUNNING_SCORE = Map.of(
-            0, "Love",
-            1, "Fifteen",
-            2, "Thirty",
-            3, "Forty"
-    );
-
 }
