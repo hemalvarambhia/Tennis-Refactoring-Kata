@@ -5,12 +5,9 @@ public class TennisGame4 implements TennisGame {
     String server;
     String receiver;
 
-    private final ResultProvider nextResult;
-
     public TennisGame4(String player1, String player2) {
         this.server = player1;
         this.receiver = player2;
-        nextResult = new DefaultResult(this);
     }
 
     @java.lang.Override
@@ -23,12 +20,13 @@ public class TennisGame4 implements TennisGame {
 
     @java.lang.Override
     public String getScore() {
+        ResultProvider startingResult = new DefaultResult(this);
         TennisResult result = new Deuce(
                 this, new GameServer(
                         this, new GameReceiver(
                                 this, new AdvantageServer(
                                         this, new AdvantageReceiver(
-                                                this, nextResult))))).getResult();
+                                                this, startingResult))))).getResult();
         return result.format();
     }
 
