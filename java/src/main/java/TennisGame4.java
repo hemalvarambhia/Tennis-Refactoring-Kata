@@ -22,11 +22,11 @@ public class TennisGame4 implements TennisGame {
     public String getScore() {
         ResultProvider startingResult = new DefaultResult(this);
         AdvantageReceiver advantageReceiver = new AdvantageReceiver(this, startingResult);
+        AdvantageServer advantageServer = new AdvantageServer(this, advantageReceiver);
         TennisResult result = new Deuce(
                 this, new GameServer(
                         this, new GameReceiver(
-                                this, new AdvantageServer(
-                                        this, advantageReceiver)))).getResult();
+                                this, advantageServer))).getResult();
         return result.format();
     }
 
