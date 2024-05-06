@@ -21,8 +21,8 @@ public class TennisGame4 implements TennisGame {
     @java.lang.Override
     public String getScore() {
         ResultProvider startingResult = new DefaultResult(this);
-        AdvantageReceiver advantageReceiver = new AdvantageReceiver(this, startingResult);
-        AdvantageServer advantageServer = new AdvantageServer(this, advantageReceiver);
+        ResultProvider advantageReceiver = new AdvantageReceiver(this, startingResult);
+        ResultProvider advantageServer = new AdvantageServer(this, advantageReceiver);
         TennisResult result = new Deuce(
                 this, new GameServer(
                         this, new GameReceiver(
