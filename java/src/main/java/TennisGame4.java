@@ -30,11 +30,11 @@ public class TennisGame4 implements TennisGame {
     }
 
     public String getServer() {
-        return server;
+        return servingPlayer.getName();
     }
 
     public String getReceiver() {
-        return receiver;
+        return receivingPlayer.getName();
     }
 
     @java.lang.Override
