@@ -1,6 +1,7 @@
 public class TennisGame4 implements TennisGame {
 
     private final TennisPlayer servingPlayer;
+    private final TennisPlayer receivingPlayer;
     int serverScore;
     int receiverScore;
     String server;
@@ -10,6 +11,7 @@ public class TennisGame4 implements TennisGame {
         this.server = player1;
         this.servingPlayer = new TennisPlayer(player1);
         this.receiver = player2;
+        this.receivingPlayer = new TennisPlayer(player2);
     }
 
     @java.lang.Override
