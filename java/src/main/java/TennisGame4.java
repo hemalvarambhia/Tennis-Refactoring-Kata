@@ -37,7 +37,7 @@ public class TennisGame4 implements TennisGame {
     }
 
     boolean receiverHasAdvantage() {
-        return receiverScore >= 4 && (receiverScore - serverScore) == 1;
+        return receivingPlayer.hasAdvantageOver(servingPlayer);
     }
 
     boolean serverHasAdvantage() {
