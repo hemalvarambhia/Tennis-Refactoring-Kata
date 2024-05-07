@@ -1,5 +1,6 @@
 public class TennisGame4 implements TennisGame {
 
+    private final TennisPlayer servingPlayer;
     int serverScore;
     int receiverScore;
     String server;
@@ -7,6 +8,7 @@ public class TennisGame4 implements TennisGame {
 
     public TennisGame4(String player1, String player2) {
         this.server = player1;
+        this.servingPlayer = new TennisPlayer(player1);
         this.receiver = player2;
     }
 
@@ -25,8 +27,7 @@ public class TennisGame4 implements TennisGame {
         ResultProvider advantageServer = new AdvantageServer(this, advantageReceiver);
         GameReceiver receiver = new GameReceiver(this, advantageServer);
         TennisResult result =
-                new Deuce(
-                        this, new GameServer(this, receiver)).getResult();
+                new Deuce(this, new GameServer(this, receiver)).getResult();
         return result.format();
     }
 
