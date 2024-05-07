@@ -25,6 +25,14 @@ public class TennisGame4 implements TennisGame {
         }
     }
 
+    public Integer serverScore() {
+        return serverScore;
+    }
+
+    public Integer receiverScore() {
+        return receiverScore;
+    }
+
     @java.lang.Override
     public String getScore() {
         ResultProvider startingResult = new DefaultResult(this);
