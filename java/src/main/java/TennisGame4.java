@@ -120,7 +120,7 @@ class GameServer implements ResultProvider {
     @Override
     public TennisResult getResult() {
         if (game.serverHasWon())
-            return new TennisResult("Win for " + game.server, "");
+            return new TennisResult("Win for " + game.getServer(), "");
         return this.nextResult.getResult();
     }
 }
@@ -137,7 +137,7 @@ class GameReceiver implements ResultProvider {
     @Override
     public TennisResult getResult() {
         if (game.receiverHasWon())
-            return new TennisResult("Win for " + game.receiver, "");
+            return new TennisResult("Win for " + game.getReceiver(), "");
         return this.nextResult.getResult();
     }
 }
