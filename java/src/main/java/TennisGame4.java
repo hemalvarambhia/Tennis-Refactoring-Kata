@@ -2,8 +2,8 @@ public class TennisGame4 implements TennisGame {
 
     private final TennisPlayer servingPlayer;
     private final TennisPlayer receivingPlayer;
-    String server;
-    String receiver;
+    private String server;
+    private String receiver;
 
     public TennisGame4(String player1, String player2) {
         this.server = player1;
