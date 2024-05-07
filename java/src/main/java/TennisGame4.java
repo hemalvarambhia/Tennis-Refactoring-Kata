@@ -26,11 +26,11 @@ public class TennisGame4 implements TennisGame {
     }
 
     public Integer serverScore() {
-        return serverScore;
+        return servingPlayer.getPoints();
     }
 
     public Integer receiverScore() {
-        return receiverScore;
+        return receivingPlayer.getPoints();
     }
 
     @java.lang.Override
