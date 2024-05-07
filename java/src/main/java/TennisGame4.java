@@ -2,8 +2,6 @@ public class TennisGame4 implements TennisGame {
 
     private final TennisPlayer servingPlayer;
     private final TennisPlayer receivingPlayer;
-    int serverScore;
-    int receiverScore;
     String server;
     String receiver;
 
@@ -17,10 +15,8 @@ public class TennisGame4 implements TennisGame {
     @java.lang.Override
     public void wonPoint(String playerName) {
         if (server.equals(playerName)) {
-            this.serverScore += 1;
             this.servingPlayer.wonPoint();
         } else {
-            this.receiverScore += 1;
             this.receivingPlayer.wonPoint();
         }
     }
@@ -31,6 +27,14 @@ public class TennisGame4 implements TennisGame {
 
     public Integer receiverScore() {
         return receivingPlayer.getPoints();
+    }
+
+    public String getServer() {
+        return server;
+    }
+
+    public String getReceiver() {
+        return receiver;
     }
 
     @java.lang.Override
@@ -150,7 +154,7 @@ class AdvantageServer implements ResultProvider {
     @Override
     public TennisResult getResult() {
         if (game.serverHasAdvantage())
-            return new TennisResult("Advantage " + game.server, "");
+            return new TennisResult("Advantage " + game.getServer(), "");
         return this.nextResult.getResult();
     }
 }
@@ -168,7 +172,7 @@ class AdvantageReceiver implements ResultProvider {
     @Override
     public TennisResult getResult() {
         if (game.receiverHasAdvantage())
-            return new TennisResult("Advantage " + game.receiver, "");
+            return new TennisResult("Advantage " + game.getReceiver(), "");
         return this.nextResult.getResult();
     }
 }
