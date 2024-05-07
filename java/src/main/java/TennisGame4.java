@@ -14,7 +14,7 @@ public class TennisGame4 implements TennisGame {
 
     @java.lang.Override
     public void wonPoint(String playerName) {
-        if (server.equals(playerName)) {
+        if (getServer().equals(playerName)) {
             this.servingPlayer.wonPoint();
         } else {
             this.receivingPlayer.wonPoint();
