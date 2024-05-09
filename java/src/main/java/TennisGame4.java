@@ -36,7 +36,7 @@ public class TennisGame4 implements TennisGame {
     @java.lang.Override
     public String getScore() {
         if(isDeuce())
-            return new TennisResult("Deuce", "").format();
+            return "Deuce";
 
         ResultProvider startingResult = new DefaultResult(this);
         ResultProvider advantageReceiver = new AdvantageReceiver(this, startingResult);
@@ -91,11 +91,9 @@ interface ResultProvider {
 }
 
 class Deuce implements ResultProvider {
-    private final TennisGame4 game;
     private final ResultProvider nextResult;
 
     public Deuce(TennisGame4 game, ResultProvider nextResult) {
-        this.game = game;
         this.nextResult = nextResult;
     }
 
