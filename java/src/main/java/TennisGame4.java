@@ -53,11 +53,11 @@ public class TennisGame4 implements TennisGame {
         return result.format();
     }
 
-    boolean receiverHasAdvantage() {
+    private boolean receiverHasAdvantage() {
         return receivingPlayer.hasAdvantageOver(servingPlayer);
     }
 
-    boolean serverHasAdvantage() {
+    private boolean serverHasAdvantage() {
         return servingPlayer.hasAdvantageOver(receivingPlayer);
     }
 
