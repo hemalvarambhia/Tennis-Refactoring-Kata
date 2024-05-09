@@ -38,6 +38,9 @@ public class TennisGame4 implements TennisGame {
         if(isDeuce())
             return "Deuce";
 
+        if (receiverHasAdvantage())
+            return new TennisResult("Advantage " + getReceiver(), "").format();
+
         ResultProvider startingResult = new DefaultResult(this);
         ResultProvider advantageReceiver = new AdvantageReceiver(this, startingResult);
         ResultProvider advantageServer = new AdvantageServer(this, advantageReceiver);
@@ -166,8 +169,6 @@ class AdvantageReceiver implements ResultProvider {
 
     @Override
     public TennisResult getResult() {
-        if (game.receiverHasAdvantage())
-            return new TennisResult("Advantage " + game.getReceiver(), "");
         return this.nextResult.getResult();
     }
 }
