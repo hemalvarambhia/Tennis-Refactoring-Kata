@@ -158,12 +158,9 @@ class AdvantageServer implements ResultProvider {
 }
 
 class AdvantageReceiver implements ResultProvider {
-
-    private final TennisGame4 game;
     private final ResultProvider nextResult;
 
     public AdvantageReceiver(TennisGame4 game, ResultProvider nextResult) {
-        this.game = game;
         this.nextResult = nextResult;
     }
 
