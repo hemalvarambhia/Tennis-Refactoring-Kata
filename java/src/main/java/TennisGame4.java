@@ -93,10 +93,6 @@ class TennisResult {
     }
 }
 
-interface ResultProvider {
-    TennisResult getResult();
-}
-
 class DefaultResult {
 
     private static final String[] scores = {"Love", "Fifteen", "Thirty", "Forty"};
