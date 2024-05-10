@@ -48,7 +48,7 @@ public class TennisGame4 implements TennisGame {
             return String.format("Win for %s", getServer());
 
         if(receiverHasWon())
-            return new TennisResult("Win for " + getReceiver(), "").format();
+            return String.format("Win for %s", getReceiver());
 
         ResultProvider startingResult = new DefaultResult(this);
         return startingResult.getResult().format();
