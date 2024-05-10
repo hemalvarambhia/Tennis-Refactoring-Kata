@@ -111,7 +111,7 @@ class DefaultResult {
     public String runningScore() {
         String serverScoreAsString = asString(game.serverScore());
         String receiverScoreAsString = asString(game.receiverScore());
-        return new TennisResult(serverScoreAsString, receiverScoreAsString).format();
+        return TennisResult.score(serverScoreAsString, receiverScoreAsString);
     }
 
     private String asString(Integer score) {
