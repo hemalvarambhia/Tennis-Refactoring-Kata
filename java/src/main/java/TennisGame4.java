@@ -103,5 +103,7 @@ class DefaultResult {
     }
 
     public String runningScore() {
-        return new TennisResult(scores[game.serverScore()], scores[game.receiverScore()]).format(); }
+        String serverScoreAsString = scores[game.serverScore()];
+        String receiverScoreAsString = scores[game.receiverScore()];
+        return new TennisResult(serverScoreAsString, receiverScoreAsString).format(); }
 }
