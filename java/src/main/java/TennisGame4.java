@@ -47,6 +47,9 @@ public class TennisGame4 implements TennisGame {
         if(serverHasWon())
             return String.format("Win for %s", getServer());
 
+        if(receiverHasWon())
+            return new TennisResult("Win for " + getReceiver(), "").format();
+
         ResultProvider startingResult = new DefaultResult(this);
         ResultProvider advantageReceiver = new AdvantageReceiver(this, startingResult);
         ResultProvider advantageServer = new AdvantageServer(this, advantageReceiver);
@@ -136,8 +139,6 @@ class GameReceiver implements ResultProvider {
 
     @Override
     public TennisResult getResult() {
-        if (game.receiverHasWon())
-            return new TennisResult("Win for " + game.getReceiver(), "");
         return this.nextResult.getResult();
     }
 }
