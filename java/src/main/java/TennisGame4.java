@@ -39,7 +39,7 @@ public class TennisGame4 implements TennisGame {
             return "Deuce";
 
         if(serverHasAdvantage())
-            return new TennisResult("Advantage " + getServer(), "").format();
+            return String.format("Advantage %s", getServer());
 
         if (receiverHasAdvantage())
             return String.format("Advantage %s", getReceiver());
