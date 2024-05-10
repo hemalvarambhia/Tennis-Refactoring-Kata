@@ -87,11 +87,9 @@ class DefaultResult {
     }
 
     public String runningScore() {
-        String serverScoreAsString = asString(game.serverScore());
-        String receiverScoreAsString = asString(game.receiverScore());
-        if (serverScoreAsString.equals(receiverScoreAsString))
-            return serverScoreAsString + "-All";
-        return serverScoreAsString + "-" + receiverScoreAsString;
+        if (game.serverScore().equals(game.receiverScore()))
+            return asString(game.serverScore()) + "-All";
+        return asString(game.serverScore()) + "-" + asString(game.receiverScore());
     }
 
     private static String asString(Integer score) {
