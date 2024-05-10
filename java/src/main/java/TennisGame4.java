@@ -86,8 +86,6 @@ class TennisResult {
     }
 
     String format() {
-        if ("".equals(this.receiverScore))
-            return this.serverScore;
         if (serverScore.equals(receiverScore))
             return serverScore + "-All";
         return this.serverScore + "-" + this.receiverScore;
