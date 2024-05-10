@@ -97,7 +97,7 @@ interface ResultProvider {
     TennisResult getResult();
 }
 
-class DefaultResult implements ResultProvider {
+class DefaultResult {
 
     private static final String[] scores = {"Love", "Fifteen", "Thirty", "Forty"};
 
