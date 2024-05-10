@@ -76,17 +76,6 @@ public class TennisGame4 implements TennisGame {
     }
 }
 
-class TennisResult {
-    String serverScore;
-    String receiverScore;
-
-    TennisResult(String serverScore, String receiverScore) {
-        this.serverScore = serverScore;
-        this.receiverScore = receiverScore;
-    }
-
-}
-
 class DefaultResult {
 
     private static final String[] scores = {"Love", "Fifteen", "Thirty", "Forty"};
