@@ -51,12 +51,7 @@ public class TennisGame4 implements TennisGame {
             return new TennisResult("Win for " + getReceiver(), "").format();
 
         ResultProvider startingResult = new DefaultResult(this);
-        ResultProvider advantageReceiver = new AdvantageReceiver(this, startingResult);
-        ResultProvider advantageServer = new AdvantageServer(this, advantageReceiver);
-        GameReceiver receiver = new GameReceiver(this, advantageServer);
-        TennisResult result =
-                new Deuce(this, new GameServer(this, receiver)).getResult();
-        return result.format();
+        return startingResult.getResult().format();
     }
 
     private boolean receiverHasAdvantage() {
