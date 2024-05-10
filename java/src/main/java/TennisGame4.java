@@ -104,9 +104,6 @@ class DefaultResult {
         this.game = game;
     }
 
-    public TennisResult getResult() {
-        return new TennisResult(scores[game.serverScore()], scores[game.receiverScore()]);
-    }
-
-    public String runningScore() { return getResult().format(); }
+    public String runningScore() {
+        return new TennisResult(scores[game.serverScore()], scores[game.receiverScore()]).format(); }
 }
