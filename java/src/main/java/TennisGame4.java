@@ -90,6 +90,12 @@ class TennisResult {
             return serverScore + "-All";
         return this.serverScore + "-" + this.receiverScore;
     }
+
+    static String score(String serverScore, String receiverScore) {
+        if (serverScore.equals(receiverScore))
+            return serverScore + "-All";
+        return serverScore + "-" + receiverScore;
+    }
 }
 
 class DefaultResult {
