@@ -94,7 +94,7 @@ class DefaultResult {
         return serverScoreAsString + "-" + receiverScoreAsString;
     }
 
-    private String asString(Integer score) {
+    private static String asString(Integer score) {
         return scores[score];
     }
 }
