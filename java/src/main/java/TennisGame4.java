@@ -62,11 +62,11 @@ public class TennisGame4 implements TennisGame {
         return servingPlayer.hasAdvantageOver(receivingPlayer);
     }
 
-    boolean receiverHasWon() {
+    private boolean receiverHasWon() {
         return receivingPlayer.hasBeaten(servingPlayer);
     }
 
-    boolean serverHasWon() {
+    private boolean serverHasWon() {
         return servingPlayer.hasBeaten(receivingPlayer);
     }
 
