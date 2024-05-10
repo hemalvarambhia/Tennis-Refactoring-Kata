@@ -85,11 +85,6 @@ class TennisResult {
         this.receiverScore = receiverScore;
     }
 
-    static String score(String serverScore, String receiverScore) {
-        if (serverScore.equals(receiverScore))
-            return serverScore + "-All";
-        return serverScore + "-" + receiverScore;
-    }
 }
 
 class DefaultResult {
@@ -105,7 +100,9 @@ class DefaultResult {
     public String runningScore() {
         String serverScoreAsString = asString(game.serverScore());
         String receiverScoreAsString = asString(game.receiverScore());
-        return TennisResult.score(serverScoreAsString, receiverScoreAsString);
+        if (serverScoreAsString.equals(receiverScoreAsString))
+            return serverScoreAsString + "-All";
+        return serverScoreAsString + "-" + receiverScoreAsString;
     }
 
     private String asString(Integer score) {
