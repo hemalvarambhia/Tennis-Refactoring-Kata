@@ -50,7 +50,7 @@ public class TennisGame4 implements TennisGame {
         if(receiverHasWon())
             return String.format("Win for %s", getReceiver());
 
-        ResultProvider startingResult = new DefaultResult(this);
+        DefaultResult startingResult = new DefaultResult(this);
         return startingResult.getResult().format();
     }
 
@@ -107,7 +107,6 @@ class DefaultResult implements ResultProvider {
         this.game = game;
     }
 
-    @Override
     public TennisResult getResult() {
         return new TennisResult(scores[game.serverScore()], scores[game.receiverScore()]);
     }
