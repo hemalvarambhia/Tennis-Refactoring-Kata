@@ -51,7 +51,8 @@ public class TennisGame4 implements TennisGame {
             return String.format("Win for %s", getReceiver());
 
         DefaultResult startingResult = new DefaultResult(this);
-        return startingResult.getResult().format();
+        return startingResult.runningScore();
+
     }
 
     private boolean receiverHasAdvantage() {
@@ -106,4 +107,6 @@ class DefaultResult {
     public TennisResult getResult() {
         return new TennisResult(scores[game.serverScore()], scores[game.receiverScore()]);
     }
+
+    public String runningScore() { return getResult().format(); }
 }
