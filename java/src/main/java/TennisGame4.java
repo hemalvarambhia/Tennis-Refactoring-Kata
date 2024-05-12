@@ -71,6 +71,12 @@ public class TennisGame4 implements TennisGame {
         return servingPlayer.hasBeaten(receivingPlayer);
     }
 
+    public String runningScore() {
+        if (serverScore().equals(receiverScore()))
+            return toRunningScore(serverScore()) + "-All";
+        return toRunningScore(serverScore()) + "-" + toRunningScore(receiverScore());
+    }
+
     private boolean isDeuce() {
         return servingPlayer.getPoints() >=3 && receivingPlayer.getPoints() >=3 && servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
@@ -95,12 +101,6 @@ class DefaultResult {
     }
 
     public String runningScore() {
-        if (game.serverScore().equals(game.receiverScore()))
-            return asString(game.serverScore()) + "-All";
-        return asString(game.serverScore()) + "-" + asString(game.receiverScore());
-    }
-
-    private static String asString(Integer score) {
-        return scores[score];
+        return game.runningScore();
     }
 }
