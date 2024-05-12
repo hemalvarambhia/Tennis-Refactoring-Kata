@@ -74,6 +74,14 @@ public class TennisGame4 implements TennisGame {
     private boolean isDeuce() {
         return servingPlayer.getPoints() >=3 && receivingPlayer.getPoints() >=3 && servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
+
+    private static final String[] SCORES = {"Love", "Fifteen", "Thirty", "Forty"};
+
+    private String runningScores() { return ""; }
+
+    private static String toRunningScore(Integer score) {
+        return SCORES[score];
+    }
 }
 
 class DefaultResult {
