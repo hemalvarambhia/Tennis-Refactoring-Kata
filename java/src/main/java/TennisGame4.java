@@ -69,7 +69,7 @@ public class TennisGame4 implements TennisGame {
         return servingPlayer.hasBeaten(receivingPlayer);
     }
 
-    public String runningScore() {
+    private String runningScore() {
         if (serverScore().equals(receiverScore()))
             return toRunningScore(serverScore()) + "-All";
         return toRunningScore(serverScore()) + "-" + toRunningScore(receiverScore());
