@@ -50,9 +50,7 @@ public class TennisGame4 implements TennisGame {
         if(receiverHasWon())
             return String.format("Win for %s", getReceiver());
 
-        DefaultResult startingResult = new DefaultResult(this);
-        return startingResult.runningScore();
-
+        return runningScore();
     }
 
     private boolean receiverHasAdvantage() {
@@ -83,24 +81,7 @@ public class TennisGame4 implements TennisGame {
 
     private static final String[] SCORES = {"Love", "Fifteen", "Thirty", "Forty"};
 
-    private String runningScores() { return ""; }
-
     private static String toRunningScore(Integer score) {
         return SCORES[score];
-    }
-}
-
-class DefaultResult {
-
-    private static final String[] scores = {"Love", "Fifteen", "Thirty", "Forty"};
-
-    private final TennisGame4 game;
-
-    public DefaultResult(TennisGame4 game) {
-        this.game = game;
-    }
-
-    public String runningScore() {
-        return game.runningScore();
     }
 }
