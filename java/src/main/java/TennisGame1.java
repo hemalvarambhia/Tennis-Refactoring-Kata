@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.stream.Stream;
 
 public class TennisGame1 implements TennisGame {
 
@@ -19,9 +17,7 @@ public class TennisGame1 implements TennisGame {
      *
      */
     public void wonPoint(String playerName) {
-        if(isNotPlaying(playerName)){
-          throw new RuntimeException(String.format("%s is not playing the game", playerName));
-        }
+        checkPlayerPresence(playerName);
         if (player1.getName().equals(playerName)) {
             player1.wonPoint();
         } else {
@@ -79,7 +75,11 @@ public class TennisGame1 implements TennisGame {
         return String.format("Win for %s", winner.getName());
     }
 
-    private boolean isNotPlaying(String playerName) {
-        return !Objects.equals(player1.getName(), playerName) && !Objects.equals(player2.getName(), playerName);
+    private void checkPlayerPresence(String playerName) {
+        Stream.of(player1, player2)
+                .map(TennisPlayer::getName)
+                .filter(name -> name.equals(playerName))
+                .findAny()
+                .orElseThrow(() -> new RuntimeException(String.format("%s is not playing the game", playerName)));
     }
 }
