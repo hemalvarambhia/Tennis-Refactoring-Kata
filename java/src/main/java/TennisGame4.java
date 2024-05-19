@@ -64,7 +64,7 @@ public class TennisGame4 implements TennisGame {
     private String runningScore() {
         if (servingPlayer.pointsDifference(receivingPlayer) == 0)
             return servingPlayer.runningScore() + "-All";
-        return servingPlayer.runningScore() + "-" + receivingPlayer.runningScore();
+        return String.format("%s-%s", servingPlayer.runningScore(), receivingPlayer.runningScore());
     }
 
     private boolean isDeuce() {
