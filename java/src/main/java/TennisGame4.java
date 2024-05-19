@@ -17,19 +17,19 @@ public class TennisGame4 implements TennisGame {
         }
     }
 
-    public Integer serverScore() {
+    private Integer serverScore() {
         return servingPlayer.getPoints();
     }
 
-    public Integer receiverScore() {
+    private Integer receiverScore() {
         return receivingPlayer.getPoints();
     }
 
-    public String getServer() {
+    private String getServer() {
         return servingPlayer.getName();
     }
 
-    public String getReceiver() {
+    private String getReceiver() {
         return receivingPlayer.getName();
     }
 
