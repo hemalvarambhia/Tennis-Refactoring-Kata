@@ -41,10 +41,6 @@ public class TennisGame4 implements TennisGame {
         return servingPlayer.getPoints();
     }
 
-    private Integer receiverScore() {
-        return receivingPlayer.getPoints();
-    }
-
     private String getServer() {
         return servingPlayer.getName();
     }
@@ -70,9 +66,9 @@ public class TennisGame4 implements TennisGame {
     }
 
     private String runningScore() {
-        if (serverScore().equals(receiverScore()))
-            return toRunningScore(serverScore()) + "-All";
-        return toRunningScore(serverScore()) + "-" + toRunningScore(receiverScore());
+        if (serverScore().equals(receivingPlayer.getPoints()))
+            return toRunningScore(servingPlayer.getPoints()) + "-All";
+        return toRunningScore(servingPlayer.getPoints()) + "-" + toRunningScore(receivingPlayer.getPoints());
     }
 
     private boolean isDeuce() {
