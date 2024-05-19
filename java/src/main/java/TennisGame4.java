@@ -17,22 +17,6 @@ public class TennisGame4 implements TennisGame {
         }
     }
 
-    private Integer serverScore() {
-        return servingPlayer.getPoints();
-    }
-
-    private Integer receiverScore() {
-        return receivingPlayer.getPoints();
-    }
-
-    private String getServer() {
-        return servingPlayer.getName();
-    }
-
-    private String getReceiver() {
-        return receivingPlayer.getName();
-    }
-
     @java.lang.Override
     public String getScore() {
         if(isDeuce())
@@ -51,6 +35,22 @@ public class TennisGame4 implements TennisGame {
             return String.format("Win for %s", getReceiver());
 
         return runningScore();
+    }
+
+    private Integer serverScore() {
+        return servingPlayer.getPoints();
+    }
+
+    private Integer receiverScore() {
+        return receivingPlayer.getPoints();
+    }
+
+    private String getServer() {
+        return servingPlayer.getName();
+    }
+
+    private String getReceiver() {
+        return receivingPlayer.getName();
     }
 
     private boolean receiverHasAdvantage() {
