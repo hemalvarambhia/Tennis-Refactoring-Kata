@@ -23,19 +23,21 @@ public class TennisGame4 implements TennisGame {
             return "Deuce";
 
         if(serverHasAdvantage())
-            return String.format("Advantage %s", getServer());
+            return String.format("Advantage %s", getServingPlayer().getName());
 
         if (receiverHasAdvantage())
             return String.format("Advantage %s", getReceiver());
 
         if(serverHasWon())
-            return String.format("Win for %s", getServer());
+            return String.format("Win for %s", getServingPlayer().getName());
 
         if(receiverHasWon())
             return String.format("Win for %s", getReceiver());
 
         return runningScore();
     }
+
+    private TennisPlayer getServingPlayer() { return servingPlayer; }
 
     private String getServer() {
         return servingPlayer.getName();
