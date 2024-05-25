@@ -64,10 +64,13 @@ public class TennisGame4 implements TennisGame {
     private String runningScore() {
         if (servingPlayer.pointsDifference(receivingPlayer) == 0)
             return servingPlayer.runningScore() + "-All";
-        return String.format("%s-%s", servingPlayer.runningScore(), receivingPlayer.runningScore());
+        return String.format(
+                "%s-%s", servingPlayer.runningScore(), receivingPlayer.runningScore()
+        );
     }
 
     private boolean isDeuce() {
-        return servingPlayer.getPoints() >=3 && receivingPlayer.getPoints() >=3 && servingPlayer.pointsDifference(receivingPlayer) == 0;
+        return servingPlayer.getPoints() >=3 && receivingPlayer.getPoints() >=3
+                && servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
 }
