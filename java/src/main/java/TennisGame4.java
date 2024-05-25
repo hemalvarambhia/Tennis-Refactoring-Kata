@@ -23,10 +23,10 @@ public class TennisGame4 implements TennisGame {
             return "Deuce";
 
         if(serverHasAdvantage())
-            return String.format("Advantage %s", servingPlayer.getName());
+            return advantage(servingPlayer);
 
         if (receiverHasAdvantage())
-            return String.format("Advantage %s", receivingPlayer.getName());
+            return advantage(receivingPlayer);
 
         if(serverHasWon())
             return winFor(servingPlayer);
@@ -39,6 +39,10 @@ public class TennisGame4 implements TennisGame {
 
     private String winFor(TennisPlayer player) {
         return String.format("Win for %s", player.getName());
+    }
+
+    private String advantage(TennisPlayer player) {
+        return String.format("Advantage %s", player.getName());
     }
 
     private boolean receiverHasAdvantage() {
