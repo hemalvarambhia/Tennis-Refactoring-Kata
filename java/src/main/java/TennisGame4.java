@@ -26,19 +26,15 @@ public class TennisGame4 implements TennisGame {
             return String.format("Advantage %s", servingPlayer.getName());
 
         if (receiverHasAdvantage())
-            return String.format("Advantage %s", getReceiver());
+            return String.format("Advantage %s", receivingPlayer.getName());
 
         if(serverHasWon())
             return String.format("Win for %s", servingPlayer.getName());
 
         if(receiverHasWon())
-            return String.format("Win for %s", getReceiver());
+            return String.format("Win for %s", receivingPlayer.getName());
 
         return runningScore();
-    }
-
-    private String getReceiver() {
-        return receivingPlayer.getName();
     }
 
     private boolean receiverHasAdvantage() {
