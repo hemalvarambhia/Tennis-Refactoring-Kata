@@ -10,7 +10,7 @@ public class TennisGame4 implements TennisGame {
 
     @java.lang.Override
     public void wonPoint(String playerName) {
-        if (getServer().equals(playerName)) {
+        if (servingPlayer.getName().equals(playerName)) {
             this.servingPlayer.wonPoint();
         } else {
             this.receivingPlayer.wonPoint();
@@ -35,10 +35,6 @@ public class TennisGame4 implements TennisGame {
             return String.format("Win for %s", getReceiver());
 
         return runningScore();
-    }
-
-    private String getServer() {
-        return servingPlayer.getName();
     }
 
     private String getReceiver() {
