@@ -42,12 +42,13 @@ class TennisGame1
         result ="Win for #{@player2Name}"
       end
     else
+      points = { 1 => @p1points, 2 => @p2points }
       (1..2).each do |i|
         if i==1
-          tempScore = @p1points
+          tempScore = points[i]
         elsif i == 2
           result+="-"
-          tempScore = @p2points
+          tempScore = points[i]
         end
         result += POINTS_TO_SCORE[tempScore]
       end
