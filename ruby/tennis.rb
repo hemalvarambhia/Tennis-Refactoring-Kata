@@ -48,6 +48,7 @@ class TennisGame1
         result+="-" if i == 2
         result += POINTS_TO_SCORE[tempScore]
       end
+      result = "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
     end
     result
   end
