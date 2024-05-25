@@ -42,7 +42,6 @@ class TennisGame1
         result ="Win for #{@player2Name}"
       end
     else
-      points = { 1 => @p1points, 2 => @p2points }
       result = "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
     end
     result
