@@ -30,12 +30,14 @@ class TennisGame1
     return "Advantage #{@player1Name}" if advantage_player_1?
     return "Advantage #{@player2Name}" if advantage_player_2?
 
+    return "Deuce" if @p1points >=3 && points_difference.zero?
+
     if points_difference.zero?
       return {
           0 => "Love-All",
           1 => "Fifteen-All",
           2 => "Thirty-All",
-      }.fetch(@p1points, "Deuce")
+      }[@p1points]
     end
 
     "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
