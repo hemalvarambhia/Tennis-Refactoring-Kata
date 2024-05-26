@@ -24,7 +24,6 @@ class TennisGame1
   }
 
   def score
-    result = ""
     if points_difference.zero?
       return {
           0 => "Love-All",
