@@ -28,6 +28,10 @@ class TennisGame1
       return "Win for #{@player1Name}"
     end
 
+    if (@p1points >= 4 or @p2points >=4) && points_difference <= -2
+      return "Win for #{@player2Name}"
+    end
+
     if advantage_player_1?
       return "Advantage #{@player1Name}"
     end
@@ -42,10 +46,6 @@ class TennisGame1
           1 => "Fifteen-All",
           2 => "Thirty-All",
       }.fetch(@p1points, "Deuce")
-    elsif @p1points >= 4 or @p2points >=4
-      if (@p1points >= 4 or @p2points >=4) && points_difference <= -2
-        return "Win for #{@player2Name}"
-      end
     end
 
     "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
