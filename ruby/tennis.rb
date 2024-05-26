@@ -24,7 +24,7 @@ class TennisGame1
   }
 
   def score
-    if (@p1points >= 4 or @p2points >=4) && points_difference >= 2
+    if player_1_won?
       return "Win for #{@player1Name}"
     end
 
@@ -54,6 +54,10 @@ class TennisGame1
   end
 
   private
+
+  def player_1_won?
+    (@p1points >= 4 or @p2points >= 4) && points_difference >= 2
+  end
 
   def advantage_player_1?
     (@p1points >= 4 or @p2points >= 4) && points_difference == 1
