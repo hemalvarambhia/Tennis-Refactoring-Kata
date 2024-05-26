@@ -25,7 +25,7 @@ class TennisGame1
 
   def score
     result = ""
-    if (@p1points - @p2points == 0)
+    if points_difference.zero?
       result = {
           0 => "Love-All",
           1 => "Fifteen-All",
