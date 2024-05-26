@@ -26,20 +26,20 @@ class TennisGame1
   def score
     result = ""
     if points_difference.zero?
-      result = {
+      return {
           0 => "Love-All",
           1 => "Fifteen-All",
           2 => "Thirty-All",
       }.fetch(@p1points, "Deuce")
     elsif @p1points >= 4 or @p2points >=4
       if points_difference==1
-        result ="Advantage #{@player1Name}"
+        return "Advantage #{@player1Name}"
       elsif points_difference ==-1
-        result ="Advantage #{@player2Name}"
+        return "Advantage #{@player2Name}"
       elsif points_difference>=2
-        result = "Win for #{@player1Name}"
+        return "Win for #{@player1Name}"
       else
-        result ="Win for #{@player2Name}"
+        return "Win for #{@player2Name}"
       end
     else
       result = "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
