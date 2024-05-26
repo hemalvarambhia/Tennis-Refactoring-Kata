@@ -5,7 +5,6 @@ class TennisGame1
     @player1_name = player1Name
     @p1points = 0
 
-    @player2Name = player2Name
     @player2_name = player2Name
     @p2points = 0
   end
