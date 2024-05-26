@@ -28,6 +28,10 @@ class TennisGame1
       return "Advantage #{@player1Name}"
     end
 
+    if (@p1points >= 4 or @p2points >=4) && points_difference == -1
+      return "Advantage #{@player2Name}"
+    end
+
     if points_difference.zero?
       return {
           0 => "Love-All",
