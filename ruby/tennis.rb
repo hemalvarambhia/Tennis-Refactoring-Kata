@@ -27,10 +27,10 @@ class TennisGame1
 
   def score
     return "Win for #{@player1_name}" if player_1_won?
-    return "Win for #{@player2Name}" if player_2_won?
+    return "Win for #{@player2_name}" if player_2_won?
 
     return "Advantage #{@player1_name}" if advantage_player_1?
-    return "Advantage #{@player2Name}" if advantage_player_2?
+    return "Advantage #{@player2_name}" if advantage_player_2?
 
     return "Deuce" if deuce?
 
