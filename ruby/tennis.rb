@@ -30,7 +30,7 @@ class TennisGame1
     return "Advantage #{@player1Name}" if advantage_player_1?
     return "Advantage #{@player2Name}" if advantage_player_2?
 
-    return "Deuce" if @p1points >=3 && points_difference.zero?
+    return "Deuce" if deuce?
 
     if points_difference.zero?
       return {
@@ -44,6 +44,10 @@ class TennisGame1
   end
 
   private
+
+  def deuce?
+    @p1points >= 3 && points_difference.zero?
+  end
 
   def player_1_won?
     (@p1points >= 4 or @p2points >= 4) && points_difference >= 2
