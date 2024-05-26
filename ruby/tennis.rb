@@ -41,9 +41,9 @@ class TennisGame1
       else
         return "Win for #{@player2Name}"
       end
-    else
-      "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
     end
+
+    "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
   end
 
   private
