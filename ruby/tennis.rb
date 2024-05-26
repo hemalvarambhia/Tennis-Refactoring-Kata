@@ -43,7 +43,7 @@ class TennisGame1
           2 => "Thirty-All",
       }.fetch(@p1points, "Deuce")
     elsif @p1points >= 4 or @p2points >=4
-      if points_difference <= -2
+      if (@p1points >= 4 or @p2points >=4) && points_difference <= -2
         return "Win for #{@player2Name}"
       end
     end
