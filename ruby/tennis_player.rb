@@ -7,4 +7,8 @@ class TennisPlayer
     @name = name
     @points = 0
   end
+
+  def won_point
+    @points += 1
+  end
 end
