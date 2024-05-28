@@ -62,6 +62,14 @@ class TestTennis < Minitest::Test
     game
   end
 
+  def test_score_is_unchanged_when_non_participating_player_wins_a_point
+    tennis_game = TennisGame1.new('Player 1', 'Player 2')
+
+    tennis_game.won_point('Non-Participating Player')
+
+    assert_equal("Love-All", tennis_game.score)
+  end
+
   def test_Score_Game1
     TEST_CASES.each do |testcase|
       (p1Points, p2Points, score, p1Name, p2Name) = testcase
