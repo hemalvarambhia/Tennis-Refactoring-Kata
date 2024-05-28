@@ -4,9 +4,11 @@ class TennisGame1
   def initialize(player1Name, player2Name)
     @player1_name = player1Name
     @p1points = 0
+    @player_1 = TennisPlayer.new(player1Name)
 
     @player2_name = player2Name
     @p2points = 0
+    @player_2 = TennisPlayer.new(player2Name)
   end
         
   def won_point(playerName)
