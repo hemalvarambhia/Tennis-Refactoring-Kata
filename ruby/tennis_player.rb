@@ -12,6 +12,11 @@ class TennisPlayer
     @points += 1
   end
 
+  def has_advantage_over?(opponent:)
+    (points >= 4 or opponent.points >= 4) &&
+      points_difference_over(opponent: opponent) == 1
+  end
+
   def points_difference_over(opponent:)
     points - opponent.points
   end
