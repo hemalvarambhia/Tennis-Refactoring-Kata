@@ -39,11 +39,7 @@ class TennisGame1
     return "Deuce" if deuce?
 
     if points_difference.zero?
-      return {
-          0 => "Love-All",
-          1 => "Fifteen-All",
-          2 => "Thirty-All",
-      }[@p1points]
+      return "#{POINTS_TO_SCORE[@p1points]}-All"
     end
 
     "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
@@ -52,7 +48,7 @@ class TennisGame1
   private
 
   def deuce?
-    @p1points >= 3 && points_difference.zero?
+    @player_1.deuce?(opponent: @player_2)
   end
 
   def player_1_won?
