@@ -72,7 +72,7 @@ class TennisGame1
   end
 
   def points_difference
-    @p1points - @p2points
+    @player_1.points_difference_over(opponent: @player_2)
   end
 end
 
