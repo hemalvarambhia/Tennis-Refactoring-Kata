@@ -64,6 +64,7 @@ public class TennisGame5 implements TennisGame {
         if (lookup.containsKey(entry)) {
             return lookup.get(entry);
         } else {
+            //This statement has a missing test.
             throw new IllegalArgumentException("Invalid score.");
         }
     }
