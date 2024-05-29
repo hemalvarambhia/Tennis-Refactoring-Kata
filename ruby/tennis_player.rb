@@ -29,4 +29,12 @@ class TennisPlayer
   def points_difference_over(opponent:)
     points - opponent.points
   end
+
+  POINTS_TO_RUNNING_SCORE = {
+    0 => "Love",
+    1 => "Fifteen",
+    2 => "Thirty",
+    3 => "Forty",
+  }
+  private_constant :POINTS_TO_RUNNING_SCORE
 end
