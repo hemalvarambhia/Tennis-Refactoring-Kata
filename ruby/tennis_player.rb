@@ -11,4 +11,8 @@ class TennisPlayer
   def won_point
     @points += 1
   end
+
+  def points_difference_over(opponent:)
+    points - opponent.points
+  end
 end
