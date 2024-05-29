@@ -39,10 +39,10 @@ class TennisGame1
     return "Deuce" if deuce?
 
     if points_difference.zero?
-      return "#{POINTS_TO_SCORE[@p1points]}-All"
+      return "#{@player_1.running_score}-All"
     end
 
-    "#{POINTS_TO_SCORE[@p1points]}-#{POINTS_TO_SCORE[@p2points]}"
+    "#{@player_1.running_score}-#{@player_2.running_score}"
   end
 
   private
