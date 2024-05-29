@@ -20,6 +20,7 @@ public class TennisGame5 implements TennisGame {
         else if (playerName.equals("player2"))
             player2Score++;
         else
+            // This block is untested.
             throw new IllegalArgumentException("Invalid player name.");
     }
 
