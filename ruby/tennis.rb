@@ -3,20 +3,16 @@ class TennisGame1
 
   def initialize(player1Name, player2Name)
     @player1_name = player1Name
-    @p1points = 0
     @player_1 = TennisPlayer.new(player1Name)
 
     @player2_name = player2Name
-    @p2points = 0
     @player_2 = TennisPlayer.new(player2Name)
   end
         
   def won_point(playerName)
     if playerName == "player1"
-      @p1points += 1
       @player_1.won_point
     elsif playerName == 'player2'
-      @p2points += 1
       @player_2.won_point
     end
   end
