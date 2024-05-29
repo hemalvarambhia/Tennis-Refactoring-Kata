@@ -56,11 +56,11 @@ class TennisGame1
   end
 
   def player_1_won?
-    (@p1points >= 4 or @p2points >= 4) && points_difference >= 2
+    @player_1.has_won_against?(opponent: @player_2)
   end
 
   def player_2_won?
-    (@p1points >= 4 or @p2points >= 4) && points_difference <= -2
+    @player_2.has_won_against?(opponent: @player_1)
   end
 
   def advantage_player_1?
