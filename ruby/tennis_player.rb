@@ -22,6 +22,10 @@ class TennisPlayer
       points_difference_over(opponent: opponent) == 1
   end
 
+  def deuce?(opponent:)
+    points >= 3 && points_difference_over(opponent: opponent).zero?
+  end
+
   def points_difference_over(opponent:)
     points - opponent.points
   end
