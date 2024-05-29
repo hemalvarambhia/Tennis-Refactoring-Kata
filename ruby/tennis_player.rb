@@ -30,10 +30,6 @@ class TennisPlayer
     points - opponent.points
   end
 
-  def running_score
-    POINTS_TO_RUNNING_SCORE[points]
-  end
-
   POINTS_TO_RUNNING_SCORE = {
     0 => "Love",
     1 => "Fifteen",
@@ -41,4 +37,8 @@ class TennisPlayer
     3 => "Forty",
   }
   private_constant :POINTS_TO_RUNNING_SCORE
+
+  def running_score
+    POINTS_TO_RUNNING_SCORE[points]
+  end
 end
