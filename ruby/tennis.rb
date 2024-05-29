@@ -2,10 +2,7 @@ require_relative 'tennis_player'
 class TennisGame1
 
   def initialize(player1Name, player2Name)
-    @player1_name = player1Name
     @player_1 = TennisPlayer.new(player1Name)
-
-    @player2_name = player2Name
     @player_2 = TennisPlayer.new(player2Name)
   end
         
