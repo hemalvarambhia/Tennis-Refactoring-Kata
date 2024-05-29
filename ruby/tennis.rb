@@ -64,11 +64,11 @@ class TennisGame1
   end
 
   def advantage_player_1?
-    (@p1points >= 4 or @p2points >= 4) && points_difference == 1
+    @player_1.has_advantage_over?(opponent: @player_2)
   end
 
   def advantage_player_2?
-    (@p1points >= 4 or @p2points >= 4) && points_difference == -1
+    @player_2.has_advantage_over?(opponent: @player_1)
   end
 
   def points_difference
