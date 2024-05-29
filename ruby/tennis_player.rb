@@ -41,4 +41,8 @@ class TennisPlayer
   def running_score
     POINTS_TO_RUNNING_SCORE[points]
   end
+
+  def to_s
+    @name
+  end
 end
