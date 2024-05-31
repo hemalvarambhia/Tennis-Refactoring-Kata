@@ -68,7 +68,14 @@ public class TennisGame5 implements TennisGame {
         }
     }
 
-    private String toRunningScore(Map.Entry<Integer, Integer> score) {
-        return "";
+    private String toRunningScore(Integer score) {
+        return RUNNING_SCORE.get(score);
     }
+
+    private static final Map<Integer, String> RUNNING_SCORE = Map.of(
+            0, "Love",
+            1, "Fifteen",
+            2, "Thirty",
+            3, "Forty"
+    );
 }
