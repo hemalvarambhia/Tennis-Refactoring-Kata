@@ -135,6 +135,13 @@ public class TennisTest {
         checkAllScores(player1Points, player2Points, expectedScore, game);
     }
 
+    @Test
+    public void testTennisGame5ANonParticipatingPlayerCannotWinAPoint() {
+        TennisGame tennisGame = new TennisGame5("player 1", "player 2");
+
+        assertThrows(RuntimeException.class, () -> tennisGame.wonPoint("Not Playing"));
+    }
+
 
     @ParameterizedTest
     @MethodSource("getAllScores")
