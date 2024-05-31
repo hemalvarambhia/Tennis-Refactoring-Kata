@@ -67,4 +67,8 @@ public class TennisGame5 implements TennisGame {
             throw new IllegalArgumentException("Invalid score.");
         }
     }
+
+    private String toRunningScore(Map.Entry<Integer, Integer> score) {
+        return "";
+    }
 }
