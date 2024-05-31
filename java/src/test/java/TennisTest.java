@@ -142,6 +142,14 @@ public class TennisTest {
         assertThrows(RuntimeException.class, () -> tennisGame.wonPoint("Not Playing"));
     }
 
+    @Test
+    public void testTennisGame5ScoreFailsWhenTennisScoreIsInvalid() {
+        TennisGame tennisGame = new TennisGame5("player1", "player2");
+        for(int i = 0; i < 20; i++) { tennisGame.wonPoint("player1"); }
+
+        assertThrows(RuntimeException.class, tennisGame::getScore);
+    }
+
 
     @ParameterizedTest
     @MethodSource("getAllScores")
