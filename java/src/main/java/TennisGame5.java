@@ -35,24 +35,24 @@ public class TennisGame5 implements TennisGame {
 
         var lookup = new HashMap<Map.Entry, String>();
         lookup.put(Map.entry(0, 0), "Love-All");
+        lookup.put(Map.entry(1, 1), "Fifteen-All");
+        lookup.put(Map.entry(2, 2), "Thirty-All");
+        lookup.put(Map.entry(3, 3), "Deuce");
         lookup.put(Map.entry(0, 1), "Love-Fifteen");
         lookup.put(Map.entry(0, 2), "Love-Thirty");
         lookup.put(Map.entry(0, 3), "Love-Forty");
         lookup.put(Map.entry(0, 4), "Win for player2");
         lookup.put(Map.entry(1, 0), "Fifteen-Love");
-        lookup.put(Map.entry(1, 1), "Fifteen-All");
         lookup.put(Map.entry(1, 2), "Fifteen-Thirty");
         lookup.put(Map.entry(1, 3), "Fifteen-Forty");
         lookup.put(Map.entry(1, 4), "Win for player2");
         lookup.put(Map.entry(2, 0), "Thirty-Love");
         lookup.put(Map.entry(2, 1), "Thirty-Fifteen");
-        lookup.put(Map.entry(2, 2), "Thirty-All");
         lookup.put(Map.entry(2, 3), "Thirty-Forty");
         lookup.put(Map.entry(2, 4), "Win for player2");
         lookup.put(Map.entry(3, 0), "Forty-Love");
         lookup.put(Map.entry(3, 1), "Forty-Fifteen");
         lookup.put(Map.entry(3, 2), "Forty-Thirty");
-        lookup.put(Map.entry(3, 3), "Deuce");
         lookup.put(Map.entry(3, 4), "Advantage player2");
         lookup.put(Map.entry(4, 0), "Win for player1");
         lookup.put(Map.entry(4, 1), "Win for player1");
