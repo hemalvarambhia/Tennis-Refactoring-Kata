@@ -1,15 +1,15 @@
 require_relative 'tennis_player'
 class TennisGame1
 
-  def initialize(player1Name, player2Name)
-    @player_1 = TennisPlayer.new(player1Name)
-    @player_2 = TennisPlayer.new(player2Name)
+  def initialize(player_1_name, player2_name)
+    @player_1 = TennisPlayer.new(player_1_name)
+    @player_2 = TennisPlayer.new(player2_name)
   end
         
-  def won_point(playerName)
-    if playerName == "player1"
+  def won_point(player_name)
+    if player_name == "player1"
       @player_1.won_point
-    elsif playerName == 'player2'
+    elsif player_name == 'player2'
       @player_2.won_point
     end
   end
