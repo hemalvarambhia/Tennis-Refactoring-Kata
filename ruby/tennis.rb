@@ -14,14 +14,6 @@ class TennisGame1
     end
   end
 
-  POINTS_TO_SCORE = {
-    0 => "Love",
-    1 => "Fifteen",
-    2 => "Thirty",
-    3 => "Forty",
-  }
-  private_constant :POINTS_TO_SCORE
-
   def score
     return "Win for #{@player_1}" if player_1_won?
     return "Win for #{@player_2}" if player_2_won?
