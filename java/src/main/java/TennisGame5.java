@@ -34,7 +34,7 @@ public class TennisGame5 implements TennisGame {
         }
         if(p1 >= 3 && p1 - p2 == 0) return "Deuce";
 
-        var lookup = new HashMap<Map.Entry, String>();
+        Map<Map.Entry<Integer, Integer>, String> lookup = new HashMap<>();
         lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(0), toRunningScore(1)));
         lookup.put(Map.entry(0, 2), String.format("%s-%s", toRunningScore(0), toRunningScore(2)));
         lookup.put(Map.entry(0, 3), String.format("%s-%s", toRunningScore(0), toRunningScore(3)));
