@@ -58,13 +58,12 @@ public class TennisGame5 implements TennisGame {
         lookup.put(Map.entry(0, 4), "Win for player2");
 
         var entry = Map.entry(p1, p2);
-        if (lookup.containsKey(entry)) {
-            if(p1 > 3 && p1 - p2 >= 2) return "Win for player1";
-            if(p2 > 3 && p2 - p1 >= 2) return "Win for player2";
-            return lookup.get(entry);
-        } else {
-            throw new IllegalArgumentException("Invalid score.");
-        }
+
+        if(!lookup.containsKey(entry)) throw new IllegalArgumentException("Invalid score.");
+
+        if(p1 > 3 && p1 - p2 >= 2) return "Win for player1";
+        if(p2 > 3 && p2 - p1 >= 2) return "Win for player2";
+        return lookup.get(entry);
     }
 
     private String toRunningScore(Integer score) {
