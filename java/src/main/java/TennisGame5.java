@@ -35,6 +35,18 @@ public class TennisGame5 implements TennisGame {
         if(p1 >= 3 && p1 - p2 == 0) return "Deuce";
         if(p1 < 3 && p1 - p2 == 0) return String.format("%s-All", toRunningScore(p1));
 
+        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap(p1, p2);
+
+        var score = Map.entry(p1, p2);
+
+        if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
+
+        if(p1 > 3 && p1 - p2 >= 2) return "Win for player1";
+        if(p2 > 3 && p2 - p1 >= 2) return "Win for player2";
+        return lookup.get(score);
+    }
+
+    private Map<Map.Entry<Integer, Integer>, String> getScoreMap(int p1, int p2) {
         Map<Map.Entry<Integer, Integer>, String> lookup = new HashMap<>();
         lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
         lookup.put(Map.entry(0, 2), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
@@ -56,14 +68,7 @@ public class TennisGame5 implements TennisGame {
         lookup.put(Map.entry(2, 4), null);
         lookup.put(Map.entry(1, 4), null);
         lookup.put(Map.entry(0, 4), null);
-
-        var score = Map.entry(p1, p2);
-
-        if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
-
-        if(p1 > 3 && p1 - p2 >= 2) return "Win for player1";
-        if(p2 > 3 && p2 - p1 >= 2) return "Win for player2";
-        return lookup.get(score);
+        return lookup;
     }
 
     private String toRunningScore(Integer score) {
