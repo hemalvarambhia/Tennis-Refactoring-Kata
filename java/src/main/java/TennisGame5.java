@@ -33,6 +33,7 @@ public class TennisGame5 implements TennisGame {
             p2--;
         }
         if(p1 >= 3 && p1 - p2 == 0) return "Deuce";
+        if(p1 < 3 && p1 - p2 == 0) return String.format("%s-All", toRunningScore(p1));
 
         Map<Map.Entry<Integer, Integer>, String> lookup = new HashMap<>();
         lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
