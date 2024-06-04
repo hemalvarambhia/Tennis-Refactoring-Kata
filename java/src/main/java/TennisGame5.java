@@ -48,9 +48,6 @@ public class TennisGame5 implements TennisGame {
         lookup.put(Map.entry(3, 0), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
         lookup.put(Map.entry(3, 1), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
         lookup.put(Map.entry(3, 2), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
-        lookup.put(Map.entry(0, 0), String.format("%s-All", toRunningScore(p1)));
-        lookup.put(Map.entry(1, 1), String.format("%s-All", toRunningScore(p1)));
-        lookup.put(Map.entry(2, 2), String.format("%s-All", toRunningScore(p1)));
         lookup.put(Map.entry(4, 3), "Advantage player1");
         lookup.put(Map.entry(3, 4), "Advantage player2");
         lookup.put(Map.entry(4, 0), "Win for player1");
