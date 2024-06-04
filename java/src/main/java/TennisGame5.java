@@ -35,9 +35,9 @@ public class TennisGame5 implements TennisGame {
         if(p1 >= 3 && p1 - p2 == 0) return "Deuce";
 
         Map<Map.Entry<Integer, Integer>, String> lookup = new HashMap<>();
-        lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(0), toRunningScore(1)));
-        lookup.put(Map.entry(0, 2), String.format("%s-%s", toRunningScore(0), toRunningScore(2)));
-        lookup.put(Map.entry(0, 3), String.format("%s-%s", toRunningScore(0), toRunningScore(3)));
+        lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
+        lookup.put(Map.entry(0, 2), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
+        lookup.put(Map.entry(0, 3), String.format("%s-%s", toRunningScore(p1), toRunningScore(p2)));
         lookup.put(Map.entry(1, 2), String.format("%s-%s", toRunningScore(1), toRunningScore(2)));
         lookup.put(Map.entry(1, 3), String.format("%s-%s", toRunningScore(1), toRunningScore(3)));
         lookup.put(Map.entry(2, 0), String.format("%s-%s", toRunningScore(2), toRunningScore(0)));
