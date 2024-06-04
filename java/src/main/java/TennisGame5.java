@@ -32,6 +32,7 @@ public class TennisGame5 implements TennisGame {
             p1--;
             p2--;
         }
+        if(p1 >= 3 && p1 - p2 == 0) return "Deuce";
 
         var lookup = new HashMap<Map.Entry, String>();
         lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(0), toRunningScore(1)));
@@ -49,8 +50,6 @@ public class TennisGame5 implements TennisGame {
         lookup.put(Map.entry(0, 0), "Love-All");
         lookup.put(Map.entry(1, 1), "Fifteen-All");
         lookup.put(Map.entry(2, 2), "Thirty-All");
-        lookup.put(Map.entry(3, 3), "Deuce");
-        lookup.put(Map.entry(4, 4), "Deuce");
         lookup.put(Map.entry(4, 3), "Advantage player1");
         lookup.put(Map.entry(3, 4), "Advantage player2");
         lookup.put(Map.entry(4, 0), "Win for player1");
