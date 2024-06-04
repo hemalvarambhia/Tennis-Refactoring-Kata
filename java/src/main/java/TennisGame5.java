@@ -53,9 +53,9 @@ public class TennisGame5 implements TennisGame {
         lookup.put(Map.entry(4, 0), null);
         lookup.put(Map.entry(4, 1), null);
         lookup.put(Map.entry(4, 2), null);
-        lookup.put(Map.entry(2, 4), "Win for player2");
-        lookup.put(Map.entry(1, 4), "Win for player2");
-        lookup.put(Map.entry(0, 4), "Win for player2");
+        lookup.put(Map.entry(2, 4), null);
+        lookup.put(Map.entry(1, 4), null);
+        lookup.put(Map.entry(0, 4), null);
 
         var entry = Map.entry(p1, p2);
 
