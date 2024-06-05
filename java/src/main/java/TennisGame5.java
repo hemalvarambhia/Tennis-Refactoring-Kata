@@ -44,7 +44,7 @@ public class TennisGame5 implements TennisGame {
         if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
 
         if(player1Score > 3 && pointsDifference() >= 2) return "Win for player1";
-        if(p2 > 3 && p2 - p1 >= 2) return "Win for player2";
+        if(player2Score > 3 && pointsDifference() <= -2) return "Win for player2";
         return lookup.get(score);
     }
 
