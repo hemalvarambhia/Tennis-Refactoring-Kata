@@ -34,7 +34,7 @@ public class TennisGame5 implements TennisGame {
             player1Score--;
             player2Score--;
         }
-        if(p1 >= 3 && p1 - p2 == 0) return "Deuce";
+        if(player1Score >= 3 && player1Score - player2Score == 0) return "Deuce";
         if(p1 < 3 && p1 - p2 == 0) return String.format("%s-All", toRunningScore(p1));
 
         Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap(p1, p2);
