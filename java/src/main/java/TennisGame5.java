@@ -34,8 +34,8 @@ public class TennisGame5 implements TennisGame {
             player1Score--;
             player2Score--;
         }
-        if(player1Score >= 3 && player1Score - player2Score == 0) return "Deuce";
-        if(player1Score < 3 && player1Score - player2Score == 0) return String.format("%s-All", toRunningScore(p1));
+        if(player1Score >= 3 && pointsDifference() == 0) return "Deuce";
+        if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(p1));
 
         Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap(p1, p2);
 
@@ -43,9 +43,13 @@ public class TennisGame5 implements TennisGame {
 
         if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
 
-        if(player1Score > 3 && player1Score - player2Score >= 2) return "Win for player1";
+        if(player1Score > 3 && pointsDifference() >= 2) return "Win for player1";
         if(p2 > 3 && p2 - p1 >= 2) return "Win for player2";
         return lookup.get(score);
+    }
+
+    private int pointsDifference() {
+        return player1Score - player2Score;
     }
 
     private Map<Map.Entry<Integer, Integer>, String> getScoreMap(int p1, int p2) {
