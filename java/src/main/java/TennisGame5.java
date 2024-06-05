@@ -35,11 +35,11 @@ public class TennisGame5 implements TennisGame {
             player2Score--;
         }
         if(player1Score >= 3 && pointsDifference() == 0) return "Deuce";
-        if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(p1));
+        if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
 
-        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap(p1, p2);
+        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap(player1Score, player2Score);
 
-        var score = Map.entry(p1, p2);
+        var score = Map.entry(player1Score, player2Score);
 
         if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
 
