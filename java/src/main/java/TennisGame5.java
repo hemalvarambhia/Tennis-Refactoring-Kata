@@ -25,12 +25,7 @@ public class TennisGame5 implements TennisGame {
 
     @Override
     public String getScore() {
-        int p1 = player1Score;
-        int p2 = player2Score;
-
-        while (p1 > 4 || p2 > 4) {
-            p1--;
-            p2--;
+        while (player1Score > 4 || player2Score > 4) {
             player1Score--;
             player2Score--;
         }
