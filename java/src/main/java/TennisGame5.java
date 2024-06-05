@@ -31,6 +31,8 @@ public class TennisGame5 implements TennisGame {
         while (p1 > 4 || p2 > 4) {
             p1--;
             p2--;
+            player1Score--;
+            player2Score--;
         }
         if(p1 >= 3 && p1 - p2 == 0) return "Deuce";
         if(p1 < 3 && p1 - p2 == 0) return String.format("%s-All", toRunningScore(p1));
