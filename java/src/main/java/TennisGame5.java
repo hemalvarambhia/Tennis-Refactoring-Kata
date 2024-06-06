@@ -30,7 +30,6 @@ public class TennisGame5 implements TennisGame {
     public String getScore() {
         if(isDeuce()) return "Deuce";
         if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
-
         while (player1Score > 4 || player2Score > 4) {
             player1Score--;
             player2Score--;
@@ -39,7 +38,9 @@ public class TennisGame5 implements TennisGame {
 
         if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
 
+        if(player1Score > 3 && pointsDifference() == 1) return "Advantage player1";
         if(player1Score > 3 && pointsDifference() >= 2) return "Win for player1";
+        if(player2Score > 3 && pointsDifference() == -1) return "Advantage player2";
         if(player2Score > 3 && pointsDifference() <= -2) return "Win for player2";
         return lookup.get(score);
     }
@@ -66,8 +67,8 @@ public class TennisGame5 implements TennisGame {
         lookup.put(Map.entry(3, 0), String.format("%s-%s", toRunningScore(3), toRunningScore(0)));
         lookup.put(Map.entry(3, 1), String.format("%s-%s", toRunningScore(3), toRunningScore(1)));
         lookup.put(Map.entry(3, 2), String.format("%s-%s", toRunningScore(3), toRunningScore(2)));
-        lookup.put(Map.entry(4, 3), "Advantage player1");
-        lookup.put(Map.entry(3, 4), "Advantage player2");
+        lookup.put(Map.entry(4, 3), null);
+        lookup.put(Map.entry(3, 4), null);
         lookup.put(Map.entry(4, 0), null);
         lookup.put(Map.entry(4, 1), null);
         lookup.put(Map.entry(4, 2), null);
