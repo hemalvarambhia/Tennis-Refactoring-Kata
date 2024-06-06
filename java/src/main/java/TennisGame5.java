@@ -31,7 +31,7 @@ public class TennisGame5 implements TennisGame {
         }
         Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap();
 
-        if(player1Score >= 3 && pointsDifference() == 0) return "Deuce";
+        if(isDeuce()) return "Deuce";
         if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
 
         var score = Map.entry(player1Score, player2Score);
@@ -40,6 +40,10 @@ public class TennisGame5 implements TennisGame {
         if(player1Score > 3 && pointsDifference() >= 2) return "Win for player1";
         if(player2Score > 3 && pointsDifference() <= -2) return "Win for player2";
         return lookup.get(score);
+    }
+
+    private boolean isDeuce() {
+        return player1Score >= 3 && pointsDifference() == 0;
     }
 
     private int pointsDifference() {
