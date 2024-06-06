@@ -25,16 +25,16 @@ public class TennisGame5 implements TennisGame {
 
     @Override
     public String getScore() {
+        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap();
         while (player1Score > 4 || player2Score > 4) {
             player1Score--;
             player2Score--;
         }
-        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap();
+        var score = Map.entry(player1Score, player2Score);
 
         if(isDeuce()) return "Deuce";
         if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
 
-        var score = Map.entry(player1Score, player2Score);
         if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
 
         if(player1Score > 3 && pointsDifference() >= 2) return "Win for player1";
