@@ -8,9 +8,12 @@ public class TennisGame5 implements TennisGame {
     private int player1Score;
     private int player2Score;
 
+    private Map<Map.Entry<Integer, Integer>, String> lookup;
+
     public TennisGame5(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
+        lookup = getScoreMap();
     }
 
     @Override
@@ -25,7 +28,6 @@ public class TennisGame5 implements TennisGame {
 
     @Override
     public String getScore() {
-        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap();
         while (player1Score > 4 || player2Score > 4) {
             player1Score--;
             player2Score--;
