@@ -29,7 +29,7 @@ public class TennisGame5 implements TennisGame {
             player1Score--;
             player2Score--;
         }
-        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap(player1Score, player2Score);
+        Map<Map.Entry<Integer, Integer>, String> lookup = getScoreMap();
 
         if(player1Score >= 3 && pointsDifference() == 0) return "Deuce";
         if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
@@ -46,7 +46,7 @@ public class TennisGame5 implements TennisGame {
         return player1Score - player2Score;
     }
 
-    private Map<Map.Entry<Integer, Integer>, String> getScoreMap(int p1, int p2) {
+    private Map<Map.Entry<Integer, Integer>, String> getScoreMap() {
         Map<Map.Entry<Integer, Integer>, String> lookup = new HashMap<>();
         lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(0), toRunningScore(1)));
         lookup.put(Map.entry(0, 2), String.format("%s-%s", toRunningScore(0), toRunningScore(2)));
