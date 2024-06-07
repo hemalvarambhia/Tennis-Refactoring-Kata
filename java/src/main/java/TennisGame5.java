@@ -8,12 +8,9 @@ public class TennisGame5 implements TennisGame {
     private int player1Score;
     private int player2Score;
 
-    private Map<Map.Entry<Integer, Integer>, String> lookup;
-
     public TennisGame5(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
-        lookup = getScoreMap();
     }
 
     @Override
@@ -61,31 +58,6 @@ public class TennisGame5 implements TennisGame {
 
     private int pointsDifference() {
         return player1Score - player2Score;
-    }
-
-    private Map<Map.Entry<Integer, Integer>, String> getScoreMap() {
-        Map<Map.Entry<Integer, Integer>, String> lookup = new HashMap<>();
-        lookup.put(Map.entry(0, 1), null);
-        lookup.put(Map.entry(0, 2), null);
-        lookup.put(Map.entry(0, 3), null);
-        lookup.put(Map.entry(1, 2), null);
-        lookup.put(Map.entry(1, 3), null);
-        lookup.put(Map.entry(2, 0), null);
-        lookup.put(Map.entry(2, 1), null);
-        lookup.put(Map.entry(2, 3), null);
-        lookup.put(Map.entry(1, 0), null);
-        lookup.put(Map.entry(3, 0), null);
-        lookup.put(Map.entry(3, 1), null);
-        lookup.put(Map.entry(3, 2), null);
-        lookup.put(Map.entry(4, 3), null);
-        lookup.put(Map.entry(3, 4), null);
-        lookup.put(Map.entry(4, 0), null);
-        lookup.put(Map.entry(4, 1), null);
-        lookup.put(Map.entry(4, 2), null);
-        lookup.put(Map.entry(2, 4), null);
-        lookup.put(Map.entry(1, 4), null);
-        lookup.put(Map.entry(0, 4), null);
-        return lookup;
     }
 
     private String toRunningScore(Integer score) {
