@@ -42,7 +42,7 @@ public class TennisGame5 implements TennisGame {
         if(player1HasWon()) return "Win for player1";
         if(advantagePlayer2()) return "Advantage player2";
         if(player2HasWon()) return "Win for player2";
-        return lookup.get(score);
+        return String.format("%s-%s", toRunningScore(player1Score), toRunningScore(player2Score));
     }
 
     private boolean player2HasWon() {
@@ -71,18 +71,18 @@ public class TennisGame5 implements TennisGame {
 
     private Map<Map.Entry<Integer, Integer>, String> getScoreMap() {
         Map<Map.Entry<Integer, Integer>, String> lookup = new HashMap<>();
-        lookup.put(Map.entry(0, 1), String.format("%s-%s", toRunningScore(0), toRunningScore(1)));
-        lookup.put(Map.entry(0, 2), String.format("%s-%s", toRunningScore(0), toRunningScore(2)));
-        lookup.put(Map.entry(0, 3), String.format("%s-%s", toRunningScore(0), toRunningScore(3)));
-        lookup.put(Map.entry(1, 2), String.format("%s-%s", toRunningScore(1), toRunningScore(2)));
-        lookup.put(Map.entry(1, 3), String.format("%s-%s", toRunningScore(1), toRunningScore(3)));
-        lookup.put(Map.entry(2, 0), String.format("%s-%s", toRunningScore(2), toRunningScore(0)));
-        lookup.put(Map.entry(2, 1), String.format("%s-%s", toRunningScore(2), toRunningScore(1)));
-        lookup.put(Map.entry(2, 3), String.format("%s-%s", toRunningScore(2), toRunningScore(3)));
-        lookup.put(Map.entry(1, 0), String.format("%s-%s", toRunningScore(1), toRunningScore(0)));
-        lookup.put(Map.entry(3, 0), String.format("%s-%s", toRunningScore(3), toRunningScore(0)));
-        lookup.put(Map.entry(3, 1), String.format("%s-%s", toRunningScore(3), toRunningScore(1)));
-        lookup.put(Map.entry(3, 2), String.format("%s-%s", toRunningScore(3), toRunningScore(2)));
+        lookup.put(Map.entry(0, 1), null);
+        lookup.put(Map.entry(0, 2), null);
+        lookup.put(Map.entry(0, 3), null);
+        lookup.put(Map.entry(1, 2), null);
+        lookup.put(Map.entry(1, 3), null);
+        lookup.put(Map.entry(2, 0), null);
+        lookup.put(Map.entry(2, 1), null);
+        lookup.put(Map.entry(2, 3), null);
+        lookup.put(Map.entry(1, 0), null);
+        lookup.put(Map.entry(3, 0), null);
+        lookup.put(Map.entry(3, 1), null);
+        lookup.put(Map.entry(3, 2), null);
         lookup.put(Map.entry(4, 3), null);
         lookup.put(Map.entry(3, 4), null);
         lookup.put(Map.entry(4, 0), null);
