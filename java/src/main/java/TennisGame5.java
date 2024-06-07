@@ -4,8 +4,8 @@ import java.util.Map;
 public class TennisGame5 implements TennisGame {
 
     private final String player1Name;
-    private final String player2Name;
     private int player1Score;
+    private final String player2Name;
     private int player2Score;
 
     public TennisGame5(String player1Name, String player2Name) {
