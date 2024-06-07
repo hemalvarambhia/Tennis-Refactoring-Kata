@@ -28,6 +28,7 @@ public class TennisGame5 implements TennisGame {
 
     @Override
     public String getScore() {
+        if(player1Score > 16 || player2Score > 16) throw new IllegalArgumentException("Invalid score.");
         if(isDeuce()) return "Deuce";
         if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
         while (player1Score > 4 || player2Score > 4) {
@@ -36,7 +37,6 @@ public class TennisGame5 implements TennisGame {
         }
         var score = Map.entry(player1Score, player2Score);
 
-        if(!lookup.containsKey(score)) throw new IllegalArgumentException("Invalid score.");
 
         if(advantagePlayer1()) return "Advantage player1";
         if(player1HasWon()) return "Win for player1";
