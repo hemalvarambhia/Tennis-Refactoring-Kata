@@ -40,9 +40,17 @@ public class TennisGame5 implements TennisGame {
 
         if(advantagePlayer1()) return "Advantage player1";
         if(player1HasWon()) return "Win for player1";
-        if(player2Score > 3 && pointsDifference() == -1) return "Advantage player2";
-        if(player2Score > 3 && pointsDifference() <= -2) return "Win for player2";
+        if(advantagePlayer2()) return "Advantage player2";
+        if(player2HasWon()) return "Win for player2";
         return lookup.get(score);
+    }
+
+    private boolean player2HasWon() {
+        return player2Score > 3 && pointsDifference() <= -2;
+    }
+
+    private boolean advantagePlayer2() {
+        return player2Score > 3 && pointsDifference() == -1;
     }
 
     private boolean advantagePlayer1() {
