@@ -29,9 +29,9 @@ public class TennisGame5 implements TennisGame {
         if(isDeuce()) return "Deuce";
         if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
 
-        if(advantagePlayer1()) return "Advantage player1";
-        if(player1HasWon()) return "Win for player1";
-        if(advantagePlayer2()) return "Advantage player2";
+        if(advantagePlayer1()) return String.format("Advantage %s", "player1");
+        if(player1HasWon()) return String.format("Win for %s", "player1");
+        if(advantagePlayer2()) return String.format("Advantage %s", "player2");
         if(player2HasWon()) return "Win for player2";
         return String.format("%s-%s", toRunningScore(player1Score), toRunningScore(player2Score));
     }
