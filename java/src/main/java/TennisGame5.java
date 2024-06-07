@@ -35,8 +35,6 @@ public class TennisGame5 implements TennisGame {
             player1Score--;
             player2Score--;
         }
-        var score = Map.entry(player1Score, player2Score);
-
 
         if(advantagePlayer1()) return "Advantage player1";
         if(player1HasWon()) return "Win for player1";
