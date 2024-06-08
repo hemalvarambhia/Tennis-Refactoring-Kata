@@ -64,15 +64,4 @@ public class TennisGame5 implements TennisGame {
     private int pointsDifference() {
         return player1Score - player2Score;
     }
-
-    private String toRunningScore(Integer score) {
-        return RUNNING_SCORE.get(score);
-    }
-
-    private static final Map<Integer, String> RUNNING_SCORE = Map.of(
-            0, "Love",
-            1, "Fifteen",
-            2, "Thirty",
-            3, "Forty"
-    );
 }
