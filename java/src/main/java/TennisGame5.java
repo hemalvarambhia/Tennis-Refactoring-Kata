@@ -7,11 +7,13 @@ public class TennisGame5 implements TennisGame {
     private final TennisPlayer player1;
     private final String player2Name;
     private int player2Score;
+    private final TennisPlayer player2;
 
     public TennisGame5(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         player1 = new TennisPlayer(player1Name);
         this.player2Name = player2Name;
+        player2 = new TennisPlayer(player2Name);
     }
 
     @Override
@@ -19,9 +21,10 @@ public class TennisGame5 implements TennisGame {
         if (playerName.equals(player1Name)) {
             player1Score++;
             player1.wonPoint();
-        } else if (playerName.equals(player2Name))
+        } else if (playerName.equals(player2Name)) {
             player2Score++;
-        else
+            player2.wonPoint();
+        } else
             throw new IllegalArgumentException("Invalid player name.");
     }
 
