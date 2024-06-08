@@ -5,7 +5,7 @@ public class TennisGame5 implements TennisGame {
 
     private final String player1Name;
     private int player1Score;
-    private TennisPlayer player1;
+    private final TennisPlayer player1;
     private final String player2Name;
     private int player2Score;
 
@@ -17,9 +17,10 @@ public class TennisGame5 implements TennisGame {
 
     @Override
     public void wonPoint(String playerName) {
-        if (playerName.equals(player1Name))
+        if (playerName.equals(player1Name)) {
             player1Score++;
-        else if (playerName.equals(player2Name))
+            player1.wonPoint();
+        } else if (playerName.equals(player2Name))
             player2Score++;
         else
             throw new IllegalArgumentException("Invalid player name.");
@@ -27,7 +28,7 @@ public class TennisGame5 implements TennisGame {
 
     @Override
     public String getScore() {
-        if(player1Score > 16 || player2Score > 16) throw new IllegalArgumentException("Invalid score.");
+        if(player1.getPoints() > 16 || player2Score > 16) throw new IllegalArgumentException("Invalid score.");
         if(isDeuce()) return "Deuce";
         if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
 
