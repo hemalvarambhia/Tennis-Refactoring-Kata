@@ -30,9 +30,9 @@ public class TennisGame5 implements TennisGame {
 
     @Override
     public String getScore() {
-        if(player1.getPoints() > 16 || player2Score > 16) throw new IllegalArgumentException("Invalid score.");
+        if(player1.getPoints() > 16 || player2.getPoints() > 16) throw new IllegalArgumentException("Invalid score.");
         if(isDeuce()) return "Deuce";
-        if(player1Score < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
+        if(player1.getPoints() < 3 && pointsDifference() == 0) return String.format("%s-All", toRunningScore(player1Score));
 
         if(advantagePlayer1()) return String.format("Advantage %s", player1.getName());
         if(player1HasWon()) return String.format("Win for %s", player1.getName());
