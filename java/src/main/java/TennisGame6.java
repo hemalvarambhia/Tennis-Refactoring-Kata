@@ -42,7 +42,7 @@ public class TennisGame6 implements TennisGame {
                     break;
             }
 
-            result = tieScore;
+            return tieScore;
         }
         else if (player1Score >= 4 || player2Score >= 4)
         {
