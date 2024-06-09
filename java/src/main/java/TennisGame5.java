@@ -3,10 +3,8 @@ import java.util.Map;
 public class TennisGame5 implements TennisGame {
 
     private final String player1Name;
-    private int player1Score;
     private final TennisPlayer player1;
     private final String player2Name;
-    private int player2Score;
     private final TennisPlayer player2;
 
     public TennisGame5(String player1Name, String player2Name) {
@@ -19,10 +17,8 @@ public class TennisGame5 implements TennisGame {
     @Override
     public void wonPoint(String playerName) {
         if (playerName.equals(player1Name)) {
-            player1Score++;
             player1.wonPoint();
         } else if (playerName.equals(player2Name)) {
-            player2Score++;
             player2.wonPoint();
         } else
             throw new IllegalArgumentException("Invalid player name.");
