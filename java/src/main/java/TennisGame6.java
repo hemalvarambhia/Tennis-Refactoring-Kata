@@ -29,7 +29,8 @@ public class TennisGame6 implements TennisGame {
             switch (player1Score)
             {
                 case 0:
-                    tieScore = "Love-All";
+                    String runningScore = "Love";
+                    tieScore = String.format("%s-All", runningScore);
                     break;
                 case 1:
                     tieScore = "Fifteen-All";
