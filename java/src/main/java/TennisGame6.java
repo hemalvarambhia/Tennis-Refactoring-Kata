@@ -26,16 +26,20 @@ public class TennisGame6 implements TennisGame {
         {
             // tie score
             String tieScore;
+            String runningScore = "";
             switch (player1Score)
             {
                 case 0:
-                    tieScore = String.format("%s-All", "Love");
+                    runningScore = "Love";
+                    tieScore = String.format("%s-All", runningScore);
                     break;
                 case 1:
-                    tieScore = String.format("%s-All", "Fifteen");
+                    runningScore = "Fifteen";
+                    tieScore = String.format("%s-All", runningScore);
                     break;
                 case 2:
-                    tieScore = String.format("%s-All", "Thirty");
+                    runningScore = "Thirty";
+                    tieScore = String.format("%s-All", runningScore);
                     break;
                 default:
                     tieScore = "Deuce";
