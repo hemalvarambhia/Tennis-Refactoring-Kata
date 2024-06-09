@@ -1,16 +1,11 @@
 import java.util.Map;
 
 public class TennisGame5 implements TennisGame {
-
-    private final String player1Name;
     private final TennisPlayer player1;
-    private final String player2Name;
     private final TennisPlayer player2;
 
     public TennisGame5(String player1Name, String player2Name) {
-        this.player1Name = player1Name;
         player1 = new TennisPlayer(player1Name);
-        this.player2Name = player2Name;
         player2 = new TennisPlayer(player2Name);
     }
 
