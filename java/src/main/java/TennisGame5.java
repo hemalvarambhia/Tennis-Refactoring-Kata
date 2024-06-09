@@ -42,15 +42,15 @@ public class TennisGame5 implements TennisGame {
     }
 
     private boolean player2HasWon() {
-        return player2Score > 3 && pointsDifference() <= -2;
+        return player2.hasBeaten(player1);
     }
 
     private boolean advantagePlayer2() {
-        return player2Score > 3 && pointsDifference() == -1;
+        return player2.hasAdvantageOver(player1);
     }
 
     private boolean advantagePlayer1() {
-        return player1Score > 3 && pointsDifference() == 1;
+        return player1.hasAdvantageOver(player2);
     }
 
     private boolean player1HasWon() {
@@ -58,7 +58,7 @@ public class TennisGame5 implements TennisGame {
     }
 
     private boolean isDeuce() {
-        return player1Score >= 3 && pointsDifference() == 0;
+        return player1.getPoints() >= 3 && pointsDifference() == 0;
     }
 
     private int pointsDifference() {
