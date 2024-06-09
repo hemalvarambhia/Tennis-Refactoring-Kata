@@ -54,7 +54,7 @@ public class TennisGame5 implements TennisGame {
     }
 
     private boolean player1HasWon() {
-        return player1Score > 3 && pointsDifference() >= 2;
+        return player1.hasBeaten(player2);
     }
 
     private boolean isDeuce() {
@@ -62,6 +62,6 @@ public class TennisGame5 implements TennisGame {
     }
 
     private int pointsDifference() {
-        return player1Score - player2Score;
+        return player1.pointsDifference(player2);
     }
 }
