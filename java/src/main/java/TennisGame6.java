@@ -33,11 +33,10 @@ public class TennisGame6 implements TennisGame {
         {
             // tie score
             String tieScore;
-            String runningScore = "";
             switch (player1Score)
             {
                 case 0, 1, 2:
-                    runningScore = runningScoreMap.get(player1Score);
+                    String runningScore = runningScoreMap.get(player1Score);
                     tieScore = String.format("%s-All", runningScore);
                     break;
                 default:
