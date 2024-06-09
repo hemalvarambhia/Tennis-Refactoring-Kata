@@ -29,7 +29,7 @@ public class TennisGame6 implements TennisGame {
                 2, "Thirty"
         );
 
-        if (player1Score == player2Score)
+        if (player1Score - player2Score == 0)
         {
             // tie score
             String tieScore;
