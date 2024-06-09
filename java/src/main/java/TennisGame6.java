@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class TennisGame6 implements TennisGame {
     private final String player1Name;
     private final String player2Name;
@@ -21,6 +23,11 @@ public class TennisGame6 implements TennisGame {
     public String getScore()
     {
         String result;
+        Map<Integer, String> runningScoreMap = Map.of(
+                0, "Love",
+                1, "Fifteen",
+                2, "Thirty"
+        );
 
         if (player1Score == player2Score)
         {
