@@ -32,15 +32,14 @@ public class TennisGame6 implements TennisGame {
         if (player1Score - player2Score == 0)
         {
             // tie score
-            String tieScore = switch (player1Score) {
+
+            return switch (player1Score) {
                 case 0, 1, 2 -> {
                     String runningScore = runningScoreMap.get(player1Score);
                     yield String.format("%s-All", runningScore);
                 }
                 default -> "Deuce";
             };
-
-            return tieScore;
         }
         else if (player1Score >= 4 || player2Score >= 4)
         {
