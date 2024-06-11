@@ -38,11 +38,11 @@ public class TennisGame4 implements TennisGame {
     }
 
     private String winFor(TennisPlayer player) {
-        return String.format("Win for %s", player.getName());
+        return String.format("Win for %s", player);
     }
 
     private String advantage(TennisPlayer player) {
-        return String.format("Advantage %s", player.getName());
+        return String.format("Advantage %s", player);
     }
 
     private boolean receiverHasAdvantage() {
