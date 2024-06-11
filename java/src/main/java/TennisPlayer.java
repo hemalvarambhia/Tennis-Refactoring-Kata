@@ -50,6 +50,8 @@ public class TennisPlayer {
         return getPoints() >= 4 && pointsDifference(opponent) == 1;
     }
 
+    public String toString() { return name; }
+
     public int pointsDifference(TennisPlayer opponent) {
         return getPoints() - opponent.getPoints();
     }
