@@ -26,7 +26,8 @@ public class TennisGame6 implements TennisGame {
         Map<Integer, String> runningScoreMap = Map.of(
                 0, "Love",
                 1, "Fifteen",
-                2, "Thirty"
+                2, "Thirty",
+                3, "Forty"
         );
 
         if (pointsDifference() == 0)
