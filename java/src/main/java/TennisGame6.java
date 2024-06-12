@@ -22,7 +22,6 @@ public class TennisGame6 implements TennisGame {
 
     public String getScore()
     {
-        String result;
         Map<Integer, String> runningScoreMap = Map.of(
                 0, "Love",
                 1, "Fifteen",
