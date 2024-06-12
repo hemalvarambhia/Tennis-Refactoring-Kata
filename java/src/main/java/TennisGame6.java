@@ -56,8 +56,6 @@ public class TennisGame6 implements TennisGame {
         }
         else
         {
-            // regular score
-
             String score1 = runningScoreMap.get(player1Score);
             String player2RunningScore = runningScoreMap.get(player2Score);
 
