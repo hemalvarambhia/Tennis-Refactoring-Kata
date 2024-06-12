@@ -61,10 +61,8 @@ public class TennisGame6 implements TennisGame {
             String score1 = runningScoreMap.get(player1Score);
             String player2RunningScore = runningScoreMap.get(player2Score);
 
-            result = score1 + "-" + player2RunningScore;
+            return score1 + "-" + player2RunningScore;
         }
-
-        return result;
     }
 
     private int pointsDifference() {
