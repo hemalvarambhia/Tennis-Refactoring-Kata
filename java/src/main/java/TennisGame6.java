@@ -43,9 +43,6 @@ public class TennisGame6 implements TennisGame {
         }
         else if (player1Score > 3 || player2Score > 3)
         {
-            // end-game score
-            String endGameScore;
-
             if (pointsDifference() == 1) {
                 return String.format("Advantage %s", player1Name);
             } else if (pointsDifference() == -1) {
