@@ -47,16 +47,14 @@ public class TennisGame6 implements TennisGame {
             String endGameScore;
 
             if (player1Score - player2Score == 1) {
-                endGameScore = "Advantage " + player1Name;
+                return "Advantage " + player1Name;
             } else if (player1Score - player2Score == -1) {
-                endGameScore = "Advantage " + player2Name;
+                return "Advantage " + player2Name;
             } else if (player1Score - player2Score >= 2) {
-                endGameScore = "Win for " + player1Name;
+                return "Win for " + player1Name;
             } else {
-                endGameScore = "Win for " + player2Name;
+                return "Win for " + player2Name;
             }
-
-            result = endGameScore;
         }
         else
         {
