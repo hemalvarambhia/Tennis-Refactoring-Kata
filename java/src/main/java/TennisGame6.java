@@ -29,7 +29,7 @@ public class TennisGame6 implements TennisGame {
                 2, "Thirty"
         );
 
-        if (player1Score - player2Score == 0)
+        if (pointsDifference() == 0)
         {
             // tie score
 
@@ -46,11 +46,11 @@ public class TennisGame6 implements TennisGame {
             // end-game score
             String endGameScore;
 
-            if (player1Score - player2Score == 1) {
+            if (pointsDifference() == 1) {
                 return String.format("Advantage %s", player1Name);
-            } else if (player1Score - player2Score == -1) {
+            } else if (pointsDifference() == -1) {
                 return String.format("Advantage %s", player2Name);
-            } else if (player1Score - player2Score >= 2) {
+            } else if (pointsDifference() >= 2) {
                 return String.format("Win for %s", player1Name);
             } else {
                 return String.format("Win for %s", player2Name);
@@ -83,5 +83,9 @@ public class TennisGame6 implements TennisGame {
         }
 
         return result;
+    }
+
+    private int pointsDifference() {
+        return player1Score - player2Score;
     }
 }
