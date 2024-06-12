@@ -60,16 +60,9 @@ public class TennisGame6 implements TennisGame {
             String regularScore;
 
             String score1 = runningScoreMap.get(player1Score);
+            String player2RunningScore = runningScoreMap.get(player2Score);
 
-            var score2 =  switch (player2Score)
-            {
-                case 0 -> "Love";
-                case 1 -> "Fifteen";
-                case 2 -> "Thirty";
-                default -> "Forty";
-            };
-
-            regularScore = score1 + "-" + score2;
+            regularScore = score1 + "-" + player2RunningScore;
 
             result = regularScore;
         }
