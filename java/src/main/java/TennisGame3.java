@@ -1,5 +1,3 @@
-import java.util.Map;
-
 public class TennisGame3 implements TennisGame {
 
     private final TennisPlayer player1;
@@ -23,7 +21,7 @@ public class TennisGame3 implements TennisGame {
             return "Deuce";
         }
 
-        if (scoresAreEqual())
+        if (isATie())
             return String.format("%s-All", runningScoreFor(player1));
 
         return String.format("%s-%s", runningScoreFor(player1), runningScoreFor(player2));
@@ -62,10 +60,10 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean isDeuce() {
-        return player1.getPoints() >= 3 && scoresAreEqual();
+        return player1.getPoints() >= 3 && isATie();
     }
 
-    private boolean scoresAreEqual() {
+    private boolean isATie() {
         return pointsDifference() == 0;
     }
 

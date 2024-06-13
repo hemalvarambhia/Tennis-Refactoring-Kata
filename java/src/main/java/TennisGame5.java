@@ -23,13 +23,17 @@ public class TennisGame5 implements TennisGame {
     public String getScore() {
         if(player1.getPoints() > 16 || player2.getPoints() > 16) throw new IllegalArgumentException("Invalid score.");
         if(isDeuce()) return "Deuce";
-        if(player1.getPoints() < 3 && pointsDifference() == 0) return String.format("%s-All", player1.runningScore());
+        if(isTied()) return String.format("%s-All", player1.runningScore());
 
         if(advantagePlayer1()) return String.format("Advantage %s", player1);
         if(player1HasWon()) return String.format("Win for %s", player1);
         if(advantagePlayer2()) return String.format("Advantage %s", player2);
         if(player2HasWon()) return String.format("Win for %s", player2);
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
+    }
+
+    private boolean isTied() {
+        return player1.getPoints() < 3 && pointsDifference() == 0;
     }
 
     private boolean player2HasWon() {

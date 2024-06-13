@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Objects;
 
 public class TennisGame1 implements TennisGame {
@@ -44,7 +42,7 @@ public class TennisGame1 implements TennisGame {
             return won(player2);
         }
 
-        if (scoresAreEqual()) return String.format("%s-All", player1.runningScore());
+        if (isATie()) return String.format("%s-All", player1.runningScore());
 
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
@@ -54,10 +52,10 @@ public class TennisGame1 implements TennisGame {
      * @return game is a deuce (true) or it is not (false).
      */
     private boolean isDeuce() {
-        return player1.getPoints() >= 3 && scoresAreEqual();
+        return player1.getPoints() >= 3 && isATie();
     }
 
-    private boolean scoresAreEqual() {
+    private boolean isATie() {
         return player1.pointsDifference(player2) == 0;
     }
 
