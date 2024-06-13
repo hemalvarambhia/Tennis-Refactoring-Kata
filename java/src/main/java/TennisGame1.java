@@ -42,7 +42,7 @@ public class TennisGame1 implements TennisGame {
             return won(player2);
         }
 
-        if (isATie()) return String.format("%s-All", player1.runningScore());
+        if (scoresAreTied()) return String.format("%s-All", player1.runningScore());
 
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
@@ -52,10 +52,10 @@ public class TennisGame1 implements TennisGame {
      * @return game is a deuce (true) or it is not (false).
      */
     private boolean isDeuce() {
-        return player1.getPoints() >= 3 && isATie();
+        return player1.getPoints() >= 3 && scoresAreTied();
     }
 
-    private boolean isATie() {
+    private boolean scoresAreTied() {
         return player1.pointsDifference(player2) == 0;
     }
 

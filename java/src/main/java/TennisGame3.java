@@ -21,7 +21,7 @@ public class TennisGame3 implements TennisGame {
             return "Deuce";
         }
 
-        if (isATie())
+        if (scoresAreTield())
             return String.format("%s-All", runningScoreFor(player1));
 
         return String.format("%s-%s", runningScoreFor(player1), runningScoreFor(player2));
@@ -60,10 +60,10 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean isDeuce() {
-        return player1.getPoints() >= 3 && isATie();
+        return player1.getPoints() >= 3 && scoresAreTield();
     }
 
-    private boolean isATie() {
+    private boolean scoresAreTield() {
         return pointsDifference() == 0;
     }
 

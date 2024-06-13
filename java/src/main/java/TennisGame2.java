@@ -12,7 +12,7 @@ public class TennisGame2 implements TennisGame
         if (player1.hasBeaten(player2)) return "Win for player1";
         if (player2.hasBeaten(player1)) return "Win for player2";
 
-        if (isATie())
+        if (scoresAreTied())
         {
             return String.format("%s-All", player1.runningScore());
         }
@@ -22,10 +22,10 @@ public class TennisGame2 implements TennisGame
     }
 
     private boolean isDeuce() {
-        return isATie() && player1.getPoints() >= 3;
+        return scoresAreTied() && player1.getPoints() >= 3;
     }
 
-    private boolean isATie() {
+    private boolean scoresAreTied() {
         return pointsDifference() == 0;
     }
 

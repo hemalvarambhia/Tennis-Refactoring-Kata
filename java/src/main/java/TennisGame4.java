@@ -62,19 +62,19 @@ public class TennisGame4 implements TennisGame {
     }
 
     private String runningScore() {
-        if (isTied())
+        if (scoresAreTied())
             return servingPlayer.runningScore() + "-All";
         return String.format(
                 "%s-%s", servingPlayer.runningScore(), receivingPlayer.runningScore()
         );
     }
 
-    private boolean isTied() {
+    private boolean scoresAreTied() {
         return servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
 
     private boolean isDeuce() {
         return servingPlayer.getPoints() >=3 && receivingPlayer.getPoints() >=3
-                && isTied();
+                && scoresAreTied();
     }
 }
