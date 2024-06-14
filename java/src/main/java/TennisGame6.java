@@ -29,15 +29,14 @@ public class TennisGame6 implements TennisGame {
                 3, "Forty"
         );
 
+        if(player1Score < 3 && pointsDifference() == 0) {
+            String runningScore = runningScoreMap.get(player1Score);
+            return String.format("%s-All", runningScore);
+        }
+
         if (pointsDifference() == 0)
         {
-            // tie score
-            if(player1Score < 3 && pointsDifference() == 0) {
-                String runningScore = runningScoreMap.get(player1Score);
-                return String.format("%s-All", runningScore);
-            } else {
-                return "Deuce";
-            }
+           return "Deuce";
         }
         else if (player1Score > 3 || player2Score > 3)
         {
