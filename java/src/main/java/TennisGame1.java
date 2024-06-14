@@ -56,7 +56,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean scoresAreTied() {
-        return player1.pointsDifference(player2) == 0;
+        return pointsDifference() == 0;
+    }
+
+    private int pointsDifference() {
+        return player1.pointsDifference(player2);
     }
 
     /**
