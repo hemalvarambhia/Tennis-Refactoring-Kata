@@ -34,7 +34,7 @@ public class TennisGame6 implements TennisGame {
             return String.format("%s-All", runningScore);
         }
 
-        if (player1Score >=3 && pointsDifference() == 0) {
+        if (isDeuce()) {
            return "Deuce";
         }
         else if (player1Score > 3 || player2Score > 3)
@@ -56,6 +56,10 @@ public class TennisGame6 implements TennisGame {
 
             return score1 + "-" + player2RunningScore;
         }
+    }
+
+    private boolean isDeuce() {
+        return player1Score >= 3 && pointsDifference() == 0;
     }
 
     private boolean scoresAreTied() {
