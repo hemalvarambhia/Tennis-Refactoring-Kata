@@ -9,8 +9,8 @@ public class TennisGame2 implements TennisGame
         if (isDeuce()) return "Deuce";
         if (player1.hasAdvantageOver(player2)) return advantage(player1);
         if (player2.hasAdvantageOver((player1))) return advantage(player2);
-        if (player1.hasBeaten(player2)) return String.format("Win for %s", player1.getName());
-        if (player2.hasBeaten(player1)) return String.format("Win for %s", player2.getName());
+        if (player1.hasBeaten(player2)) return won(player1);
+        if (player2.hasBeaten(player1)) return won(player2);
 
         if (scoresAreTied()) return String.format("%s-All", player1.runningScore());
 
@@ -39,6 +39,10 @@ public class TennisGame2 implements TennisGame
 
     private String advantage(TennisPlayer player) {
         return String.format("Advantage %s", player);
+    }
+
+    private String won(TennisPlayer player) {
+        return String.format("Win for %s", player.getName());
     }
 
     private final TennisPlayer player1;
