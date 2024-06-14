@@ -12,13 +12,9 @@ public class TennisGame2 implements TennisGame
         if (player1.hasBeaten(player2)) return String.format("Win for %s", player1.getName());
         if (player2.hasBeaten(player1)) return String.format("Win for %s", player2.getName());
 
-        if (scoresAreTied())
-        {
-            return String.format("%s-All", player1.runningScore());
-        }
-        return String.format(
-                "%s-%s", player1.runningScore(), player2.runningScore()
-        );
+        if (scoresAreTied()) return String.format("%s-All", player1.runningScore());
+
+        return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
 
     private boolean isDeuce() {
