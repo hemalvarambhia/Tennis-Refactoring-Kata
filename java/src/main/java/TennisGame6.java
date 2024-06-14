@@ -34,8 +34,7 @@ public class TennisGame6 implements TennisGame {
             return String.format("%s-All", runningScore);
         }
 
-        if (pointsDifference() == 0)
-        {
+        if (player1Score >=3 && pointsDifference() == 0) {
            return "Deuce";
         }
         else if (player1Score > 3 || player2Score > 3)
