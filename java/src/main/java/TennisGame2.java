@@ -18,7 +18,7 @@ public class TennisGame2 implements TennisGame
     }
 
     private boolean isDeuce() {
-        return scoresAreTied() && player1.getPoints() >= 3;
+        return player1.getPoints() >= 3 && scoresAreTied();
     }
 
     private boolean scoresAreTied() {
