@@ -29,7 +29,7 @@ public class TennisGame6 implements TennisGame {
                 3, "Forty"
         );
 
-        if(player1Score < 3 && pointsDifference() == 0) {
+        if(scoresAreTied()) {
             String runningScore = runningScoreMap.get(player1Score);
             return String.format("%s-All", runningScore);
         }
@@ -56,6 +56,10 @@ public class TennisGame6 implements TennisGame {
 
             return score1 + "-" + player2RunningScore;
         }
+    }
+
+    private boolean scoresAreTied() {
+        return player1Score < 3 && pointsDifference() == 0;
     }
 
     private int pointsDifference() {
