@@ -7,7 +7,7 @@ public class TennisGame2 implements TennisGame
 
     public String getScore(){
         if (isDeuce()) return "Deuce";
-        if (player1.hasAdvantageOver(player2)) return String.format("Advantage %s", player1.getName());
+        if (player1.hasAdvantageOver(player2)) return advantage(player1);
         if (player2.hasAdvantageOver((player1))) return String.format("Advantage %s", player2.getName());
         if (player1.hasBeaten(player2)) return String.format("Win for %s", player1.getName());
         if (player2.hasBeaten(player1)) return String.format("Win for %s", player2.getName());
@@ -35,6 +35,10 @@ public class TennisGame2 implements TennisGame
         } else {
             player2.wonPoint();
         }
+    }
+
+    private String advantage(TennisPlayer player) {
+        return String.format("Advantage %s", player);
     }
 
     private final TennisPlayer player1;
