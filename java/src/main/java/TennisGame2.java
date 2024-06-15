@@ -42,11 +42,11 @@ public class TennisGame2 implements TennisGame
         return player1.pointsDifference((player2));
     }
 
-    private String advantage(TennisPlayer player) {
+    private static String advantage(TennisPlayer player) {
         return String.format("Advantage %s", player);
     }
 
-    private String won(TennisPlayer winner) {
+    private static String won(TennisPlayer winner) {
         return String.format("Win for %s", winner);
     }
 

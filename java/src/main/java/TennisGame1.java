@@ -61,7 +61,7 @@ public class TennisGame1 implements TennisGame {
      * @param player player with the advantage.
      * @return Advantage {name of player}
      */
-    private String advantage(TennisPlayer player) {
+    private static String advantage(TennisPlayer player) {
         return String.format("Advantage %s", player);
     }
 
@@ -70,7 +70,7 @@ public class TennisGame1 implements TennisGame {
      * @param winner the winner of the game.
      * @return Win for {name of player}
      */
-    private String won(TennisPlayer winner) {
+    private static String won(TennisPlayer winner) {
         return String.format("Win for %s", winner);
     }
 
