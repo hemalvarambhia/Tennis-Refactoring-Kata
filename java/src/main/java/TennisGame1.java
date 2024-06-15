@@ -2,9 +2,6 @@ import java.util.Objects;
 
 public class TennisGame1 implements TennisGame {
 
-    private final TennisPlayer player1;
-    private final TennisPlayer player2;
-
     public TennisGame1(String player1Name, String player2Name) {
         player1 = new TennisPlayer(player1Name);
         player2 = new TennisPlayer(player2Name);
@@ -80,4 +77,7 @@ public class TennisGame1 implements TennisGame {
     private boolean isNotPlaying(String playerName) {
         return !Objects.equals(player1.getName(), playerName) && !Objects.equals(player2.getName(), playerName);
     }
+
+    private final TennisPlayer player1;
+    private final TennisPlayer player2;
 }
