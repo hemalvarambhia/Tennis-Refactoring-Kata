@@ -62,7 +62,7 @@ public class TennisGame1 implements TennisGame {
      * @return Advantage {name of player}
      */
     private String advantage(TennisPlayer player) {
-        return String.format("Advantage %s", player.getName());
+        return String.format("Advantage %s", player);
     }
 
     /**
@@ -71,7 +71,7 @@ public class TennisGame1 implements TennisGame {
      * @return Win for {name of player}
      */
     private String won(TennisPlayer winner) {
-        return String.format("Win for %s", winner.getName());
+        return String.format("Win for %s", winner);
     }
 
     private boolean isNotPlaying(String playerName) {
