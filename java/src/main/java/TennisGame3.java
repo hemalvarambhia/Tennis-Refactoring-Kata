@@ -9,16 +9,16 @@ public class TennisGame3 implements TennisGame {
     }
 
     public String getScore() {
-        if(thereIsAWinner()) {
-            return win(leadingPlayer());
+        if(isDeuce()) {
+            return "Deuce";
         }
 
         if (isAdvantage()) {
             return advantage(leadingPlayer());
         }
 
-        if(isDeuce()) {
-            return "Deuce";
+        if(thereIsAWinner()) {
+            return win(leadingPlayer());
         }
 
         if (scoresAreTied())
