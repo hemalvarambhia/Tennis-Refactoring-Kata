@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class TennisGame2 implements TennisGame
 {
     public TennisGame2(String player1Name, String player2Name) {
@@ -30,11 +32,18 @@ public class TennisGame2 implements TennisGame
     }
 
     public void wonPoint(String player) {
+        if(isNotPlaying(player)){
+            throw new RuntimeException(String.format("%s is not playing the game", player));
+        }
         if (player.equals(player1.getName())) {
             player1.wonPoint();
         } else {
             player2.wonPoint();
         }
+    }
+
+    private boolean isNotPlaying(String playerName) {
+        return !Objects.equals(player1.getName(), playerName) && !Objects.equals(player2.getName(), playerName);
     }
 
     private String advantage(TennisPlayer player) {

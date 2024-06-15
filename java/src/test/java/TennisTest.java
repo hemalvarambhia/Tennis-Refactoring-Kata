@@ -104,6 +104,13 @@ public class TennisTest {
         assertEquals("Thirty-Fifteen", tennisGame.getScore());
     }
 
+    @Test
+    public void testPointsCannotBeWonByNonParticipatingPlayerInTennisGame2() {
+        TennisGame tennisGame = new TennisGame2("Player A", "Player B");
+
+        assertThrows(RuntimeException.class, () -> tennisGame.wonPoint("Not Playing"));
+    }
+
     @ParameterizedTest
     @MethodSource("getAllScores")
     public void checkAllScoresTennisGame3(int player1Points, int player2Points, String expectedScore) {
