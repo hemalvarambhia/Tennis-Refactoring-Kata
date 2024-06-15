@@ -13,9 +13,8 @@ public class TennisGame3 implements TennisGame {
             return "Deuce";
         }
 
-        if (isAdvantage()) {
-            return advantage(leadingPlayer());
-        }
+        if (player1.hasAdvantageOver(player2)) return advantage(player1.getName());
+        if (player2.hasAdvantageOver(player1)) return advantage(player2.getName());
 
         if(thereIsAWinner()) {
             return win(leadingPlayer());
