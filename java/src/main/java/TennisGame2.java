@@ -46,8 +46,8 @@ public class TennisGame2 implements TennisGame
         return String.format("Advantage %s", player);
     }
 
-    private String won(TennisPlayer player) {
-        return String.format("Win for %s", player.getName());
+    private String won(TennisPlayer winner) {
+        return String.format("Win for %s", winner);
     }
 
     private boolean isNotPlaying(String playerName) {
