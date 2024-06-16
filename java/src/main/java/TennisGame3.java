@@ -12,8 +12,8 @@ public class TennisGame3 implements TennisGame {
         if(isDeuce()) return "Deuce";
         if (player1.hasAdvantageOver(player2)) return advantage(player1.getName());
         if (player2.hasAdvantageOver(player1)) return advantage(player2.getName());
-        if (player1.hasBeaten(player2)) return win(player1.getName());
-        if(player2.hasBeaten(player1)) {return win(player2.getName());}
+        if (player1.hasBeaten(player2)) return winner(player1);
+        if(player2.hasBeaten(player1)) return winner(player2);
 
         if (scoresAreTied())
             return String.format("%s-All", runningScoreFor(player1));
@@ -39,6 +39,10 @@ public class TennisGame3 implements TennisGame {
 
     private int pointsDifference() {
         return player1.pointsDifference(player2);
+    }
+
+    private static String winner(TennisPlayer player) {
+        return win(player.getName());
     }
 
     private static String win(String leadingPlayer) {
