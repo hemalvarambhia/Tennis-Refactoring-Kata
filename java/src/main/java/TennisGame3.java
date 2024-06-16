@@ -37,16 +37,16 @@ public class TennisGame3 implements TennisGame {
         return pointsDifference() == 0;
     }
 
+    private int pointsDifference() {
+        return player1.pointsDifference(player2);
+    }
+
     private static String win(String leadingPlayer) {
         return String.format("Win for %s", leadingPlayer);
     }
 
     private static String advantage(String leadingPlayer) {
         return String.format("Advantage %s", leadingPlayer);
-    }
-
-    private int pointsDifference() {
-        return player1.pointsDifference(player2);
     }
 
     private String runningScoreFor(TennisPlayer player) {
