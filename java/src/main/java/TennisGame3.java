@@ -47,10 +47,6 @@ public class TennisGame3 implements TennisGame {
         return String.format("Win for %s", leadingPlayer);
     }
 
-    private boolean isAdvantage() {
-        return player1.hasAdvantageOver(player2) || player2.hasAdvantageOver(player1);
-    }
-
     private static String advantage(String leadingPlayer) {
         return String.format("Advantage %s", leadingPlayer);
     }
