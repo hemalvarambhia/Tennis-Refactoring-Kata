@@ -13,10 +13,7 @@ public class TennisGame3 implements TennisGame {
         if (player1.hasAdvantageOver(player2)) return advantage(player1.getName());
         if (player2.hasAdvantageOver(player1)) return advantage(player2.getName());
         if (player1.hasBeaten(player2)) return win(player1.getName());
-
-        if(thereIsAWinner()) {
-            return win(leadingPlayer());
-        }
+        if(player2.hasBeaten(player1)) {return win(player2.getName());}
 
         if (scoresAreTied())
             return String.format("%s-All", runningScoreFor(player1));
@@ -38,10 +35,6 @@ public class TennisGame3 implements TennisGame {
 
     private boolean scoresAreTied() {
         return pointsDifference() == 0;
-    }
-
-    private boolean thereIsAWinner() {
-        return player2.hasBeaten(player1);
     }
 
     private static String win(String leadingPlayer) {
