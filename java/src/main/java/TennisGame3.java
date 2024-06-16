@@ -49,10 +49,6 @@ public class TennisGame3 implements TennisGame {
         return player1.pointsDifference(player2);
     }
 
-    private String leadingPlayer() {
-        return player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
-    }
-
     private String runningScoreFor(TennisPlayer player) {
         return player.runningScore();
     }
