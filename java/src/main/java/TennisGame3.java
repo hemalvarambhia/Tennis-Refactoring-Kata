@@ -42,11 +42,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private static String winner(TennisPlayer player) {
-        return win(player.getName());
-    }
-
-    private static String win(String leadingPlayer) {
-        return String.format("Win for %s", leadingPlayer);
+        return String.format("Win for %s", player);
     }
 
     private static String advantage(String leadingPlayer) {
