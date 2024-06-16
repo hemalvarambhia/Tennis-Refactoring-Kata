@@ -16,9 +16,9 @@ public class TennisGame3 implements TennisGame {
         if(player2.hasBeaten(player1)) return winner(player2);
 
         if (scoresAreTied())
-            return String.format("%s-All", runningScoreFor(player1));
+            return String.format("%s-All", player1.runningScore());
 
-        return String.format("%s-%s", runningScoreFor(player1), runningScoreFor(player2));
+        return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
 
     public void wonPoint(String playerName) {
@@ -49,7 +49,4 @@ public class TennisGame3 implements TennisGame {
         return String.format("Advantage %s", leadingPlayer);
     }
 
-    private String runningScoreFor(TennisPlayer player) {
-        return player.runningScore();
-    }
 }
