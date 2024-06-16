@@ -12,6 +12,7 @@ public class TennisGame3 implements TennisGame {
         if(isDeuce()) return "Deuce";
         if (player1.hasAdvantageOver(player2)) return advantage(player1.getName());
         if (player2.hasAdvantageOver(player1)) return advantage(player2.getName());
+        if (player1.hasBeaten(player2)) return win(player1.getName());
 
         if(thereIsAWinner()) {
             return win(leadingPlayer());
@@ -40,7 +41,7 @@ public class TennisGame3 implements TennisGame {
     }
 
     private boolean thereIsAWinner() {
-        return player1.hasBeaten(player2) || player2.hasBeaten(player1);
+        return player2.hasBeaten(player1);
     }
 
     private static String win(String leadingPlayer) {
