@@ -29,23 +29,11 @@ public class TennisGame4 implements TennisGame {
             return advantage(receivingPlayer);
 
         if(servingPlayer.hasBeaten(receivingPlayer))
-            return win(servingPlayer);
+            return won(servingPlayer);
 
         if(receivingPlayer.hasBeaten(servingPlayer))
-            return win(receivingPlayer);
+            return won(receivingPlayer);
 
-        return runningScore();
-    }
-
-    private static String win(TennisPlayer player) {
-        return String.format("Win for %s", player);
-    }
-
-    private static String advantage(TennisPlayer player) {
-        return String.format("Advantage %s", player);
-    }
-
-    private String runningScore() {
         if (scoresAreTied())
             return servingPlayer.runningScore() + "-All";
         return String.format(
@@ -53,12 +41,22 @@ public class TennisGame4 implements TennisGame {
         );
     }
 
-    private boolean scoresAreTied() {
-        return servingPlayer.pointsDifference(receivingPlayer) == 0;
-    }
-
     private boolean isDeuce() {
         return servingPlayer.getPoints() >=3 && receivingPlayer.getPoints() >=3
                 && scoresAreTied();
     }
+
+
+    private boolean scoresAreTied() {
+        return servingPlayer.pointsDifference(receivingPlayer) == 0;
+    }
+
+    private static String won(TennisPlayer player) {
+        return String.format("Win for %s", player);
+    }
+
+    private static String advantage(TennisPlayer player) {
+        return String.format("Advantage %s", player);
+    }
+
 }
