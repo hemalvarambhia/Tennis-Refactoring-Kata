@@ -22,16 +22,16 @@ public class TennisGame4 implements TennisGame {
         if(isDeuce())
             return "Deuce";
 
-        if(serverHasAdvantage())
+        if(servingPlayer.hasAdvantageOver(receivingPlayer))
             return advantage(servingPlayer);
 
-        if (receiverHasAdvantage())
+        if (receivingPlayer.hasAdvantageOver(servingPlayer))
             return advantage(receivingPlayer);
 
-        if(serverHasWon())
+        if(servingPlayer.hasBeaten(receivingPlayer))
             return winFor(servingPlayer);
 
-        if(receiverHasWon())
+        if(receivingPlayer.hasBeaten(servingPlayer))
             return winFor(receivingPlayer);
 
         return runningScore();
@@ -43,22 +43,6 @@ public class TennisGame4 implements TennisGame {
 
     private String advantage(TennisPlayer player) {
         return String.format("Advantage %s", player);
-    }
-
-    private boolean receiverHasAdvantage() {
-        return receivingPlayer.hasAdvantageOver(servingPlayer);
-    }
-
-    private boolean serverHasAdvantage() {
-        return servingPlayer.hasAdvantageOver(receivingPlayer);
-    }
-
-    private boolean receiverHasWon() {
-        return receivingPlayer.hasBeaten(servingPlayer);
-    }
-
-    private boolean serverHasWon() {
-        return servingPlayer.hasBeaten(receivingPlayer);
     }
 
     private String runningScore() {
