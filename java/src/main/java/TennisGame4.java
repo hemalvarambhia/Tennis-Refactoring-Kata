@@ -29,19 +29,19 @@ public class TennisGame4 implements TennisGame {
             return advantage(receivingPlayer);
 
         if(servingPlayer.hasBeaten(receivingPlayer))
-            return winFor(servingPlayer);
+            return win(servingPlayer);
 
         if(receivingPlayer.hasBeaten(servingPlayer))
-            return winFor(receivingPlayer);
+            return win(receivingPlayer);
 
         return runningScore();
     }
 
-    private String winFor(TennisPlayer player) {
+    private static String win(TennisPlayer player) {
         return String.format("Win for %s", player);
     }
 
-    private String advantage(TennisPlayer player) {
+    private static String advantage(TennisPlayer player) {
         return String.format("Advantage %s", player);
     }
 
