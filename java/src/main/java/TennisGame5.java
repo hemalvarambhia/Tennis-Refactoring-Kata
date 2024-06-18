@@ -23,31 +23,15 @@ public class TennisGame5 implements TennisGame {
         if(isDeuce()) return "Deuce";
         if(scoresAreTied()) return String.format("%s-All", player1.runningScore());
 
-        if(advantagePlayer1()) return String.format("Advantage %s", player1);
-        if(player1HasWon()) return String.format("Win for %s", player1);
-        if(advantagePlayer2()) return String.format("Advantage %s", player2);
-        if(player2HasWon()) return String.format("Win for %s", player2);
+        if(player1.hasAdvantageOver(player2)) return String.format("Advantage %s", player1);
+        if(player1.hasBeaten(player2)) return String.format("Win for %s", player1);
+        if(player2.hasAdvantageOver(player1)) return String.format("Advantage %s", player2);
+        if(player2.hasBeaten(player1)) return String.format("Win for %s", player2);
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
 
     private boolean scoresAreTied() {
         return player1.getPoints() < 3 && pointsDifference() == 0;
-    }
-
-    private boolean player2HasWon() {
-        return player2.hasBeaten(player1);
-    }
-
-    private boolean advantagePlayer2() {
-        return player2.hasAdvantageOver(player1);
-    }
-
-    private boolean advantagePlayer1() {
-        return player1.hasAdvantageOver(player2);
-    }
-
-    private boolean player1HasWon() {
-        return player1.hasBeaten(player2);
     }
 
     private boolean isDeuce() {
