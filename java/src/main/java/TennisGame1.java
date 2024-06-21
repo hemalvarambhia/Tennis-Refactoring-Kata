@@ -45,11 +45,11 @@ public class TennisGame1 implements TennisGame {
      * @return game is a deuce (true) or it is not (false).
      */
     private boolean isDeuce() {
-        return player1.getPoints() >= 3 && scoresAreTied();
+        return player1.getPoints() >= 3 && pointsDifference() == 0;
     }
 
     private boolean scoresAreTied() {
-        return pointsDifference() == 0;
+        return player1.getPoints() < 3 && pointsDifference() == 0;
     }
 
     private int pointsDifference() {
