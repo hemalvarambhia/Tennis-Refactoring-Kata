@@ -43,12 +43,12 @@ public class TennisGame4 implements TennisGame {
 
     private boolean isDeuce() {
         return servingPlayer.getPoints() >=3 && receivingPlayer.getPoints() >=3
-                && scoresAreTied();
+                && servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
 
 
     private boolean scoresAreTied() {
-        return servingPlayer.pointsDifference(receivingPlayer) == 0;
+        return servingPlayer.getPoints() < 3 && servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
 
     private static String won(TennisPlayer player) {
