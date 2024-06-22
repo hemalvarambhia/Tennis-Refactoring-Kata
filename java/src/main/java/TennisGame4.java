@@ -46,7 +46,6 @@ public class TennisGame4 implements TennisGame {
                 && servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
 
-
     private boolean scoresAreTied() {
         return servingPlayer.getPoints() < 3 && servingPlayer.pointsDifference(receivingPlayer) == 0;
     }
