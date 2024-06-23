@@ -51,7 +51,7 @@ public class TennisGame6 implements TennisGame {
         }
         else
         {
-            return runningScore(player1Score) + "-" + runningScore(player2Score);
+            return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
         }
     }
 
