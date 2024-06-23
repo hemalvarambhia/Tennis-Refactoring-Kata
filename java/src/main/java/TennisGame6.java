@@ -42,7 +42,7 @@ public class TennisGame6 implements TennisGame {
             if (pointsDifference() == 1) {
                 return advantageTo(player1Name);
             } else if (pointsDifference() == -1) {
-                return String.format("Advantage %s", player2Name);
+                return advantageTo(player2Name);
             } else if (pointsDifference() >= 2) {
                 return String.format("Win for %s", player1Name);
             } else {
