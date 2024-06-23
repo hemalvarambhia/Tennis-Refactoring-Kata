@@ -6,6 +6,13 @@ public class TennisGame6 implements TennisGame {
     private int player1Score;
     private int player2Score;
 
+    private static final Map<Integer, String> runningScoreMap = Map.of(
+            0, "Love",
+            1, "Fifteen",
+            2, "Thirty",
+            3, "Forty"
+            );
+
     public TennisGame6(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
@@ -22,13 +29,6 @@ public class TennisGame6 implements TennisGame {
 
     public String getScore()
     {
-        Map<Integer, String> runningScoreMap = Map.of(
-                0, "Love",
-                1, "Fifteen",
-                2, "Thirty",
-                3, "Forty"
-        );
-
         if(scoresAreTied()) {
             String runningScore = runningScoreMap.get(player1Score);
             return String.format("%s-All", runningScore);
