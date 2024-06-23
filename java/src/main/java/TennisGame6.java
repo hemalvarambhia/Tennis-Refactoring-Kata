@@ -37,10 +37,10 @@ public class TennisGame6 implements TennisGame {
         if (isDeuce()) {
            return "Deuce";
         }
-        else if (player1Score > 3 || player2Score > 3)
+        if (player1Score > 3 || player2Score > 3)
         {
             if (pointsDifference() == 1) {
-                return String.format("Advantage %s", player1Name);
+                return advantageTo(player1Name);
             } else if (pointsDifference() == -1) {
                 return String.format("Advantage %s", player2Name);
             } else if (pointsDifference() >= 2) {
@@ -68,5 +68,9 @@ public class TennisGame6 implements TennisGame {
 
     private int pointsDifference() {
         return player1Score - player2Score;
+    }
+
+    private static String advantageTo(String player) {
+        return String.format("Advantage %s", player);
     }
 }
