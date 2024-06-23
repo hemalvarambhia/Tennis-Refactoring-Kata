@@ -51,8 +51,8 @@ public class TennisGame6 implements TennisGame {
         }
         else
         {
-            String score1 = runningScoreMap.get(player1Score);
-            String player2RunningScore = runningScoreMap.get(player2Score);
+            String score1 = runningScore(player1Score);
+            String player2RunningScore = runningScore(player2Score);
 
             return score1 + "-" + player2RunningScore;
         }
@@ -72,5 +72,9 @@ public class TennisGame6 implements TennisGame {
 
     private static String advantageTo(String player) {
         return String.format("Advantage %s", player);
+    }
+
+    private static String runningScore(Integer playerScore) {
+       return runningScoreMap.get(playerScore);
     }
 }
