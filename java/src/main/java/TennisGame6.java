@@ -30,8 +30,7 @@ public class TennisGame6 implements TennisGame {
     public String getScore()
     {
         if(scoresAreTied()) {
-            String runningScore = runningScoreMap.get(player1Score);
-            return String.format("%s-All", runningScore);
+            return String.format("%s-All", runningScore(player1Score));
         }
 
         if (isDeuce()) {
