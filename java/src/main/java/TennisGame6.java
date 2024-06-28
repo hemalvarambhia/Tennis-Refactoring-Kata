@@ -43,9 +43,9 @@ public class TennisGame6 implements TennisGame {
             } else if (pointsDifference() == -1) {
                 return advantageTo(player2Name);
             } else if (pointsDifference() >= 2) {
-                return String.format("Win for %s", player1Name);
+                return won(player1Name);
             } else {
-                return String.format("Win for %s", player2Name);
+                return won(player2Name);
             }
         }
         else
@@ -68,6 +68,10 @@ public class TennisGame6 implements TennisGame {
 
     private static String advantageTo(String player) {
         return String.format("Advantage %s", player);
+    }
+
+    private static String won(String player) {
+        return String.format("Win for %s", player);
     }
 
     private static String runningScore(Integer playerScore) {
