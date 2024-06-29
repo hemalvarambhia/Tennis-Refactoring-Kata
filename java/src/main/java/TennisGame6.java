@@ -38,6 +38,7 @@ public class TennisGame6 implements TennisGame {
         }
 
         if (player1HasAdvantage()) { return advantageTo(player1Name); }
+        if (player2HasAdvantage()) { return advantageTo(player2Name); }
 
         if (player1Score > 3 || player2Score > 3)
         {
