@@ -48,10 +48,8 @@ public class TennisGame6 implements TennisGame {
                 return won(player2Name);
             }
         }
-        else
-        {
-            return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
-        }
+
+        return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
     }
 
     private boolean player2HasAdvantage() {
