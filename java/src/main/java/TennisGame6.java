@@ -26,6 +26,7 @@ public class TennisGame6 implements TennisGame {
     public void wonPoint(String playerName) {
         if (playerName.equals("player1")) {
             player1Score++;
+            player1.wonPoint();
         } else if(playerName.equals(player2Name)) {
             player2Score++;
         } else {
