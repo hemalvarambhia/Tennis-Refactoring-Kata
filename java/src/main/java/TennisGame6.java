@@ -39,11 +39,7 @@ public class TennisGame6 implements TennisGame {
         if (player2HasAdvantage()) { return advantageTo(player2Name); }
 
         if (player1HasWon()) { return won(player1Name); }
-
-        if (player2HasWon())
-        {
-            return won(player2Name);
-        }
+        if (player2HasWon()) { return won(player2Name); }
 
         return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
     }
