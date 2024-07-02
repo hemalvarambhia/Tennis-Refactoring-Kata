@@ -42,7 +42,7 @@ public class TennisGame6 implements TennisGame {
 
         if (player1Score > 3 || player2Score > 3)
         {
-            if (pointsDifference() >= 2) {
+            if (player1HasWon()) {
                 return won(player1Name);
             } else {
                 return won(player2Name);
@@ -50,6 +50,10 @@ public class TennisGame6 implements TennisGame {
         }
 
         return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
+    }
+
+    private boolean player1HasWon() {
+        return (player1Score > 3 || player2Score > 3) && pointsDifference() >= 2;
     }
 
     private boolean player2HasAdvantage() {
