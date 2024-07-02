@@ -157,6 +157,13 @@ public class TennisTest {
         assertThrows(RuntimeException.class, tennisGame::getScore);
     }
 
+    @Test
+    public void testPointsCannotBeWonByNonParticipatingPlayerInTennisGame6() {
+        TennisGame tennisGame = new TennisGame6("Player A", "Player B");
+
+        assertThrows(RuntimeException.class, () -> tennisGame.wonPoint("Not Playing"));
+    }
+
 
     @ParameterizedTest
     @MethodSource("getAllScores")
