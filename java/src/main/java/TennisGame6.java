@@ -2,8 +2,9 @@ import java.util.Map;
 
 public class TennisGame6 implements TennisGame {
     private final String player1Name;
-    private final String player2Name;
     private int player1Score;
+
+    private final String player2Name;
     private int player2Score;
 
     private static final Map<Integer, String> runningScoreMap = Map.of(
