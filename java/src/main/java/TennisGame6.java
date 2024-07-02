@@ -40,13 +40,9 @@ public class TennisGame6 implements TennisGame {
 
         if (player1HasWon()) { return won(player1Name); }
 
-        if (player1Score > 3 || player2Score > 3)
+        if ((player1Score > 3 || player2Score > 3) && pointsDifference() <= -2)
         {
-            if (player1HasWon()) {
-                return won(player1Name);
-            } else {
-                return won(player2Name);
-            }
+            return won(player2Name);
         }
 
         return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
