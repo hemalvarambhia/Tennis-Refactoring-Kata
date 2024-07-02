@@ -33,12 +33,12 @@ public class TennisGame6 implements TennisGame {
             return String.format("%s-All", runningScore(player1Score));
         }
 
-        if (isDeuce()) {
-           return "Deuce";
-        }
+        if (isDeuce()) { return "Deuce"; }
 
         if (player1HasAdvantage()) { return advantageTo(player1Name); }
         if (player2HasAdvantage()) { return advantageTo(player2Name); }
+
+        if (player1HasWon()) { return won(player1Name); }
 
         if (player1Score > 3 || player2Score > 3)
         {
