@@ -8,6 +8,7 @@ public class TennisGame6 implements TennisGame {
 
     private final String player2Name;
     private int player2Score;
+    private TennisPlayer player2;
 
     private static final Map<Integer, String> runningScoreMap = Map.of(
             0, "Love",
@@ -20,6 +21,7 @@ public class TennisGame6 implements TennisGame {
         this.player1Name = player1Name;
         player1 = new TennisPlayer(player1Name);
         this.player2Name = player2Name;
+        player2 = new TennisPlayer(player2Name);
     }
 
     @Override
@@ -29,6 +31,7 @@ public class TennisGame6 implements TennisGame {
             player1Score = player1.getPoints();
         } else if(playerName.equals(player2Name)) {
             player2Score++;
+            player2.wonPoint();
         } else {
             throw new IllegalArgumentException("Invalid player name.");
         }
