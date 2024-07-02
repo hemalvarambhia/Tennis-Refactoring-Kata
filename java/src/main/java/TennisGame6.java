@@ -29,10 +29,6 @@ public class TennisGame6 implements TennisGame {
 
     public String getScore()
     {
-        if(scoresAreTied()) {
-            return String.format("%s-All", runningScore(player1Score));
-        }
-
         if (isDeuce()) { return "Deuce"; }
 
         if (player1HasAdvantage()) { return advantageTo(player1Name); }
@@ -41,6 +37,9 @@ public class TennisGame6 implements TennisGame {
         if (player1HasWon()) { return won(player1Name); }
         if (player2HasWon()) { return won(player2Name); }
 
+        if(scoresAreTied()) {
+            return String.format("%s-All", runningScore(player1Score));
+        }
         return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
     }
 
