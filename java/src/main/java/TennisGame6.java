@@ -30,8 +30,8 @@ public class TennisGame6 implements TennisGame {
             player1.wonPoint();
             player1Score = player1.getPoints();
         } else if(playerName.equals(player2Name)) {
-            player2Score++;
             player2.wonPoint();
+            player2Score = player2.getPoints();
         } else {
             throw new IllegalArgumentException("Invalid player name.");
         }
