@@ -41,11 +41,11 @@ public class TennisGame6 implements TennisGame {
     {
         if (isDeuce()) { return "Deuce"; }
 
-        if (player1HasAdvantage()) { return advantage(player1Name); }
-        if (player2HasAdvantage()) { return advantage(player2Name); }
+        if (player1HasAdvantage()) { return advantage(player1.getName()); }
+        if (player2HasAdvantage()) { return advantage(player2.getName()); }
 
-        if (player1HasWon()) { return won(player1Name); }
-        if (player2HasWon()) { return won(player2Name); }
+        if (player1HasWon()) { return won(player1.getName()); }
+        if (player2HasWon()) { return won(player2.getName()); }
 
         if(scoresAreTied()) { return String.format("%s-All", runningScore(player1Score)); }
         return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
