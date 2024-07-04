@@ -41,8 +41,8 @@ public class TennisGame6 implements TennisGame {
     {
         if (isDeuce()) { return "Deuce"; }
 
-        if (player1HasAdvantage()) { return advantageTo(player1Name); }
-        if (player2HasAdvantage()) { return advantageTo(player2Name); }
+        if (player1HasAdvantage()) { return advantage(player1Name); }
+        if (player2HasAdvantage()) { return advantage(player2Name); }
 
         if (player1HasWon()) { return won(player1Name); }
         if (player2HasWon()) { return won(player2Name); }
@@ -79,7 +79,7 @@ public class TennisGame6 implements TennisGame {
         return player1Score - player2Score;
     }
 
-    private static String advantageTo(String player) {
+    private static String advantage(String player) {
         return String.format("Advantage %s", player);
     }
 
