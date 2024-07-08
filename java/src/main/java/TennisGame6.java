@@ -1,13 +1,8 @@
 import java.util.Map;
 
 public class TennisGame6 implements TennisGame {
-    private final String player1Name;
-    private int player1Score;
-
     private TennisPlayer player1;
 
-    private final String player2Name;
-    private int player2Score;
     private TennisPlayer player2;
 
     private static final Map<Integer, String> runningScoreMap = Map.of(
@@ -18,9 +13,7 @@ public class TennisGame6 implements TennisGame {
             );
 
     public TennisGame6(String player1Name, String player2Name) {
-        this.player1Name = player1Name;
         player1 = new TennisPlayer(player1Name);
-        this.player2Name = player2Name;
         player2 = new TennisPlayer(player2Name);
     }
 
@@ -28,10 +21,8 @@ public class TennisGame6 implements TennisGame {
     public void wonPoint(String playerName) {
         if (playerName.equals(player1.getName())) {
             player1.wonPoint();
-            player1Score = player1.getPoints();
         } else if(playerName.equals(player2.getName())) {
             player2.wonPoint();
-            player2Score = player2.getPoints();
         } else {
             throw new IllegalArgumentException("Invalid player name.");
         }
