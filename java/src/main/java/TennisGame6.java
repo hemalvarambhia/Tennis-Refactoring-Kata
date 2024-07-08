@@ -26,10 +26,10 @@ public class TennisGame6 implements TennisGame {
 
     @Override
     public void wonPoint(String playerName) {
-        if (playerName.equals("player1")) {
+        if (playerName.equals(player1.getName())) {
             player1.wonPoint();
             player1Score = player1.getPoints();
-        } else if(playerName.equals(player2Name)) {
+        } else if(playerName.equals(player2.getName())) {
             player2.wonPoint();
             player2Score = player2.getPoints();
         } else {
@@ -48,7 +48,7 @@ public class TennisGame6 implements TennisGame {
         if (player2HasWon()) { return won(player2.getName()); }
 
         if(scoresAreTied()) { return String.format("%s-All", runningScore(player1.getPoints())); }
-        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2Score));
+        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2.getPoints()));
     }
 
     private boolean player2HasWon() {
