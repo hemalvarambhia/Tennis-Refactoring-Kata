@@ -64,19 +64,19 @@ public class TennisGame6 implements TennisGame {
     }
 
     private boolean player1HasAdvantage() {
-        return (player1Score > 3 || player2Score > 3) && pointsDifference() == 1;
+        return player1.hasAdvantageOver(player2);
     }
 
     private boolean isDeuce() {
-        return player1Score >= 3 && pointsDifference() == 0;
+        return player1.getPoints() >= 3 && pointsDifference() == 0;
     }
 
     private boolean scoresAreTied() {
-        return player1Score < 3 && pointsDifference() == 0;
+        return player1.getPoints() < 3 && pointsDifference() == 0;
     }
 
     private int pointsDifference() {
-        return player1Score - player2Score;
+        return player1.pointsDifference(player2);
     }
 
     private static String advantage(String player) {
