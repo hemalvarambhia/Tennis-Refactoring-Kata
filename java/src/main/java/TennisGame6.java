@@ -47,20 +47,20 @@ public class TennisGame6 implements TennisGame {
         if (player1HasWon()) { return won(player1.getName()); }
         if (player2HasWon()) { return won(player2.getName()); }
 
-        if(scoresAreTied()) { return String.format("%s-All", runningScore(player1Score)); }
-        return String.format("%s-%s", runningScore(player1Score), runningScore(player2Score));
+        if(scoresAreTied()) { return String.format("%s-All", runningScore(player1.getPoints())); }
+        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2Score));
     }
 
     private boolean player2HasWon() {
-        return (player1Score > 3 || player2Score > 3) && pointsDifference() <= -2;
+        return player2.hasBeaten(player1);
     }
 
     private boolean player1HasWon() {
-        return (player1Score > 3 || player2Score > 3) && pointsDifference() >= 2;
+        return player1.hasBeaten(player2);
     }
 
     private boolean player2HasAdvantage() {
-        return (player1Score > 3 || player2Score > 3) && pointsDifference() == -1;
+        return player2.hasAdvantageOver(player1);
     }
 
     private boolean player1HasAdvantage() {
