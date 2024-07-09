@@ -38,8 +38,8 @@ public class TennisGame6 implements TennisGame {
         if (player1HasWon()) { return won(player1.getName()); }
         if (player2HasWon()) { return won(player2.getName()); }
 
-        if(scoresAreTied()) { return String.format("%s-All", runningScore(player1.getPoints())); }
-        return String.format("%s-%s", runningScore(player1.getPoints()), runningScore(player2.getPoints()));
+        if(scoresAreTied()) { return String.format("%s-All", player1.runningScore()); }
+        return String.format("%s-%s", player1.runningScore(), player2.runningScore());
     }
 
     private boolean player2HasWon() {
