@@ -35,8 +35,8 @@ public class TennisGame6 implements TennisGame {
         if (player1.hasAdvantageOver(player2)) { return advantage(player1.getName()); }
         if (player2.hasAdvantageOver(player1)) { return advantage(player2.getName()); }
 
-        if (player1.hasBeaten(player2)) { return won(player1.getName()); }
-        if (player2.hasBeaten(player1)) { return won(player2.getName()); }
+        if (player1.hasBeaten(player2)) { return won(player1); }
+        if (player2.hasBeaten(player1)) { return won(player2); }
 
         if(scoresAreTied()) { return String.format("%s-All", player1.runningScore()); }
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
@@ -59,6 +59,10 @@ public class TennisGame6 implements TennisGame {
     }
 
     private static String won(String player) {
+        return String.format("Win for %s", player);
+    }
+
+    private String won(TennisPlayer player) {
         return String.format("Win for %s", player);
     }
 
