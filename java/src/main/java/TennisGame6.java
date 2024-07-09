@@ -54,16 +54,12 @@ public class TennisGame6 implements TennisGame {
         return player1.pointsDifference(player2);
     }
 
-    private static String advantage(String player) {
-        return String.format("Advantage %s", player);
-    }
-
-    private String won(TennisPlayer player) {
+    private static String won(TennisPlayer player) {
         return String.format("Win for %s", player);
     }
 
-    private String advantage(TennisPlayer player) {
-        return TennisGame6.advantage(player.getName());
+    private static String advantage(TennisPlayer player) {
+        return String.format("Advantage %s", player);
     }
 
 }
