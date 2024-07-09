@@ -32,30 +32,14 @@ public class TennisGame6 implements TennisGame {
     {
         if (isDeuce()) { return "Deuce"; }
 
-        if (player1HasAdvantage()) { return advantage(player1.getName()); }
-        if (player2HasAdvantage()) { return advantage(player2.getName()); }
+        if (player1.hasAdvantageOver(player2)) { return advantage(player1.getName()); }
+        if (player2.hasAdvantageOver(player1)) { return advantage(player2.getName()); }
 
-        if (player1HasWon()) { return won(player1.getName()); }
-        if (player2HasWon()) { return won(player2.getName()); }
+        if (player1.hasBeaten(player2)) { return won(player1.getName()); }
+        if (player2.hasBeaten(player1)) { return won(player2.getName()); }
 
         if(scoresAreTied()) { return String.format("%s-All", player1.runningScore()); }
         return String.format("%s-%s", player1.runningScore(), player2.runningScore());
-    }
-
-    private boolean player2HasWon() {
-        return player2.hasBeaten(player1);
-    }
-
-    private boolean player1HasWon() {
-        return player1.hasBeaten(player2);
-    }
-
-    private boolean player2HasAdvantage() {
-        return player2.hasAdvantageOver(player1);
-    }
-
-    private boolean player1HasAdvantage() {
-        return player1.hasAdvantageOver(player2);
     }
 
     private boolean isDeuce() {
