@@ -78,7 +78,4 @@ public class TennisGame6 implements TennisGame {
         return String.format("Win for %s", player);
     }
 
-    private static String runningScore(Integer playerScore) {
-       return runningScoreMap.get(playerScore);
-    }
 }
