@@ -1,16 +1,7 @@
-import java.util.Map;
-
 public class TennisGame6 implements TennisGame {
     private final TennisPlayer player1;
 
     private final TennisPlayer player2;
-
-    private static final Map<Integer, String> runningScoreMap = Map.of(
-            0, "Love",
-            1, "Fifteen",
-            2, "Thirty",
-            3, "Forty"
-            );
 
     public TennisGame6(String player1Name, String player2Name) {
         player1 = new TennisPlayer(player1Name);
