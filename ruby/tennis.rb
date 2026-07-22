@@ -18,6 +18,11 @@ class TennisGame1
     result = ""
     points_difference = @p1_points - @p2_points
     temp_score = 0
+    verbalisation = Hash.new('Ambiguous')
+    verbalisation[0] = 'Love'
+    verbalisation[1] = 'Fifteen'
+    verbalisation[2] = 'Thirty'
+    verbalisation[3] = 'Forty'
     if points_difference.zero?
       result = {
         0 => "Love-All",
