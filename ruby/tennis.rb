@@ -23,7 +23,7 @@ class TennisGame1
         0 => "Love-All",
         1 => "Fifteen-All",
         2 => "Thirty-All"
-      }.fetch(@p1_points, "Deuce")
+      }[@p1_points] || "Deuce"
     elsif @p1_points >= 4 || @p2_points >= 4
       result = if points_difference == 1
         "Advantage #{@player1_name}"
