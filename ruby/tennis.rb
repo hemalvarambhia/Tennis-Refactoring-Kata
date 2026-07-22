@@ -28,7 +28,7 @@ class TennisGame1
       result = if points_difference == 1
         "Advantage #{@player1_name}"
       elsif points_difference == -1
-        "Advantage player2"
+        "Advantage #{@player2_name}"
       elsif points_difference >= 2
         "Win for player1"
       else
