@@ -18,7 +18,7 @@ class TennisGame1
     result = ""
     points_difference = @p1_points - @p2_points
     temp_score = 0
-    if @p1_points == @p2_points
+    if points_difference.zero?
       result = {
         0 => "Love-All",
         1 => "Fifteen-All",
